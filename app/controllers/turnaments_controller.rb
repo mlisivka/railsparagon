@@ -1,0 +1,2 @@
+class TurnamentsController < ApplicationController
+end

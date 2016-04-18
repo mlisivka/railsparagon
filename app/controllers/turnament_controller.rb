@@ -1,2 +1,0 @@
-class TurnamentController < ApplicationController
-end
