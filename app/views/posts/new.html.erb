@@ -1,0 +1,11 @@
+<h1>Create new Match</h1>
+
+<%= form_for Post.new do |p| %>
+
+	<p>Title:		<%= p.text_field :title     %></p>
+	<p>Text:	  <%= p.text_field :text      %></p>
+	<p>Authort: <%= p.number_field :autorId %></p>
+
+	<p><%= p.submit "Create Post" %></p>
+
+<% end %>
