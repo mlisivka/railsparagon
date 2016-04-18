@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="col-sm-4">
+        <div class="pick-team">
+             <div class="btn-group btn-input clearfix team-select">
+              <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
+                <span data-bind="label">Choose Team</span>&nbsp;<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Team1</a></li>
+                <li><a href="#">Team2</a></li>
+                <li><a href="#">Team3</a></li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary" id="btn-send">Send</button>
+            <div class="team-detail">
+              <div class="team-info">
+                <img src="http://placehold.it/60">
+                Name
+                <br>
+                Country
+                <br>
+                Rating
+              </div>
+              <div class="team-player">
+                <ul class="list-group">
+                  <li class="list-group-item">BlackNigga</li>
+                  <li class="list-group-item">WhiteNigga</li>
+                  <li class="list-group-item">YellowNigga</li>
+                  <li class="list-group-item">GreenNigga</li>
+                  <li class="list-group-item">BlueNigga</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="party-teams">
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>img</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><img src="http://placehold.it/30" alt=""></td>
+                <td>Team Spirit</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><img src="http://placehold.it/30" alt=""></td>
+                <td>Team Empire</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><img src="http://placehold.it/30" alt=""></td>
+                <td>Team Alliance</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><img src="http://placehold.it/30" alt=""></td>
+                <td>Vega Squadron</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><img src="http://placehold.it/30" alt=""></td>
+                <td>Team Secret</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><img src="http://placehold.it/30" alt=""></td>
+                <td>Virtus.pro</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
+
+   var $target = $( event.currentTarget );
+
+   $target.closest( '.btn-group' )
+      .find( '[data-bind="label"]' ).text( $target.text() )
+         .end()
+      .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+
+   return false;
+
+  });
+</script>
