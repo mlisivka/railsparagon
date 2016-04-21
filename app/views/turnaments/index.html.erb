@@ -4,15 +4,14 @@
       <div class="turnament">
         <div class="turnament-title">Turnament #1</div>
         <div class="turnament-info">
-          payment-$10
-          <br>
-          teams-6/12
-          <br>
-          prize-$100
-          <br>
-          date-24.04.16 16:00
+          <ul>
+            <li>payment-$10</li>
+            <li>teams-6/12</li>
+            <li>prize-$100</li>
+            <li>date-24.04.16 16:00</li>
+          </ul>
         </div>
-        <a href="#" class="btn btn-primary btn-reg">Registration</a>
+        <%= link_to 'Registration', turnament_path(@turnaments), class: "btn btn-primary btn-reg" %>
       </div>
     </div>
   </div>
