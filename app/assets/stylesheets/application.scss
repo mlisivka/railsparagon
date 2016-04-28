@@ -1,268 +1,311 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .post{
-   background-color: #222;
-   height: 160px;
-   width: 100%;
-   border: 1px solid red;
-   padding: 20px;
- }
- .img{
-   height: 120px;
-   width: 100%;
- }
- .content{
-   color: white;
- }
- .content>h3{
-   margin: 0;
-   font-size: 24px;
-   line-height: 24px;
- }
- .info{
-   font-size: 12px;
-   line-height: 12px;
-   float:right;
-   top:0;
- }
- .navbar-toggle.pull-left {
-   margin-left: 15px;
- }
- .navbar-static-bottom{
-   border-radius: 0px;
- }
- @media (max-width: 768px) {
-   .navbar > .container .navbar-brand,
-   .navbar > .container-fluid .navbar-brand {
-     position:absolute;
- 	left:50%;
- 	margin-left: -60px;
-   }
- }
- .turnament{
-   background-color: #f2f2f2;
-   height: 180px;
-   width: 100%;
-   border: 1px solid #222;
-   padding: 20px;
- }
- .turnament-title{
-   text-align: center;
- }
- .btn-reg{
-   position: absolute;
-   bottom: 20px;
-   margin-left: -51px;
-   left:50%;
- }
- .profile{
-   width: 100%;
-   height: 200px;
- }
- .result-match{
-   width: 100%;
-   padding-bottom: 10px;
- }
- .navbar-static-bottom{
-   margin-top: 20px;
- }
- .title{
-   color: #7BC8F7;
-   background-color: #222;
-   width: 100%;
-   padding: 6px;
- }
- .match{
-   width: calc(100% - 40px);
-   margin: 10px 20px 0 20px;
- }
- .btn-details{
-   height: 100%;
-   float: right;
-   margin-top: -69px;
-   padding: 23px 2px;
-   font-size: 25px;
-   color: #7BC8F7;
-   background: #222;
- }
- .match-header{
-   padding: 2px;
-   width: 100%;
-   height: 23px;
-   background: #eee;
- }
- .match-main{
-   width: 100%;
-   height: 68px;
-   background: #396B8D;
- }
- .match-left{
-   height: 100%;
-   width: calc(100% - 58px);
-   line-height: 68px;
-   margin-left: 29px;
- }
- .main-team{
- 	width:45%;
- 	float:left;
- 	text-align: center;
- }
- .team-logo{
-   height: 50px;
-   width: 50px;
-   margin-top: 9px;
- }
- .team-name{
-   margin-top: 50px;
- }
- .stats{
-   margin-top: 10px;
- }
- .stats>tbody>tr>td:last-child{
-   text-align: right;
- }
- .main-team + b{
-   float: left;
-   width: 10%;
-   text-align: center;;
- }
- .match-full{
- }
- .match-main a{
-   text-decoration: none;
- }
- .match-main a:focus{
-   color: #7BC8F7;
- }
- .match-main a:hover{
-   color: red;
- }
- a.spoiler:after{
-   text-decoration: none;
-   content: "\e253";
- }
- a.spoiler.collapsed:after{
-   content: "\e252";
- }
- .table{
-   margin-bottom: 0px;
- }
- .teams{
-   padding: 0 4px;
-   font-size: 11px;
- }
- .teams th{
-   color: white;
-   background: #848484;
- }
- .team{
-       padding: 0 2px;
- }
- .team:first-child{
-       padding-left: 15px;
- }
- .team:last-child{
-       padding-right: 15px;
- }
- .team-select{
-   margin-top: 10px;
-   width: 68%;
- }
- .btn-input .btn.form-control span:first-child {
-    left: 10px;
-    overflow: hidden;
+ .post {
+  background-color: #eee;
+  height: 160px;
+  width: 100%;
+  border-bottom: 1px solid #888;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+.img {
+  height: 120px;
+  width: 100%;
+}
+.content>h3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 24px;
+}
+.info {
+  font-size: 12px;
+  line-height: 12px;
+  float: right;
+  top: 0;
+}
+.blog {
+  background-color: #eee;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+.blog-title {
+  line-height: 32px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+  font-size: 24px;
+}
+.blog-image {
+  width: 80%;
+  height: 180px;
+  margin: 10px auto;
+  display: block;
+}
+.navbar-toggle.pull-left {
+  margin-left: 15px;
+}
+.navbar-static-bottom {
+  border-radius: 0px;
+}
+@media (max-width: 767px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
     position: absolute;
-    right: 15px;
-    text-align: left;
- }
- .btn-input .btn.form-control .caret {
-    margin-top: -1px;
-    position: absolute;
-    right: 5px;
-    top: 50%;
- }
- .team-info{
-   height: 80px;
-   margin-top: 10px;
-   border: 1px solid #ddd;
-   border-top-left-radius: 4px;
-   border-top-right-radius: 4px;
-   padding: 10px 15px;
- }
- .team-info > img{
-   float: left;
-   margin-right: 15px;
- }
- .team-player{
-   margin-top: 5px;
- }
- #btn-send{
-   margin-top: 10px;
-   width: 30%;
-   float: right;
- }
- .team-profile{
-   width: 100%;
-   float: left;
-   background: #eee;
- }
- .team-logo-lg{
-   width: 80px;
-   height: 80px;
-   margin: 20px;
-   float: left;
- }
- .team-description{
-   margin-top: 10px;
-   height: 100px;
-   width: calc(100% - 140px);
-   float: left;
-   background: #888;
- }
- .team-holder{
-   margin-bottom: 20px;
-   height: 120px;
- }
- .players{
-   width: 60%;
-   margin: auto;
- }
- .recent-matches{
-   height: 250px;
- }
- .recent-matches>ul{
-   margin-top: 10px;
-   padding-left: 0;
- }
- .recent-matches>ul>li{
-   display: block;
-   margin-bottom: -1px;
-   color: #fff;
-   padding: 0px 10px;
-   line-height: 30px;
-   background-color: #333;
-   border: 1px solid #444;
- }
-.turnament-info>ul{
+    left: 50%;
+    margin-left: -60px;
+  }
+}
+.turnament {
+  background-color: #f2f2f2;
+  height: 180px;
+  width: 100%;
+  border: 1px solid #222;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.turnament-title {
+  text-align: center;
+}
+.btn-reg {
+  position: absolute;
+  margin-left: -51px;
+  left: 50%;
+}
+.profile {} .result-match {
+  width: 100%;
+  padding-bottom: 10px;
+}
+.title {
+  color: #7BC8F7;
+  background-color: #222;
+  width: 100%;
+  padding: 6px;
+}
+.match {
+  width: calc(100% - 40px);
+  margin: 10px 20px 0 20px;
+}
+.btn-details {
+  height: 100%;
+  float: right;
+  margin-top: -69px;
+  padding: 23px 2px;
+  font-size: 25px;
+  color: #7BC8F7;
+  background: #222;
+}
+.match-info {
+  padding: 2px;
+  width: 100%;
+  height: 23px;
+  background: #eee;
+}
+.match-main {
+  width: 100%;
+  height: 68px;
+  background: #396B8D;
+}
+.match-left {
+  height: 100%;
+  width: calc(100% - 58px);
+  line-height: 68px;
+  margin-left: 29px;
+}
+.main-team {
+  width: 45%;
+  float: left;
+  text-align: center;
+  color: #fff;
+}
+.team-logo {
+  height: 50px;
+  width: 50px;
+  margin-top: 9px;
+}
+.team-name {
+  margin-top: 50px;
+}
+.stats {
+  margin-top: 10px;
+}
+.stats>tbody>tr>td:last-child {
+  text-align: right;
+}
+.main-team + b {
+  float: left;
+  width: 10%;
+  text-align: center;
+}
+.match-main a {
+  text-decoration: none;
+}
+.match-main a:focus {
+  color: #7BC8F7;
+}
+.match-main a:hover {
+  color: red;
+}
+a.spoiler:after {
+  text-decoration: none;
+  content: "\e253";
+}
+a.spoiler.collapsed:after {
+  content: "\e252";
+}
+.table {
+  margin-bottom: 0px;
+}
+.teams {
+  padding: 0 4px;
+  font-size: 11px;
+}
+.teams th {
+color: white;
+background: #848484;
+}
+.team {
+  padding: 0 2px;
+}
+@media (max-width: 992px) {
+  .team {
+    padding: 0 15px;
+  }
+}
+.team:first-child {
+  padding-left: 15px;
+}
+.team:last-child {
+  padding-right: 15px;
+}
+.team-select {
+  margin-top: 10px;
+  width: 68%;
+}
+.btn-input .btn.form-control span:first-child {
+  left: 10px;
+  overflow: hidden;
+  position: absolute;
+  right: 15px;
+  text-align: left;
+}
+.btn-input .btn.form-control .caret {
+  margin-top: -1px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+}
+.team-info {
+  height: 80px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 10px 15px;
+}
+.team-info > img {
+  float: left;
+  margin-right: 15px;
+}
+.team-player {
+  margin-bottom: -10px;
+  margin-top: 5px;
+}
+.party-teams {
+  margin: 10px 0
+}
+.party-teams th {
+  background-color: grey;
+  color: white;
+}
+#btn-send {
+  margin-top: 10px;
+  width: 30%;
+  float: right;
+}
+.team-profile {
+  width: 100%;
+  float: left;
+  background: #eee;
+  margin-bottom: 10px;
+}
+.team-logo-lg {
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+  float: left;
+}
+.team-description {
+  margin-top: 10px;
+  height: 100px;
+  width: calc(100% - 140px);
+  float: left;
+  background: #888;
+}
+.team-holder {
+  margin-bottom: 20px;
+  height: 120px;
+}
+.players {
+  width: 60%;
+  margin: auto;
+}
+.recent-matches>ul {
+  margin-top: 10px;
   padding-left: 0;
 }
-.turnament-info>ul>li{
+.recent-matches>ul>li {
+  display: block;
+  margin-bottom: -1px;
+  color: #fff;
+  padding: 0 10px;
+  line-height: 30px;
+  background-color: #888;
+  border: 1px solid #999;
+}
+.turnament-info>ul {
+  padding-left: 0;
+}
+.turnament-info>ul>li {
   display: block;
   padding: 0px 10px;
+}
+.event {
+  margin-right: 8px;
+}
+.match-box {
+  margin-bottom: 10px;
+}
+.match-url {
+  color: #333!important;
+}
+.team-emblem {
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+.heroes {
+  float: right;
+  margin-top: -6px;
+}
+.hero {
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+}
+.match-full {
+  background: #eee;
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+.team-player-match {
+  margin-bottom: -10px;
+}
+.blue-border {
+  border: solid 1px #87CEEB;
+}
+.blue-border:first-child {
+border-top: solid 8px #87CEEB;
 }
