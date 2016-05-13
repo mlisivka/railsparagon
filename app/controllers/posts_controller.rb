@@ -4,6 +4,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @postId = Post.find(params[:id])
+  end
+
   def edit
   end
 

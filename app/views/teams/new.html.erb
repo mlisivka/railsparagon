@@ -1,12 +1,17 @@
 <div class="container">
   <div class="title">Create new Team</div>
+  <%= form_for Team.new do |i| %>
 
-  <b>Full Team Name</b><br>
-  <input type="text" size="40"><br>
-  <b>Team Tag / Abbreviation</b><br>
-  <input type="text" size="40"><br>
-  <b>Specify Country</b><br>
-  <input type="text" size="40"><br>
-  <b>Team URL</b><br>
-  <input type="text" size="40"><br>
+    <b>Full Team Name</b><br>
+    <%= i.text_field :name %><br>
+    <b>Team Tag / Abbreviation</b><br>
+    <br>
+    <b>Specify Country</b><br>
+    <%= i.text_field :country %><br>
+    <b>Team URL</b><br>
+    <%= i.number_field :captainId %><br>
+
+  	<p><%= i.submit "Create Team" %></p>
+
+  <% end %>
 </div>

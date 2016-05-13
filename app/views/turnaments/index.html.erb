@@ -1,18 +1,20 @@
 <div class="container">
   <div class="row">
+    <% @turnaments.each do |i| %>
     <div class="col-md-4">
       <div class="turnament">
-        <div class="turnament-title">Turnament #1</div>
+        <div class="turnament-title"><%= i.title %></div>
         <div class="turnament-info">
           <ul>
-            <li>payment-$10</li>
-            <li>teams-6/12</li>
-            <li>prize-$100</li>
-            <li>date-24.04.16 16:00</li>
+            <li>payment-$<%= i.payment %></li>
+            <li>teams-6/<%= i.max_team %></li>
+            <li>prize-$<%= i.prize %></li>
+            <li>date-<%= i.date_turnament.strftime('%d/%m/%Y %H:%M') %></li>
           </ul>
         </div>
-        <%= link_to 'Registration', turnament_path(@turnaments), class: "btn btn-primary btn-reg" %>
+        <%= link_to 'Registration', turnament_path(:id => i.id), class: "btn btn-primary btn-reg" %>
       </div>
     </div>
+    <% end %>
   </div>
 </div>

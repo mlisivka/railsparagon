@@ -11,7 +11,7 @@
             <div class="content">
               <h3><a href="/posts/<%= i.id %>"><%= i.title %></a></h3>
               <div class="text"><%= i.text %></div>
-              <div class="info"><%= i.created_at %></div>
+              <div class="info"><%= i.created_at.strftime('%d/%m/%Y %H:%M') %></div>
             </div>
           </div>
         </div>
