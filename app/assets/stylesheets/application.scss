@@ -1,18 +1,22 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .post {
+.post {
   background-color: #eee;
   height: 160px;
   width: 100%;
-  border-bottom: 1px solid #888;
   padding: 20px;
   margin-bottom: 10px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 25px 80px -50px rgba(0,0,0,1);
+  //box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+  //box-shadow: 0px 10px 50px -25px rgba(0,0,0,1);
 }
 .img {
   height: 120px;
   width: 100%;
+}
+.content{
+  height: 120px;
 }
 .content>h3 {
   margin: 0;
@@ -22,8 +26,9 @@
 .info {
   font-size: 12px;
   line-height: 12px;
-  float: right;
-  top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
 }
 .blog {
   background-color: #eee;
@@ -162,8 +167,8 @@ a.spoiler.collapsed:after {
   font-size: 11px;
 }
 .teams th {
-color: white;
-background: #848484;
+  color: white;
+  background: #848484;
 }
 .team {
   padding: 0 2px;
@@ -219,6 +224,9 @@ background: #848484;
   background-color: grey;
   color: white;
 }
+.party-teams td{
+  vertical-align: middle !important;
+}
 #btn-send {
   margin-top: 10px;
   width: 30%;
@@ -251,6 +259,9 @@ background: #848484;
   width: 60%;
   margin: auto;
 }
+.recent-matches{
+  background: url('http://cdn.dota2lounge.com/img/sub.jpg');
+}
 .recent-matches>ul {
   margin-top: 10px;
   padding-left: 0;
@@ -261,7 +272,7 @@ background: #848484;
   color: #fff;
   padding: 0 10px;
   line-height: 30px;
-  background-color: #888;
+  background-color: #3e3e3e;
   border: 1px solid #999;
 }
 .turnament-info>ul {

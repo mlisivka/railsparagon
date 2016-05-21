@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  resources :session, only:[:new, :create, :destroy]
+
+
+  get 'login', to: 'session#new', as: 'login'
+  post 'login', to: 'session#create'
+  get 'logout', to: 'session#destroy', as: 'logout'
+
   resources :posts
   resources :teams
   resources :users
@@ -6,6 +14,8 @@ Rails.application.routes.draw do
   resources :turnaments
 
   root 'posts#index'
+
+  get 'signin' => 'application/sign_in'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

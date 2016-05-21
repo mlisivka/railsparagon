@@ -40,19 +40,31 @@
             <li><a href="/jointheteam">JnTm</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="signin.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <% if current_user %>
+            <div style="color: white;float: left;margin-top: 15px;"><%= current_user.name %></div>
+              <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <% else %>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <% end %>
           </ul>
         </div>
       </div>
     </nav>
+
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, class: "alert alert-success fade in", id: "success-alert") do %>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!<%= key %></strong><%= value %>
+      <% end %>
+    <% end %>
 
     <%= yield %>
 
     <nav class="navbar navbar-inverse navbar-static-bottom">
       <div class="container">
         <div class="row">
-    		  <p class="navbar-text pull-left">
+    		  <p class="navbar-text pull-left" style="text-align: center;width: 100%;margin-left: auto">
     			Copyright © 2016 - Site Built By SpiriKoN
     		  </p>
         </div>
@@ -60,5 +72,10 @@
     </nav>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- <script src="javascripts/bootstrap.min.js"></script> -->
+    <script type="text/javascript">
+      $(document).ready (function(){
+        $("#success-alert").fadeTo(2000, 500).slideUp(500);
+      });
+    </script>
   </body>
 </html>
