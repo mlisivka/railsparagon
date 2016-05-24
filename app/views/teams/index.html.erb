@@ -1,41 +1,49 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="title">Profile Team</div>
-      <div class="team-profile">
-        <div class="team-holder">
-          <img src="http://placehold.it/80" class="team-logo-lg">
-          <div class="team-description">
-            Name <br> Country
-          </div>
-        </div>
-        <div class="team-info-holder">
-          <div class="statistic">Rating winrate matches played</div>
-          <div class="players">
-						<div class="team-player">
-            	<ul class="list-group">
-            	  <li class="list-group-item">BlackNigga&nbsp;&nbsp;<span class="label label-primary">Captain</span>
-            	  <li class="list-group-item">WhiteNigga</li>
-            	  <li class="list-group-item">YellowNigga</li>
-            	  <li class="list-group-item">GreenNigga</li>
-            	  <li class="list-group-item">BlueNigga</li>
-            	</ul>
-						</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="recent-matches">
-        <div class="title">Recent Matches</div>
-        <ul>
-          <li>Team 1 vs Team 6</li>
-          <li>Team 2 vs Team 7</li>
-          <li>Team 3 vs Team 8</li>
-          <li>Team 4 vs Team 9</li>
-          <li>Team 5 vs Team 10</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<h1>This team/index</h1>
+<a href="teams/1">Show you teams</a>
+<h1>All Teams</h1>
+<style>
+
+table {
+  margin: 15px;
+  font: 1em 'times';
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+td, th {
+  padding: 5px;
+  border: 1px solid #000;
+}
+th {
+  font-size: .9em;
+  color: #fff;
+  background-color: #666;
+  text-align: left;
+}
+tr ~ tr > td:nth-child(2n+1) {
+  background: #7cded5;
+}
+tr ~ tr > td:nth-child(2n) {
+  background: #fffd7a;
+}
+
+</style>
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Country</th>
+		<th>Rating</th>
+		<th>Captain</th>
+		<th>Players</th>
+	</tr>
+ <% @teams.each do |i| %>
+	<tr>
+		<td><%= i.id %></td>
+		<td><%= i.name %></td>
+    <td><%= i.country %></td>
+    <td><%= i.rating %></td>
+    <td><%= i.captainId %></td>
+    <td><%= i.playersId %></td>
+	</tr>
+<% end %>
+</table>

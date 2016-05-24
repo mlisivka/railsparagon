@@ -1,6 +1,11 @@
 class TeamsController < ApplicationController
 
   def index
+    @teams = Team.all
+  end
+
+  def show
+    @teams = Team.where(captainId: current_user);
   end
 
   def create
