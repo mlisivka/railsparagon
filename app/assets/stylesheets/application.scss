@@ -125,7 +125,7 @@ body{
 .match-main {
   width: 100%;
   height: 68px;
-  background: #396B8D;
+  background: #2e6da4;
 }
 .match-left {
   height: 100%;
@@ -236,8 +236,15 @@ a.spoiler.collapsed:after {
   margin: 10px 0
 }
 .party-teams th {
-  background-color: grey;
+  background-color: #337ab7;
   color: white;
+  border-bottom: 0 !important;
+}
+.party-teams th:first-child {
+  width: 20px;
+}
+.party-teams th:nth-child(2){
+  width: 40px
 }
 .party-teams td{
   vertical-align: middle !important;
