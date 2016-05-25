@@ -1,0 +1,15 @@
+<div class="team-info">
+  <img src="http://placehold.it/60">
+  <%= @current_team.name %>
+  <br>
+  Country
+  <br>
+  Rating
+</div>
+<div class="team-player">
+  <ul class="list-group">
+    <% @users.each do |i| %>
+      <li class="list-group-item"><%= i.name %>&nbsp;&nbsp;<span class="label label-primary">Captain</span></li>
+    <% end %>
+  </ul>
+</div>

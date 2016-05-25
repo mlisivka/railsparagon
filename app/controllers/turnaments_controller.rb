@@ -5,6 +5,14 @@ class TurnamentsController < ApplicationController
   end
 
   def show
+    @teams = Team.where(captainId: current_user)
+    @users = User.all
+    @current_team = Team.find_by_id(params[:team_id])
+
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   def create
