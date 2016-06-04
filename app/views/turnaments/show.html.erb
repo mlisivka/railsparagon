@@ -3,25 +3,24 @@
     <div class="container">
       <div class="title">Registration</div>
       <div class="col-sm-4">
+        <div class="tournament-info-sm">
+          <li>Name&nbsp;&nbsp;Tournament #1</li>
+          <li>prize pool&nbsp;&nbsp;<span class="label label-warning">100$</span></li>
+          <li>payment&nbsp;&nbsp;<span class="label label-warning">10$</span></li>
+          <li>date begin&nbsp;&nbsp; 20.08.2017 14:30</li>
+        </div>
         <% if current_user %>
         <div id="pick-team">
-          <div class="btn-group btn-input clearfix team-select">
-            <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
-              <span data-bind="label">Choose Team</span>&nbsp;<span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <% @teams.each do |i| %>
-                <li><%= link_to i.name, turnament_path(team_id: i), remote: true %></li>
-              <% end %>
-            </ul>
-          </div>
-          <button type="button" class="btn btn-primary" id="btn-send">Send</button>
+          <%= form_tag({:action => :update}, {:method => :put}) do %>
+            <%= select_tag 'team_id', options_for_select(@teams.collect{ |i| [i.name, i.id] }) %>
+            <%= submit_tag "Send", class: "btn btn-primary", id: "btn-send" %>
+          <% end %>
           <div id="team-detail">
           </div>
         </div>
         <% else %>
           <div>To register for the tournament you need to be authorized</div>
-          <%= link_to "LogIn", login_path %>
+          <%= link_to "Log in", login_path %>
         <% end %>
       </div>
       <div class="col-sm-8">
@@ -75,8 +74,22 @@
 </div>
 
 <script type="text/javascript">
-  $(".dropdown-menu li a").click(function(){
-    var selText = $(this).text();
-    $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
+  $(document).ready(function() {
+    $(".dropdown-menu li a").click(function(){
+      var selText = $(this).text();
+      $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
+    });
+    $('#team_id').change(function() {
+      $.ajax({
+        type: 'GET',
+        data: {
+          team_id: $("#team_id option:selected").val()
+        },
+        dataType: "script",
+        error: function(XMLHttpRequest, errorTextStatus, error){
+          console.log("Failed: "+ errorTextStatus+" ;"+error);
+        }
+      });
+    });
   });
 </script>

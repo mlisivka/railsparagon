@@ -77,16 +77,29 @@ body{
     margin-left: -60px;
   }
 }
-.turnament {
-  background-color: #f2f2f2;
-  height: 180px;
+.tournament {
+  background-color: #fafafa;
+  height: 200px;
   width: 100%;
-  border: 1px solid #222;
-  padding: 20px;
+  border: 1px solid #ddd;
   margin-bottom: 10px;
 }
-.turnament-title {
+.tournament-title {
+  margin: 5px;
   text-align: center;
+}
+.tournament-info {
+  padding: 0 20px;
+}
+.tournament-info-sm{
+  height: 80px;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+.tour>tbody>tr>td:last-child {
+  text-align: right;
 }
 .btn-reg {
   position: absolute;
@@ -316,13 +329,6 @@ a.spoiler.collapsed:after {
   line-height: 30px;
   background-color: #3e3e3e;
   border: 1px solid #999;
-}
-.turnament-info>ul {
-  padding-left: 0;
-}
-.turnament-info>ul>li {
-  display: block;
-  padding: 0px 10px;
 }
 .event {
   margin-right: 8px;

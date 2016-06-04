@@ -15,6 +15,16 @@ class TurnamentsController < ApplicationController
     end
   end
 
+  def update
+    @tournament = Turnament.find_by_id(params[:id])
+    @tournament.update(teamsId: params[:team_id])
+    if @tournament.errors.empty?
+      redirect_to turnaments_path
+    else
+      render "show"
+    end
+  end
+
   def create
     @turnament = Turnament.create(turnament_params)
     if @turnament.errors.empty?
