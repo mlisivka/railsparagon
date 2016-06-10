@@ -39,11 +39,11 @@ tr ~ tr > td:nth-child(2n) {
  <% @teams.each do |i| %>
 	<tr>
 		<td><%= i.id %></td>
-		<td><%= i.name %></td>
+		<td><%= i.full_name %></td>
     <td><%= i.country %></td>
     <td><%= i.rating %></td>
-    <td><%= i.captainId %></td>
-    <td><%= i.playersId %></td>
+    <td><%= i.captain_id %></td>
+    <td><%= i.player_id %></td>
 	</tr>
 <% end %>
 </table>

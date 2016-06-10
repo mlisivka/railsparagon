@@ -215,6 +215,12 @@ a.spoiler.collapsed:after {
 .team-select {
   margin-top: 10px;
   width: 68%;
+  min-width: 160px;
+  padding: 5px 5px;
+}
+.team-select>option {
+  //background-color: #fff;
+  color: #fff;
 }
 .btn-input .btn.form-control span:first-child {
   left: 10px;
@@ -274,9 +280,12 @@ a.spoiler.collapsed:after {
   width: 30%;
   float: right;
 }
-.left-navbar {
-  margin-right: -30px;
+@media (min-width: 768px) {
+  .left-navbar {
+    margin-right: -30px;
+  }
 }
+
 .left-navbar li {
   background-color: #F8F8F8;
 }

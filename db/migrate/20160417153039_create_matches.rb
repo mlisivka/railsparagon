@@ -1,10 +1,10 @@
 class CreateMatches < ActiveRecord::Migration
   def change
     create_table :matches do |t|
-      t.datetime :date_match, null: false
-      t.integer :teamId_1, null: false
-      t.integer :teamId_2, null: false
-      t.string :agora_link, null: false
+      t.datetime :match_begins, null: false
+      t.integer  :team_id, null: false
+      t.string   :agora_link, null: false
+      t.boolean  :end, default: false
       t.timestamps null: false
     end
   end

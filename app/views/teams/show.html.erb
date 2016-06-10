@@ -6,7 +6,7 @@
         <div class="left-navbar">
           <ul class="list-group">
             <% @teams.each do |i| %>
-              <li class="list-group-item"><a href="#"><%= i.name %></a></li>
+              <li class="list-group-item"><a href="#"><%= i.full_name %></a></li>
             <% end %>
             <li class="list-group-item"><%= link_to 'Create New Team', new_team_path %></li>
           </ul>

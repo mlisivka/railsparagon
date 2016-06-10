@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :teams
   resources :users
   resources :matches
-  resources :turnaments
+  resources :tournaments
 
   root 'posts#index'
 

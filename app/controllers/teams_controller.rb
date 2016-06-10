@@ -5,11 +5,11 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @teams = Team.where(captainId: current_user);
+    @teams = Team.where(captain_id: current_user);
   end
 
   def create
-    @team = Team.create(name: team_params[:name], country: team_params[:country], image: team_params[:image], captainId: current_user.id)
+    @team = Team.create(full_name: team_params[:full_name], country: team_params[:country], image: team_params[:image], captain_id: current_user.id)
     if @team.errors.empty?
       redirect_to teams_path
     else
@@ -20,7 +20,7 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:name, :country, :image)
+    params.require(:team).permit(:full_name, :country, :image)
   end
 
 end

@@ -14,42 +14,44 @@
 ActiveRecord::Schema.define(version: 20160417153128) do
 
   create_table "matches", force: :cascade do |t|
-    t.datetime "date_match", null: false
-    t.integer  "teamId_1",   null: false
-    t.integer  "teamId_2",   null: false
-    t.string   "agora_link", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "match_begins",                 null: false
+    t.integer  "team_id",                      null: false
+    t.string   "agora_link",                   null: false
+    t.boolean  "end",          default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",      null: false
     t.text     "text",       null: false
-    t.integer  "autorId",    null: false
+    t.integer  "author_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "full_name",  null: false
+    t.string   "tag_name"
     t.string   "country"
     t.integer  "rating"
     t.string   "image"
-    t.integer  "captainId",  null: false
-    t.integer  "playersId"
+    t.integer  "captain_id", null: false
+    t.integer  "player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "turnaments", force: :cascade do |t|
-    t.string   "title",          null: false
-    t.datetime "date_turnament", null: false
-    t.integer  "max_team",       null: false
+  create_table "tournaments", force: :cascade do |t|
+    t.string   "title",                             null: false
+    t.integer  "max_team",                          null: false
     t.integer  "payment"
     t.integer  "prize"
-    t.integer  "teamsId"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "team_id"
+    t.boolean  "end",               default: false
+    t.datetime "tournament_beginss",                 null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160417153128) do
     t.integer  "win"
     t.integer  "lose"
     t.integer  "kda"
-    t.integer  "teamsId"
+    t.integer  "team_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
