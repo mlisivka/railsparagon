@@ -43,7 +43,9 @@ tr ~ tr > td:nth-child(2n) {
     <td><%= i.country %></td>
     <td><%= i.rating %></td>
     <td><%= i.captain_id %></td>
-    <td><%= i.player_id %></td>
+    <td><% i.users.each do |u| %>
+          <%= u.name %>,
+        <% end %></td>
 	</tr>
 <% end %>
 </table>

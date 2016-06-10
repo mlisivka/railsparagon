@@ -7,7 +7,7 @@ class CreateTournaments < ActiveRecord::Migration
       t.integer  :prize
       t.integer  :team_id
       t.boolean  :end, default: false
-      t.datetime :tournament_beginss, null: false
+      t.datetime :tournament_begins, null: false
       t.timestamps null: false
     end
   end

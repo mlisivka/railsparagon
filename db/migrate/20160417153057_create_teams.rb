@@ -7,7 +7,6 @@ class CreateTeams < ActiveRecord::Migration
       t.integer :rating
       t.string  :image
       t.integer :captain_id, null: false
-      t.integer :player_id
       t.timestamps null: false
     end
   end

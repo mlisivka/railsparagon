@@ -8,8 +8,8 @@
 </div>
 <div class="team-player">
   <ul class="list-group">
-    <% @users.each do |i| %>
-      <li class="list-group-item"><%= i.name %>&nbsp;&nbsp;<span class="label label-primary">Captain</span></li>
+    <% @current_team.users.each do |i| %>
+      <li class="list-group-item"><%= i.name %></li><!-- &nbsp;&nbsp;<span class="label label-primary">Captain</span> -->
     <% end %>
   </ul>
 </div>

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  #before_action :logged_in_user, only: [:create, :destroy, :show, :index]
 
   def index
     @posts = Post.all
@@ -12,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    user = User.find(current_user.id)
+    @post = user.posts.create(post_params)
     if @post.errors.empty?
       redirect_to posts_path
     else
@@ -23,7 +25,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :author_id)
+    params.require(:post).permit(:title, :text)
   end
 
 end

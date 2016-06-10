@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417153128) do
+ActiveRecord::Schema.define(version: 20160610145505) do
 
   create_table "matches", force: :cascade do |t|
     t.datetime "match_begins",                 null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160417153128) do
   create_table "posts", force: :cascade do |t|
     t.string   "title",      null: false
     t.text     "text",       null: false
-    t.integer  "author_id",  null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,9 +37,13 @@ ActiveRecord::Schema.define(version: 20160417153128) do
     t.integer  "rating"
     t.string   "image"
     t.integer  "captain_id", null: false
-    t.integer  "player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "teams_users", id: false, force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "user_id"
   end
 
   create_table "tournaments", force: :cascade do |t|
@@ -49,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160417153128) do
     t.integer  "prize"
     t.integer  "team_id"
     t.boolean  "end",               default: false
-    t.datetime "tournament_beginss",                 null: false
+    t.datetime "tournament_begins",                 null: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
   end

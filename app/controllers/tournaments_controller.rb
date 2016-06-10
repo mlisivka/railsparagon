@@ -6,7 +6,7 @@ class TournamentsController < ApplicationController
 
   def show
     @teams = Team.where(captain_id: current_user)
-    @users = User.all
+    @captain = Team.where(id: params[:team_id], captain_id: current_user)
     @current_team = Team.find_by_id(params[:team_id])
 
     respond_to do |format|
