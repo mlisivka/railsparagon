@@ -73,24 +73,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $(".dropdown-menu li a").click(function(){
-      var selText = $(this).text();
-      $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
-    });
-    $('#team_id').change(function() {
-      $.ajax({
-        type: 'GET',
-        data: {
-          team_id: $("#team_id option:selected").val()
-        },
-        dataType: "script",
-        error: function(XMLHttpRequest, errorTextStatus, error){
-          console.log("Failed: "+ errorTextStatus+" ;"+error);
-        }
-      });
-    });
-  });
-</script>

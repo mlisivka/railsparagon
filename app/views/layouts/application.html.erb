@@ -3,7 +3,7 @@
   <head>
     <title>ParagonRails</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, defer: 'defer' %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,13 +58,5 @@
   		  </p>
       </div>
     </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- <script src="javascripts/bootstrap.min.js"></script> -->
-    <script type="text/javascript">
-      $(document).ready (function(){
-        $("#success-alert").fadeTo(2000, 500).slideUp(500);
-      });
-    </script>
   </body>
 </html>
