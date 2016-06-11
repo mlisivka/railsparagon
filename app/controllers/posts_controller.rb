@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    user = User.find(current_user.id)
+    user = User.find(current_user)
     @post = user.posts.create(post_params)
     if @post.errors.empty?
       redirect_to posts_path
