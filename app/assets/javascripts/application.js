@@ -17,14 +17,31 @@ $(document).ready(function() {
       }
     });
   });
+  $(".notify-btn .btn").click(function (e) {
+    var id = $('input[name="id"]').val();
+    $.ajax({
+      url: "invites/" + id,
+      type: 'PUT',
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+      data: {
+        accepted: $(e.target).attr("value")
+      },
+      error: function(XMLHttpRequest, errorTextStatus, error){
+        console.log("Failed: "+ errorTextStatus+" ;"+error);
+      },
+      success: function(){
+        alert(true);
+      }
+    });
+  });
   $("#success-alert").fadeTo(2000, 500).slideUp(500);
   $(document).click(function(e){
     if(e.target.id == "notify-cl"){
-      $("#demo").toggle();
+      $("#notify").toggle();
     }
-    else if($("#demo").is(':visible') && e.target.id != "notify-cl")
+    else if($("#notify").is(':visible') && e.target.id != "notify-cl" && e.target.id != "notify")
     {
-      $("#demo").hide();
+      $("#notify").hide();
     }
   });
 });
