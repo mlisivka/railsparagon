@@ -17,6 +17,14 @@ $(document).ready(function() {
       }
     });
   });
-
   $("#success-alert").fadeTo(2000, 500).slideUp(500);
+  $(document).click(function(e){
+    if(e.target.id == "notify-cl"){
+      $("#demo").toggle();
+    }
+    else if($("#demo").is(':visible') && e.target.id != "notify-cl")
+    {
+      $("#demo").hide();
+    }
+  });
 });

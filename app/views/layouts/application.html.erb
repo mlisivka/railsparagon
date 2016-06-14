@@ -3,7 +3,7 @@
   <head>
     <title>ParagonRails</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, defer: 'defer' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, async: 'async' %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,10 +28,27 @@
             <li><a href="/teams">Team</a></li>
             <li><a href="/matches">Match</a></li>
             <li><a href="/teams/new">NewTm</a></li>
-            <li><a href="/jointheteam">JnTm</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
+              <% if current_user %>
+                <% team_invite.each do |i| %>
+                  <li>
+                    <span id="notify-cl" class="glyphicon glyphicon-envelope" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
+                    <div id="demo" class="notify" style="display: none">
+                      <div class="notify-main">
+                        <b><%= link_to i.sender.name, user_path(i.sender) %></b>
+                        invites you to the team
+                        <b><%= link_to i.team.full_name, team_path(i.team) %></b>
+                        <div class="notify-btn">
+                          <a class="btn btn-warning btn-sm">Reject</a>
+                          <a class="btn btn-success btn-sm">Accept</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
               <div style="color: white;float: left;margin-top: 15px;"><%= current_user.name %></div>
               <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <% else %>

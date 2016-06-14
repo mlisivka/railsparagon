@@ -8,6 +8,25 @@ html {
 body{
   margin-bottom: 60px;
 }
+.notify{
+  position: absolute;
+  width: 280px;
+  top: 52px;
+  background: #fff;
+  border: 1px solid #c5d0db;
+  border-top: none;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  cursor: default;
+  margin-left: -135px;
+}
+.notify-main{
+  margin: 5px;
+}
+.notify-btn .btn{
+  margin-top: 10px;
+  width: 132px;
+}
 .footer {
   position: absolute;
   bottom: 0;
