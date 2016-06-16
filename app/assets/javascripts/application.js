@@ -1,9 +1,27 @@
 //= require jquery
 //= require bootstrap-sprockets
 $(document).ready(function() {
+	var path = window.location.pathname;
   $(".dropdown-menu li a").click(function(){
     var selText = $(this).text();
     $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
+		var team_id = $(this).data("team-id");
+		$("#btn-send").click(function() {
+		var id = path.substring(path.lastIndexOf('/') + 1);
+			$.ajax({
+				url: path + "/send_invite",
+				type: 'GET',
+				data: {
+					team_id: team_id
+				},
+	      error: function(XMLHttpRequest, errorTextStatus, error){
+	        console.log("Failed: "+ errorTextStatus+" ;"+error);
+	      },
+	      success: function(){
+	        alert(true);
+	      }
+			});
+		});
   });
   $('#team_id').change(function() {
     $.ajax({

@@ -31,11 +31,11 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-              <% team_invite.each do |i| %>
-                <% if i.accepted.nil? %>
-                  <li>
-                    <span id="notify-cl" class="glyphicon glyphicon-envelope" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
-                    <div id="notify" class="notify" style="display: none">
+							<% unless team_invite.empty? %>
+							<li>
+								<span id="notify-cl" class="glyphicon glyphicon-envelope" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
+								<div id="notify" class="notify" style="display: none">
+									<% team_invite.each do |i| %>
                       <input type="hidden" name="id" value="<%= i.id %>">
                       <div class="notify-main">
                         <b><%= link_to i.sender.name, user_path(i.sender) %></b>
@@ -46,10 +46,10 @@
                           <a class="btn btn-success btn-sm" value="true">Accept</a>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                <% end %>
-              <% end %>
+                	<% end %>
+                 </div>
+                </li>
+								<% end %>
               <div style="color: white;float: left;margin-top: 15px;"><%= current_user.name %></div>
               <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <% else %>

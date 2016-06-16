@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :teams
-  resources :users
+  resources :users do
+    get :send_invite, on: :member
+  end
   resources :matches
   resources :tournaments
   resources :invites
