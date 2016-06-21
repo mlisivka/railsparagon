@@ -11,7 +11,7 @@
         </div>
         <% if current_user %>
         <div id="pick-team">
-          <%= form_tag({:action => :update}, {:method => :put}) do %>
+          <%= form_tag({action: :registration_team}, {method: :get}) do %>
             <lable>
             <%= select_tag 'team_id', options_for_select(@teams.collect{ |i| [i.full_name, i.id] }), class: 'team-select btn btn-primary form-control', prompt: "Choose Team" %></lable>
             <%= submit_tag "Send", class: "btn btn-primary", id: "btn-send" %>
@@ -35,36 +35,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td><img src="http://placehold.it/30" alt=""></td>
-                <td>Team 1</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><img src="http://placehold.it/30" alt=""></td>
-                <td>Team 2</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><img src="http://placehold.it/30" alt=""></td>
-                <td>Team 3</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td><img src="http://placehold.it/30" alt=""></td>
-                <td>Vega 4</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td><img src="http://placehold.it/30" alt=""></td>
-                <td>Team 5</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td><img src="http://placehold.it/30" alt=""></td>
-                <td>Team 6</td>
-              </tr>
+							<% @registered_team.each_with_index do |i, index| %>
+              	<tr>
+              	  <td><%= index+1 %></td>
+              	  <td><img src="http://placehold.it/30" alt=""></td>
+              	  <td><%= i.full_name %></td>
+              	</tr>
+              <% end %>
             </tbody>
           </table>
         </div>

@@ -7,12 +7,6 @@ class ApplicationController < ActionController::Base
   def team_invite
     current_user.invitions.where("accepted IS NULL")
   end
-  
-  #def invite_nil?
-  #  team_invite.each do |i|
-  #    i.accepted.nil?
-  #  end
-  #end
 
   def current_user
     User.find_by_id(session[:user_id])

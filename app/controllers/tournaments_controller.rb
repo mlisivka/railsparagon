@@ -8,6 +8,8 @@ class TournamentsController < ApplicationController
     @teams = Team.where(captain_id: current_user)
     @captain = Team.where(id: params[:team_id], captain_id: current_user)
     @current_team = Team.find_by_id(params[:team_id])
+    tournament = Tournament.find(params[:id])
+    @registered_team = tournament.teams
 
     respond_to do |format|
       format.html {}
@@ -16,13 +18,6 @@ class TournamentsController < ApplicationController
   end
 
   def update
-    @tournament = Tournament.find_by_id(params[:id])
-    @tournament.update(team_id: params[:team_id])
-    if @tournament.errors.empty?
-      redirect_to tournaments_path
-    else
-      render "show"
-    end
   end
 
   def create
@@ -31,6 +26,17 @@ class TournamentsController < ApplicationController
       redirect_to tournaments_path
     else
       render "new"
+    end
+  end
+  
+  def registration_team
+    tournament = Tournament.find(params[:id])
+    team = Team.find(params[:team_id])
+    tournament.teams << team unless tournament.teams.include?(team)
+    if tournament.errors.empty?
+      redirect_to :back
+    else
+      render "show"
     end
   end
 

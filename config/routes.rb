@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   resources :session, only:[:new, :create, :destroy]
 
-
   get 'login', to: 'session#new', as: 'login'
   post 'login', to: 'session#create'
   get 'logout', to: 'session#destroy', as: 'logout'
@@ -13,7 +12,9 @@ Rails.application.routes.draw do
     get :send_invite, on: :member
   end
   resources :matches
-  resources :tournaments
+  resources :tournaments do
+    get :registration_team, on: :member
+  end
   resources :invites
 
   root 'posts#index'
