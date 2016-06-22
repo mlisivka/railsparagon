@@ -9,16 +9,18 @@ $(document).ready(function() {
 		$("#btn-send").click(function() {
 		var id = path.substring(path.lastIndexOf('/') + 1);
 			$.ajax({
-				url: path + "/send_invite",
-				type: 'GET',
+				url: "/invites",
+				type: 'POST',
+      	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 				data: {
-					team_id: team_id
+					team_id: team_id,
+					user_id: id
 				},
 	      error: function(XMLHttpRequest, errorTextStatus, error){
 	        console.log("Failed: "+ errorTextStatus+" ;"+error);
 	      },
 	      success: function(){
-	        alert(true);
+	        //alert(true);
 	      }
 			});
 		});
@@ -36,9 +38,9 @@ $(document).ready(function() {
     });
   });
   $(".notify-btn .btn").click(function (e) {
-    var id = $('input[name="id"]').val();
+    var id = $(this).closest(".notify-main").find("input").val();
     $.ajax({
-      url: "invites/" + id,
+      url: "/invites/" + id,
       type: 'PUT',
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
       data: {
@@ -48,7 +50,7 @@ $(document).ready(function() {
         console.log("Failed: "+ errorTextStatus+" ;"+error);
       },
       success: function(){
-        alert(true);
+        //$(this).closest('.notify-main').remove();
       }
     });
   });
@@ -57,7 +59,7 @@ $(document).ready(function() {
     if(e.target.id == "notify-cl"){
       $("#notify").toggle();
     }
-    else if($("#notify").is(':visible') && e.target.id != "notify-cl" && e.target.id != "notify")
+    else if($("#notify").is(':visible') && !$(e.target).closest("#notify").length && e.target.id != "notify-cl")
     {
       $("#notify").hide();
     }

@@ -5,7 +5,6 @@ class TournamentsController < ApplicationController
   end
 
   def show
-    @teams = Team.where(captain_id: current_user)
     @captain = Team.where(id: params[:team_id], captain_id: current_user)
     @current_team = Team.find_by_id(params[:team_id])
     tournament = Tournament.find(params[:id])

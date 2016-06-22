@@ -36,8 +36,8 @@
 								<span id="notify-cl" class="glyphicon glyphicon-envelope" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
 								<div id="notify" class="notify" style="display: none">
 									<% team_invite.each do |i| %>
-                      <input type="hidden" name="id" value="<%= i.id %>">
                       <div class="notify-main">
+                      	<input type="hidden" name="id" value="<%= i.id %>">
                         <b><%= link_to i.sender.name, user_path(i.sender) %></b>
                         invites you to the team
                         <b><%= link_to i.team.full_name, team_path(i.team) %></b>

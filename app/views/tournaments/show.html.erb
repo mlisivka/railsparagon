@@ -13,7 +13,7 @@
         <div id="pick-team">
           <%= form_tag({action: :registration_team}, {method: :get}) do %>
             <lable>
-            <%= select_tag 'team_id', options_for_select(@teams.collect{ |i| [i.full_name, i.id] }), class: 'team-select btn btn-primary form-control', prompt: "Choose Team" %></lable>
+            <%= select_tag 'team_id', options_for_select(current_user.teams.collect{ |i| [i.full_name, i.id] }), class: 'team-select btn btn-primary form-control', prompt: "Choose Team" %></lable>
             <%= submit_tag "Send", class: "btn btn-primary", id: "btn-send" %>
           <% end %>
           <div id="team-detail">

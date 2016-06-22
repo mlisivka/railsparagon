@@ -2,7 +2,7 @@ class SessionController < ApplicationController
   rescue_from ActionController::RedirectBackError, with: :redirect_to_default
   
   def new
-    session[:return_to] ||= request.referer
+    session[:return_to] = request.referer
   end
 
   def create
@@ -16,8 +16,9 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    session[:return_to] = request.referer
     session[:user_id] = nil
-    redirect_to root_url, notice: 'Logged Out!'
+    redirect_to session.delete(:return_to), notice: 'Logged Out!'
   end
 
 end
