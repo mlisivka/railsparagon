@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= form_tag session_index_path, class: "form-signin" do %>
+    <%= form_tag session_index_path, class: "form-sign" do %>
       <h2 class="form-signin-heading">Please sign in</h2>
       <%= label_tag :name, "User name" , class: "sr-only" %>
       <%= text_field_tag :name, nil, placeholder: "User name", required: true, autofocus: true, class: "form-control" %>
@@ -15,22 +15,3 @@
     <% end %>
   </div>
 </div>
-<style>
-  .form-signin {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-  }
-  .form-signin .form-control:focus {
-    z-index: 2;
-  }
-  .form-signin .form-control {
-    position: relative;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-  }
-  .form-signin input[type="email"] {
-    margin-bottom: -1px;
-  }
-</style>

@@ -1,16 +1,49 @@
+<div class="container">
+	<div class="row">
+		<%= form_tag new_user_path, class: "form-sign", onsubmit: "return validate_form()" do %>
+      <h2 class="form-signup-heading">Please sign up</h2>
+      <%= label_tag :name, "User name" , class: "sr-only" %>
+      <%= text_field_tag :name, nil, placeholder: "User name", required: true, autofocus: true, class: "form-control" %>
+      <%= label_tag :password, "Password" , class: "sr-only" %>
+      <%= password_field_tag :password, nil, placeholder: "Password",  required: true, class: "form-control" %>
+			<%= password_field_tag :confirm_password, nil, placeholder: "Confirm Password",  required: true, class: "form-control" %>
 
-		<div class="container">
-			<div class="row">
-						<%= form_tag new_user_path, class: "form-signin" do %>
-				      <h2 class="form-signin-heading">Please sign in</h2>
-				      <%= label_tag :name, "User name" , class: "sr-only" %>
-				      <%= text_field_tag :name, nil, placeholder: "User name", required: true, autofocus: true, class: "form-control" %>
-				      <%= label_tag :password, "Password" , class: "sr-only" %>
-				      <%= password_field_tag :password, nil, placeholder: "Password",  required: true, class: "form-control" %>
-							<%= password_field_tag :password_confirmation, nil, placeholder: "Confirm Password",  required: true, class: "form-control" %>
-							
-				      <%= submit_tag "Sign in", class: "btn btn-lg btn-primary btn-block" %>
-				    <% end %>
-						
-			</div>
-		</div>
+      <%= submit_tag "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+    <% end %>
+	</div>
+</div>
+<script>
+	function validate_form(){
+
+		var success = true;
+
+		var nameReg = /^[A-Za-z]{3,16}$/,
+				passwordReg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])\S{7,36}$/;
+
+		var name = document.getElementById("name"),
+				pass = document.getElementById("password"),
+				pass_conf = document.getElementById("confirm_password");
+
+    var elements = document.getElementsByClassName("invalid_error");
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+
+		if(!nameReg.test(name.value)){
+			name.insertAdjacentHTML('afterend', "<div class='invalid_error'>Name must be between 3 and 16 characters</div>");
+			success = false;
+		}
+		if(!passwordReg.test(pass.value)){
+			pass.insertAdjacentHTML('afterend', "<div class='invalid_error'>Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace</div>");
+			success = false;
+		}
+		if(pass_conf.value != pass.value){
+			pass_conf.insertAdjacentHTML('afterend', "<div class='invalid_error'>Passwords Don't Match</div>");
+			success = false;
+		}
+		console.log("You must agree to the terms of use.");
+
+		return success
+
+	}
+</script>
