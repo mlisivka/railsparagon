@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   resources :session, only:[:new, :create, :destroy]
 
-  get 'login', to: 'session#new', as: 'login'
+  get  'signup', to: 'users#new'
+  get  'login', to: 'session#new', as: 'login'
   post 'login', to: 'session#create'
-  get 'logout', to: 'session#destroy', as: 'logout'
+  get  'logout', to: 'session#destroy', as: 'logout'
 
   resources :posts
   resources :teams

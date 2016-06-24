@@ -3,7 +3,9 @@
     <%= form_tag session_index_path, class: "form-signin" do %>
       <h2 class="form-signin-heading">Please sign in</h2>
       <%= label_tag :name, "User name" , class: "sr-only" %>
-      <%= text_field_tag :name, nil, placeholder: "User name", class: "form-control" %>
+      <%= text_field_tag :name, nil, placeholder: "User name", required: true, autofocus: true, class: "form-control" %>
+      <%= label_tag :password, "Password" , class: "sr-only" %>
+      <%= password_field_tag :password, nil, placeholder: "Password",  required: true, class: "form-control" %>
       <div class="checkbox">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
