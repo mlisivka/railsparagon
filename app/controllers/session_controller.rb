@@ -1,14 +1,14 @@
 class SessionController < ApplicationController
   rescue_from ActionController::RedirectBackError, with: :redirect_to_default
-  
+
   def new
-    session[:return_to] = request.referer
+    session[:return_to] ||= request.referer
   end
 
   def create
     user = User.find_by_name(params[:name])
     if user
-       session[:user_id] = user.id
+       log_in user
        redirect_to session.delete(:return_to), notice: 'Logged In!'
      else
        render :new
@@ -17,7 +17,7 @@ class SessionController < ApplicationController
 
   def destroy
     session[:return_to] = request.referer
-    session[:user_id] = nil
+    log_out
     redirect_to session.delete(:return_to), notice: 'Logged Out!'
   end
 
