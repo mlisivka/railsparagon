@@ -13,12 +13,10 @@ class InvitesController < ApplicationController
     invite.team = Team.find(params[:team_id])
     invite.recipient = User.find(params[:user_id])
     invite.sender = current_user
-    invite.save
+    invite.save unless invite.recipient == invite.sender
     #invite = Invite.new(sender_id: current_user.id, recipient_id: params[:user_id], team_id: params[:team_id]) #unless invite.team.include?(team1) && invite.recipient.include?(recipient) && invite.sended.include?(current_user.id)
-    if invite.save
-    end
     respond_to do |format|
-      format.html { render :nothing => true }
+      format.html { render nothing: true }
     end
   end
 
