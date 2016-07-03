@@ -15,7 +15,7 @@
           	<%= form_tag({action: :registration_team}, {method: :get}) do %>
             	<lable>
             	<%= select_tag 'team_id', options_for_select(current_user.teams.collect{ |i| [i.full_name, i.id] }), class: 'team-select btn btn-primary form-control', prompt: "Choose Team" %></lable>
-    	        <%= submit_tag "Send", class: "btn btn-primary", id: "btn-send" %>
+    	        <%= submit_tag "Send", class: "btn btn-primary btn-send", id: "register" %>
     	      <% end %>
     	      <div id="team-detail">
     	      </div>

@@ -5,27 +5,28 @@ $(document).ready(function() {
   $(".dropdown-menu li a").click(function(){
     var selText = $(this).text();
     $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
-		var team_id = $(this).data("team-id");
-		$("#btn-send").click(function() {
-		var id = path.substring(path.lastIndexOf('/') + 1);
-			$.ajax({
-				url: "/invites",
-				type: 'POST',
-      	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-				data: {
-					team_id: team_id,
-					user_id: id
-				},
-	      error: function(XMLHttpRequest, errorTextStatus, error){
-	        console.log("Failed: "+ errorTextStatus+" ;"+error);
-					$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
-	      },
-	      success: function(){
-					$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
-	      }
-			});
-		});
   });
+	$("#send_inv").click(function() {
+		var team_id = $(".dropdown-menu li a").data("team-id");
+		console.log(team_id);
+		var id = path.substring(path.lastIndexOf('/') + 1);
+		$.ajax({
+			url: "/invites",
+			type: 'POST',
+    	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			data: {
+				team_id: team_id,
+				user_id: id
+			},
+      error: function(XMLHttpRequest, errorTextStatus, error){
+        console.log("Failed: "+ errorTextStatus+" ;"+error);
+				$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
+      },
+      success: function(){
+				$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
+      }
+		});
+	});
   $('#team_id').change(function() {
     $.ajax({
       type: 'GET',
@@ -51,6 +52,14 @@ $(document).ready(function() {
         console.log("Failed: "+ errorTextStatus+" ;"+error);
       },
       success: function(){
+				if($(e.target).attr("value") == "true"){
+					$(e.target).closest(".notify-main").append("<div class='success_msg'>invitation was confirmed now you is a member of the team</div>");
+					$(e.target).parent().remove();
+				}
+				else{
+					$(e.target).closest(".notify-main").append("<div class='success_msg'>invitation was rejected</div>");
+					$(e.target).parent().remove();
+				}
         //$(this).closest('.notify-main').remove();
       }
     });
