@@ -1,8 +1,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+$main_colora: rgba(40,53,79,.9);
+$main_color: rgb(40,53,79);
+$orange: #FFC749;
 
 .navbar-static-top{
   box-shadow: 1px 1px 7px 2px rgba(0,0,0,0.2);
+	background-color: $main_colora !important;
+  border:1px solid $main_color !important;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
+	//color: $orange;
+	background-color: $main_color;
+}
+.navbar-inverse .navbar-nav > li > a{
+	color: $orange;
+}
+.navbar-inverse .navbar-toggle .icon-bar{
+	background-color: $orange;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+    background-color: $main_color;
+}
+.navbar-inverse .navbar-toggle{
+	border-color: $main-color;
+}
+#divider {
+  height: 1px;
+  margin: 0 10px;
+  overflow: hidden;
+  background-color: #e5e5e5;
 }
 html {
  position: relative;
@@ -10,6 +37,15 @@ html {
 }
 body{
   margin-bottom: 60px;
+	//background: url(asset-path('bg_o.jpg')) no-repeat center center fixed;
+	//background: url(asset-path('paragon1.jpg')) no-repeat center center fixed;
+	//background: url(asset-path('paragon2.jpg')) no-repeat center center fixed;
+	//background: url(asset-path('over_bg.jpg')) no-repeat center center fixed;
+	background: url(asset-path('agora_bg.png')) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .notify{
   position: absolute;
@@ -34,9 +70,9 @@ body{
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #222;
-  color: #9d9d9d;
-  border:1px solid #090909;
+  background-color: $main_colora;
+  color: $orange;
+  border:1px solid $main_color;
 }
 .post {
   background-color: #eee;
@@ -122,19 +158,23 @@ body{
 }
 .tour>tbody>tr>td:last-child {
   text-align: right;
+	color: #003BB2;
 }
 .btn-reg {
   position: absolute;
   margin-left: -51px;
   left: 50%;
 }
-.profile {} .result-match {
+.profile {
+	background-color: #fff;
+}
+.result-match {
   width: 100%;
   padding-bottom: 10px;
 }
 .title {
-  color: #7BC8F7;
-  background-color: #222;
+  color: $orange;//7BC8F7
+  background-color: $main_color;
   width: 100%;
   padding: 6px;
 }
@@ -277,6 +317,10 @@ a.spoiler.collapsed:after {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+.cover{
+	background-color: #fff;
+  overflow: hidden
+}
 #pick-team .dropdown-menu{
   min-width: 100%;
 }
@@ -345,10 +389,10 @@ a.spoiler.collapsed:after {
   margin: auto;
 }
 .recent-matches{
-  background: url('http://cdn.dota2lounge.com/img/sub.jpg');
+  //background: url('http://cdn.dota2lounge.com/img/sub.jpg');
 }
 .recent-matches>ul {
-  margin-top: 10px;
+  //margin-top: 10px;
   padding-left: 0;
 }
 .recent-matches>ul>li {
@@ -357,8 +401,8 @@ a.spoiler.collapsed:after {
   color: #fff;
   padding: 0 10px;
   line-height: 30px;
-  background-color: #3e3e3e;
-  border: 1px solid #999;
+  background-color: #346;
+  border: 1px solid #485F8E;
 }
 .event {
   margin-right: 8px;
@@ -410,6 +454,7 @@ border-top: solid 8px #87CEEB;
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+	background-color: hsla(0,0%,100%,0.8);
 }
 .form-sign .form-control:focus {
   z-index: 2;

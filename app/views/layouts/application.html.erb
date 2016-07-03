@@ -30,6 +30,7 @@
             <li><a href="/teams/new">NewTm</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+						<li id="divider"></li>
             <% if current_user %>
 							<% unless team_invite.empty? %>
 							<li>
@@ -50,7 +51,7 @@
                  </div>
                 </li>
 								<% end %>
-              <div style="color: white;float: left;margin-top: 15px;"><%= current_user.name %></div>
+							<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
               <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <% else %>
               <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
