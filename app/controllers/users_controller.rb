@@ -4,8 +4,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def  new
-    session[:return_to] ||= request.referer
+  def new
+    store_location
   end
 
   def create

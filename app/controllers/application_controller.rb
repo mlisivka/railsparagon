@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :current_user, :team_invite, :log_in, :log_out
+  helper_method :current_user, :team_invite, :log_in, :log_out, :store_location
 
   def team_invite
     current_user.invitions.where("accepted IS NULL")
@@ -18,6 +18,13 @@ class ApplicationController < ActionController::Base
 
   def log_out
     session.delete(:user_id)
+  end
+  
+  def store_location
+    prev = Rails.application.routes.recognize_path(request.referer)
+    session[:return_to] = root_path
+    session[:return_to] = request.referer if request.get? && prev[:controller] != "session" && prev != {controller:"users", action:"new"}
+    puts session[:return_to]
   end
 
 end
