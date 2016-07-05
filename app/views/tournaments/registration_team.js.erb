@@ -1,0 +1,5 @@
+<% unless @tournament.teams.include?(@team) %>
+	$("tbody").append("<%= escape_javascript(render 'team') %>")
+<% else %>
+	$("#pick-team").after('<div class="error_msg">This team has already been registered for this tournament</div>')
+<% end %>

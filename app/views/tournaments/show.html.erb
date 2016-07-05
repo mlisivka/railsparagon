@@ -13,15 +13,21 @@
 						</ul>
       	  </div>
       	  <% if current_user %>
-      	  <div id="pick-team">
-          	<%= form_tag({action: :registration_team}, {method: :get}) do %>
-            	<lable>
-            	<%= select_tag 'team_id', options_for_select(current_user.teams.collect{ |i| [i.full_name, i.id] }), class: 'team-select btn btn-primary form-control', prompt: "Choose Team" %></lable>
-    	        <%= submit_tag "Send", class: "btn btn-primary btn-send", id: "register" %>
-    	      <% end %>
+      	  	<div id="pick-team">
+ 	    	    	<div class="btn-group btn-input clearfix team-select">
+ 	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
+ 	    	        <span data-bind="label">Choose Team</span>&nbsp;<span class="caret"></span>
+ 	    	      </button>
+ 	    	      <ul class="dropdown-menu">
+ 							 <% current_user.teams.each do |i| %>
+ 							 	<li><a data-team-id="<%= i.id %>"><%= i.full_name %></a></li>
+ 							 <% end %>
+ 	    	     	</ul>
+ 	    	     </div>
+    	        <button class="btn btn-primary btn-send" id="register">Send</button>
+						</div>
     	      <div id="team-detail">
     	      </div>
-    	    </div>
     	    <% else %>
     	      <div>To register for the tournament you need to be authorized</div>
     	      <%= link_to "Log in", login_path %>

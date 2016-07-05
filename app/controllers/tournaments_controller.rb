@@ -29,14 +29,13 @@ class TournamentsController < ApplicationController
   end
   
   def registration_team
-    tournament = Tournament.find(params[:id])
-    team = Team.find(params[:team_id])
-    tournament.teams << team unless tournament.teams.include?(team)
-    if tournament.errors.empty?
-      redirect_to :back
-    else
-      render "show"
+    @tournament = Tournament.find(params[:id])
+    @team = Team.find(params[:team_id])
+    @tournament.teams << @team unless @tournament.teams.include?(@team)
+    respond_to do |format|
+        format.js {}
     end
+    
   end
 
   private

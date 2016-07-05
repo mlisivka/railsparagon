@@ -17,6 +17,25 @@ $(document).ready(function() {
 		}
 		$(this).parent().next('.result-full').slideToggle();
 	});
+	$("#register").click(function(e) {
+		var id = path.substring(path.lastIndexOf('/') + 1);
+		$.ajax({
+			url: path + "/registration_team",
+			type: 'GET',
+    	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			data: {
+				team_id: team_id
+			},
+      error: function(XMLHttpRequest, errorTextStatus, error){
+        console.log("Failed: "+ errorTextStatus+" ;"+error);
+				//$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
+      },
+      success: function(){
+				alert(true);
+				//$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
+      }
+		});
+	});
 	$("#send_inv").click(function(e) {
 		var id = path.substring(path.lastIndexOf('/') + 1);
 		$.ajax({
@@ -36,11 +55,11 @@ $(document).ready(function() {
       }
 		});
 	});
-  $('#team_id').change(function() {
+  $('.dropdown-menu > li > a').click(function() {
     $.ajax({
       type: 'GET',
       data: {
-        team_id: $("#team_id option:selected").val()
+        team_id: team_id
       },
       dataType: "script",
       error: function(XMLHttpRequest, errorTextStatus, error){

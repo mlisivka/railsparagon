@@ -27,7 +27,7 @@ class InvitesController < ApplicationController
       current_user.teams << @invite.team
     end
     respond_to do |format|
-      format.html { render :nothing => true }
+      format.html { render nothing: true }
     end
   end
 
