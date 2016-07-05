@@ -2,30 +2,33 @@
 //= require bootstrap-sprockets
 $(document).ready(function() {
 	var path = window.location.pathname;
+	var team;
   $(".dropdown-menu li a").click(function(){
     var selText = $(this).text();
+		team = $(this).data("team-id");
+		console.log(team);
     $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
   });
-	$("#send_inv").click(function() {
-		var team_id = $(".dropdown-menu li a").data("team-id");
-		console.log(team_id);
+	$("#send_inv").click(function(e) {
+		var team_id = $(e.target).data("team-id");
+		console.log(team);
 		var id = path.substring(path.lastIndexOf('/') + 1);
-		$.ajax({
-			url: "/invites",
-			type: 'POST',
-    	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-			data: {
-				team_id: team_id,
-				user_id: id
-			},
-      error: function(XMLHttpRequest, errorTextStatus, error){
-        console.log("Failed: "+ errorTextStatus+" ;"+error);
-				$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
-      },
-      success: function(){
-				$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
-      }
-		});
+		//$.ajax({
+		//	url: "/invites",
+		//	type: 'POST',
+    //	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+		//	data: {
+		//		team_id: team_id,
+		//		user_id: id
+		//	},
+    //  error: function(XMLHttpRequest, errorTextStatus, error){
+    //    console.log("Failed: "+ errorTextStatus+" ;"+error);
+		//		$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
+    //  },
+    //  success: function(){
+		//		$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
+    //  }
+		//});
 	});
   $('#team_id').change(function() {
     $.ajax({
