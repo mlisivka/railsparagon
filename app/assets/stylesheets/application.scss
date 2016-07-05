@@ -275,10 +275,11 @@ a.spoiler.collapsed:after {
   padding-right: 15px;
 }
 .team-select {
-  margin-top: 10px;
-  width: 68%;
-  min-width: 160px;
-  padding: 5px 5px;
+	margin-top: 10px;
+	width: 68%;
+	min-width: 160px;
+	float: left;
+	padding: 5px 5px;
 }
 .team-select>option {
   //background-color: #fff;
@@ -304,6 +305,7 @@ a.spoiler.collapsed:after {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding: 10px 15px;
+	overflow: hidden;
 }
 .team-info > img {
   float: left;
@@ -322,8 +324,13 @@ a.spoiler.collapsed:after {
   overflow: hidden;
 	margin-bottom: 10px;
 }
+#pick-team{
+	overflow: hidden;
+}
 #pick-team .dropdown-menu{
   min-width: 100%;
+	position: relative;
+	z-index: 1000;
 }
 .party-teams {
   margin: 10px 0
@@ -343,8 +350,9 @@ a.spoiler.collapsed:after {
   vertical-align: middle !important;
 }
 .btn-send {
-  margin-top: 10px;
+  margin-top: 15px;
   width: 30%;
+	float: left;
 }
 @media (min-width: 768px) {
   .left-navbar {
