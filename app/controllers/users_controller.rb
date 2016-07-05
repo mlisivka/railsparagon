@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @teams = Team.where(captain_id: current_user)
+    @team_of_user = User.find(params[:id]).teams # team involving the player
   end
 
   private

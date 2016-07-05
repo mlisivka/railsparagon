@@ -4,42 +4,60 @@
 			<div class="cover">
     	  <div class="profile">
     	    <div class="title">Profile</div>
-    	      <table class="table table-condensed stats">
-    	        <tr>
-    	          <td>Played</td>
-    	          <td>126</td>
-    	        </tr>
-    	        <tr>
-    	          <td>Win</td>
-    	          <td>71(89%)</td>
-    	        </tr>
-    	        <tr>
-    	          <td>Lose</td>
-    	          <td>55</td>
-    	        </tr>
-    	        <tr>
-    	          <td>KDA</td>
-    	          <td>3.68</td>
-    	        </tr>
-    	      </table>
+    	    <table class="table table-condensed stats">
+    	      <tr>
+    	        <td>Played</td>
+    	        <td>126</td>
+    	      </tr>
+    	      <tr>
+    	        <td>Win</td>
+    	        <td>71(89%)</td>
+    	      </tr>
+    	      <tr>
+    	        <td>Lose</td>
+    	        <td>55</td>
+    	      </tr>
+    	      <tr>
+    	        <td>KDA</td>
+    	        <td>3.68</td>
+    	      </tr>
+    	    </table>
     	  </div>
-    	  <% if current_user && current_user.id != params[:id].to_i %>
-    	 	 <div id="pick-team">
-    	     <div class="btn-group btn-input clearfix team-select">
-    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
-    	        <span data-bind="label">Choose Team</span>&nbsp;<span class="caret"></span>
-    	      </button>
-    	      <ul class="dropdown-menu">
-						 <% @teams.each do |i| %>
-						 	<li><a data-team-id="<%= i.id %>"><%= i.full_name %></a></li>
-						 <% end %>
-    	     	</ul>
-    	     </div>
-					 <button class="btn btn-primary btn-send" id="send_inv">Send</button>
-    	  </div>
-    	  <% end %>
-				Команди в яких бере участь гравець
-    	</div>
+			</div>
+			<div class="cover">
+				<div>
+					<div class="title">Teams of player</div>
+	    	  <% if current_user && current_user.id != params[:id].to_i %>
+	    	 	 <div id="pick-team">
+	    	     <div class="btn-group btn-input clearfix team-select">
+	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
+	    	        <span data-bind="label">Choose Team</span>&nbsp;<span class="caret"></span>
+	    	      </button>
+	    	      <ul class="dropdown-menu">
+							 <% @teams.each do |i| %>
+							 	<li><a data-team-id="<%= i.id %>"><%= i.full_name %></a></li>
+							 <% end %>
+	    	     	</ul>
+	    	     </div>
+						 <button class="btn btn-primary btn-send" id="send_inv">Send</button>
+	    	  	</div>
+	    	  <% end %>
+					<% unless @team_of_user.blank? %>
+						<div class="team-info">
+			  		  <% @team_of_user.each do |i| %>
+						  <img src="http://placehold.it/60">
+						  Name: <%= i.full_name %>
+						  <br>
+						  Country: <%= i.country %>
+						  <br>
+						  Rating: <%= i.rating %>
+		  	  		<% end %>
+						</div>
+					<% else %>
+						<p>The player has not yet been involved in a team</p>
+					<% end %>
+				</div>
+			</div>
 		</div>
 		
     <div class="col-md-8">

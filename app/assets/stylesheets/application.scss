@@ -75,7 +75,7 @@ body{
   border:1px solid $main_color;
 }
 .post {
-  background-color: #eee;
+  background-color: #fafafa;
   height: 160px;
   width: 100%;
   padding: 20px;
@@ -166,7 +166,7 @@ body{
   left: 50%;
 }
 .profile {
-	background-color: #fff;
+	background-color: #fafafa;
 }
 .result-match {
   width: 100%;
@@ -318,8 +318,9 @@ a.spoiler.collapsed:after {
   border-bottom-right-radius: 4px;
 }
 .cover{
-	background-color: #fff;
-  overflow: hidden
+	background-color: #fafafa;
+  overflow: hidden;
+	margin-bottom: 10px;
 }
 #pick-team .dropdown-menu{
   min-width: 100%;
