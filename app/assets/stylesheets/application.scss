@@ -150,12 +150,17 @@ body{
   padding: 0 20px;
 }
 .tournament-info-sm{
-  height: 80px;
+  height: 93px;
   width: 100%;
-  border: 1px solid #ddd;
   margin-top: 10px;
-  border-radius: 4px;
 }
+.tournament-info-sm > ul > li{
+	background-color: inherit;
+  padding: 0;
+	line-height: 22px;
+	padding-left: 15px;
+}
+
 .tour>tbody>tr>td:last-child {
   text-align: right;
 	color: #003BB2;
@@ -244,10 +249,10 @@ body{
 }
 a.spoiler:after {
   text-decoration: none;
-  content: "\e253";
-}
-a.spoiler.collapsed:after {
   content: "\e252";
+}
+a.spoiler.change:after {
+  content: "\e253";
 }
 .table {
   margin-bottom: 0px;

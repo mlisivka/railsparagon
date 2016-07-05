@@ -2,33 +2,39 @@
 //= require bootstrap-sprockets
 $(document).ready(function() {
 	var path = window.location.pathname;
-	var team;
+	var team_id; // id for sending invites to the player
   $(".dropdown-menu li a").click(function(){
     var selText = $(this).text();
-		team = $(this).data("team-id");
-		console.log(team);
+		team_id = $(this).data("team-id");
     $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
   });
+	$('.btn-details').click(function(){ // function 'accordion' on the user/show page
+		if($(this).hasClass('change')){
+			$(this).removeClass('change')
+		}
+		else{
+			$(this).addClass('change')
+		}
+		$(this).parent().next('.result-full').slideToggle();
+	});
 	$("#send_inv").click(function(e) {
-		var team_id = $(e.target).data("team-id");
-		console.log(team);
 		var id = path.substring(path.lastIndexOf('/') + 1);
-		//$.ajax({
-		//	url: "/invites",
-		//	type: 'POST',
-    //	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-		//	data: {
-		//		team_id: team_id,
-		//		user_id: id
-		//	},
-    //  error: function(XMLHttpRequest, errorTextStatus, error){
-    //    console.log("Failed: "+ errorTextStatus+" ;"+error);
-		//		$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
-    //  },
-    //  success: function(){
-		//		$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
-    //  }
-		//});
+		$.ajax({
+			url: "/invites",
+			type: 'POST',
+    	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+			data: {
+				team_id: team_id,
+				user_id: id
+			},
+      error: function(XMLHttpRequest, errorTextStatus, error){
+        console.log("Failed: "+ errorTextStatus+" ;"+error);
+				$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
+      },
+      success: function(){
+				$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
+      }
+		});
 	});
   $('#team_id').change(function() {
     $.ajax({
