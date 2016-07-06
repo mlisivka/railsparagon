@@ -43,16 +43,16 @@
 	    	  	</div>
 	    	  <% end %>
 					<% unless @team_of_user.blank? %>
-						<div class="team-info">
 			  		  <% @team_of_user.each do |i| %>
+						<div class="team-info">
 						  <img src="http://placehold.it/60">
 						  Name: <%= i.full_name %>
 						  <br>
 						  Country: <%= i.country %>
 						  <br>
 						  Rating: <%= i.rating %>
-		  	  		<% end %>
 						</div>
+		  	  		  <% end %>
 					<% else %>
 						<p>The player has not yet been involved in a team</p>
 					<% end %>

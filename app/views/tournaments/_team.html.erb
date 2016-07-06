@@ -1,9 +1,5 @@
-<% unless @tournament.teams.include?(@team) %>
-	<tr>
-	  <td><%= @tournament.teams.count + 1 %></td>
-	  <td><img src="http://placehold.it/30" alt=""></td>
-	  <td><%= @team.full_name %></td>
-	</tr>
-<% else %>
-	<tr><td><div class="error_msg">This team has already been registered for this tournament</div></td></tr>
-<% end %>
+<tr>
+  <td><%= @tournament.teams.count %></td>
+  <td><img src="http://placehold.it/30" alt=""></td>
+  <td><%= @team.full_name %></td>
+</tr>

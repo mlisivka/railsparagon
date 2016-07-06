@@ -31,7 +31,11 @@ class TournamentsController < ApplicationController
   def registration_team
     @tournament = Tournament.find(params[:id])
     @team = Team.find(params[:team_id])
-    @tournament.teams << @team unless @tournament.teams.include?(@team)
+    unless @tournament.teams.include?(@team)
+      @tournament.teams << @team
+    else
+      @tournament.errors.add(:team, "This team has already been registered for this tournament")
+    end
     respond_to do |format|
         format.js {}
     end

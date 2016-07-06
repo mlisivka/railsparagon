@@ -28,10 +28,9 @@ $(document).ready(function() {
 			},
       error: function(XMLHttpRequest, errorTextStatus, error){
         console.log("Failed: "+ errorTextStatus+" ;"+error);
-				//$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
+		$("#pick-team").after("<div class='error_msg'>Error!</div>");
       },
       success: function(){
-				alert(true);
 				//$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
       }
 		});
