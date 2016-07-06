@@ -25,10 +25,10 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
           <ul class="nav navbar-nav">
-            <li><a href="/tournaments">Tournament</a></li>
-            <li><a href="/users">Profile</a></li>
-            <li><a href="/teams">Team</a></li>
-            <li><a href="/matches">Match</a></li>
+            <li><a href="/tournaments"><%= _('Tournaments') %></a></li>
+            <li><a href="/users"><%= _('Profile') %></a></li>
+            <li><a href="/teams"><%= _('Team') %></a></li>
+            <li><a href="/matches"><%= _('Matches') %></a></li>
             <li><a href="/teams/new">NewTm</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -54,10 +54,10 @@
                 </li>
 								<% end %>
 							<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
-              <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> <%= _('Logout') %></a></li>
             <% else %>
-              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> <%= _('Login') %></a></li>
+              <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> <%= _('Sign Up') %></a></li>
             <% end %>
           </ul>
         </div>

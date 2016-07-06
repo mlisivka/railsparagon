@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  before_filter :set_gettext_locale
+  
   protect_from_forgery with: :exception
   helper_method :current_user, :team_invite, :log_in, :log_out, :store_location
 
@@ -25,6 +25,11 @@ class ApplicationController < ActionController::Base
     session[:return_to] = root_path
     session[:return_to] = request.referer if request.get? && prev[:controller] != "session" && prev != {controller: "users", action: "new"}
     puts session[:return_to]
+  end
+  
+  def set_gettext_locale
+    requested_locale = params[:locale] || session[:locale] || cookies[:locale] ||  request.env['HTTP_ACCEPT_LANGUAGE']
+    session[:locale] = FastGettext.set_locale(requested_locale)
   end
 
 end
