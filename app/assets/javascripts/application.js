@@ -1,103 +1,112 @@
 //= require jquery
 //= require bootstrap-sprockets
 $(document).ready(function() {
-	var path = window.location.pathname;
-	var team_id; // id for sending invites to the player
-  $(".dropdown-menu li a").click(function(){
+  var path = window.location.pathname;
+  var team_id; // id for sending invites to the player
+  $(".dropdown-menu li a").click(function() {
     var selText = $(this).text();
-		team_id = $(this).data("team-id");
+    team_id = $(this).data("team-id");
     $(this).parents('.team-select').removeClass('open').find('[data-bind="label"]').text(selText);
   });
-	$('.btn-details').click(function(){ // function 'accordion' on the user/show page
-		if($(this).hasClass('change')){
-			$(this).removeClass('change')
-		}
-		else{
-			$(this).addClass('change')
-		}
-		$(this).parent().next('.result-full').slideToggle();
-	});
-	$("#register").click(function(e) {
-		var id = path.substring(path.lastIndexOf('/') + 1);
-		$.ajax({
-			url: path + "/registration_team",
-			type: 'GET',
-    	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-			data: {
-				team_id: team_id
-			},
-      error: function(XMLHttpRequest, errorTextStatus, error){
-        console.log("Failed: "+ errorTextStatus+" ;"+error);
-		$("#pick-team").after("<div class='error_msg'>Error!</div>");
+  $('.btn-details').click(function() { // function 'accordion' on the user/show page
+    if ($(this).hasClass('change')) {
+      $(this).removeClass('change')
+    } else {
+      $(this).addClass('change')
+    }
+    $(this).parent().next('.result-full').slideToggle();
+  });
+  $("#register").click(function(e) {
+    var id = path.substring(path.lastIndexOf('/') + 1);
+    $.ajax({
+      url: path + "/registration_team",
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       },
-      success: function(){
-				//$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
-      }
-		});
-	});
-	$("#send_inv").click(function(e) {
-		var id = path.substring(path.lastIndexOf('/') + 1);
-		$.ajax({
-			url: "/invites",
-			type: 'POST',
-    	beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-			data: {
-				team_id: team_id,
-				user_id: id
-			},
-      error: function(XMLHttpRequest, errorTextStatus, error){
-        console.log("Failed: "+ errorTextStatus+" ;"+error);
-				$("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
+      data: {
+        team_id: team_id
       },
-      success: function(){
-				$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
+      error: function(XMLHttpRequest, errorTextStatus, error) {
+        console.log("Failed: " + errorTextStatus + " ;" + error);
+        $("#pick-team").after("<div class='error_msg'>Error!</div>");
+      },
+      success: function() {
+        //$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
       }
-		});
-	});
-  $('.dropdown-menu > li > a').click(function() {
+    });
+  });
+  $("#send_inv").click(function(e) {
+  	$('.success.msg').remove();
+  	$('.error_msg').remove();
+    var id = path.substring(path.lastIndexOf('/') + 1);
+    $.ajax({
+      url: "/invites",
+      type: 'POST',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+      },
+      data: {
+        team_id: team_id,
+        user_id: id
+      },
+      error: function(XMLHttpRequest, errorTextStatus, error) {
+        console.log("Failed: " + errorTextStatus + " ;" + error);
+        $("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
+      },
+      success: function(data) {
+        var obj = JSON.parse(data);
+        if (obj.error.user[0]) {
+          $("#pick-team").after("<div class='error_msg'>" + obj.error.user[0] + "</div>");
+        } else {
+          $("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
+        }
+      }
+    });
+  });
+  $('.dropdown-menu#request > li > a').click(function() {
     $.ajax({
       type: 'GET',
       data: {
         team_id: team_id
       },
       dataType: "script",
-      error: function(XMLHttpRequest, errorTextStatus, error){
-        console.log("Failed: "+ errorTextStatus+" ;"+error);
+      error: function(XMLHttpRequest, errorTextStatus, error) {
+        console.log("Failed: " + errorTextStatus + " ;" + error);
       }
     });
   });
-  $(".notify-btn .btn").click(function (e) {
+  $(".notify-btn .btn").click(function(e) {
     var id = $(this).closest(".notify-main").find("input").val();
     $.ajax({
       url: "/invites/" + id,
       type: 'PUT',
-      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+      },
       data: {
         accepted: $(e.target).attr("value")
       },
-      error: function(XMLHttpRequest, errorTextStatus, error){
-        console.log("Failed: "+ errorTextStatus+" ;"+error);
+      error: function(XMLHttpRequest, errorTextStatus, error) {
+        console.log("Failed: " + errorTextStatus + " ;" + error);
       },
-      success: function(){
-				if($(e.target).attr("value") == "true"){
-					$(e.target).closest(".notify-main").append("<div class='success_msg'>invitation was confirmed now you is a member of the team</div>");
-					$(e.target).parent().remove();
-				}
-				else{
-					$(e.target).closest(".notify-main").append("<div class='success_msg'>invitation was rejected</div>");
-					$(e.target).parent().remove();
-				}
+      success: function() {
+        if ($(e.target).attr("value") == "true") {
+          $(e.target).closest(".notify-main").append("<div class='success_msg'>invitation was confirmed now you is a member of the team</div>");
+          $(e.target).parent().remove();
+        } else {
+          $(e.target).closest(".notify-main").append("<div class='success_msg'>invitation was rejected</div>");
+          $(e.target).parent().remove();
+        }
         //$(this).closest('.notify-main').remove();
       }
     });
   });
   $("#success-alert").fadeTo(2000, 500).slideUp(500);
-  $(document).click(function(e){
-    if(e.target.id == "notify-cl"){
+  $(document).click(function(e) {
+    if (e.target.id == "notify-cl") {
       $("#notify").toggle();
-    }
-    else if($("#notify").is(':visible') && !$(e.target).closest("#notify").length && e.target.id != "notify-cl")
-    {
+    } else if ($("#notify").is(':visible') && !$(e.target).closest("#notify").length && e.target.id != "notify-cl") {
       $("#notify").hide();
     }
   });
