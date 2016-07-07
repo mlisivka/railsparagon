@@ -1,12 +1,12 @@
 <div class="container">
 	<div class="row">
 		<%= form_for User.new, html: { class: "form-sign", onsubmit: "return validate_form();" } do |i| %>
-      <h2 class="form-signup-heading">Please sign up</h2>
-      <%= i.label :name, "User name" , class: "sr-only" %>
-      <%= i.text_field :name, placeholder: "User name", required: true, autofocus: true, class: "form-control" %>
-      <%= i.label :password, "Password" , class: "sr-only" %>
-      <%= i.password_field :password, placeholder: "Password",  required: true, class: "form-control" %>
-			<%= i.password_field :confirm_password, placeholder: "Confirm Password",  required: true, class: "form-control" %>
+      <h2 class="form-signup-heading"><%= _('Please sign up') %></h2>
+      <%= i.label :name, _('User name') , class: "sr-only" %>
+      <%= i.text_field :name, placeholder: _('User name'), required: true, autofocus: true, class: "form-control" %>
+      <%= i.label :password, _('Password') , class: "sr-only" %>
+      <%= i.password_field :password, placeholder: _('Password'),  required: true, class: "form-control" %>
+	  <%= i.password_field :confirm_password, placeholder: _('Confirm Password'),  required: true, class: "form-control" %>
 
       <%= i.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
     <% end %>
@@ -30,15 +30,15 @@
     }
 
 		if(!nameReg.test(name.value)){
-			name.insertAdjacentHTML('afterend', "<div class='invalid_error'>Name must be between 3 and 16 characters</div>");
+			name.insertAdjacentHTML('afterend', "<div class='invalid_error'><%= _('Name must be between 3 and 16 characters') %></div>");
 			success = false;
 		}
 		if(!passwordReg.test(pass.value)){
-			pass.insertAdjacentHTML('afterend', "<div class='invalid_error'>Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace</div>");
+			pass.insertAdjacentHTML('afterend', "<div class='invalid_error'><%= _('Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace') %></div>");
 			success = false;
 		}
 		if(pass_conf.value != pass.value){
-			pass_conf.insertAdjacentHTML('afterend', "<div class='invalid_error'>Passwords Don't Match</div>");
+			pass_conf.insertAdjacentHTML('afterend', "<div class='invalid_error'><%= _('Passwords Don\'t Match') %></div>");
 			success = false;
 		}
 		console.log("You must agree to the terms of use.");

@@ -30,11 +30,11 @@ tr ~ tr > td:nth-child(2n) {
 <table>
 	<tr>
 		<th>Id</th>
-		<th>Name</th>
-		<th>Country</th>
-		<th>Rating</th>
-		<th>Captain</th>
-		<th>Players</th>
+		<th><%= _('Name') %></th>
+		<th><%= _('Country') %></th>
+		<th><%= _('Rating') %></th>
+		<th><%= _('Captain') %></th>
+		<th><%= _('Players') %></th>
 	</tr>
  <% @teams.each do |i| %>
 	<tr>

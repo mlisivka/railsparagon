@@ -16,29 +16,280 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-msgid "Matches"
-msgstr "Матчі"
+msgid "Captain"
+msgstr "Капітан"
 
-msgid "Profile"
-msgstr "Профіль"
+msgid "Choose Team"
+msgstr "Вибрати команду"
 
-msgid "Tournament"
-msgstr "Турнір"
+msgid "Confirm Password"
+msgstr "Підтвердження паролю"
 
-msgid "Team"
-msgstr "Команда"
+msgid "Country"
+msgstr "Країна"
 
-msgid "Tournaments"
-msgstr "Турніри"
+msgid "Create Match"
+msgstr "Створити Матч"
 
-msgid "Recent matches"
-msgstr "Останні матчі"
+msgid "Create New Team"
+msgstr "Створити нову Команду"
+
+msgid "Create Post"
+msgstr "Створити оголошення"
+
+msgid "Create Team"
+msgstr "Створити Команду"
+
+msgid "Create new Post"
+msgstr "Створити нове оголошення"
+
+#, fuzzy
+msgid "Create new Team"
+msgstr "Створити нову Команду"
+
+msgid "Create new Tournament"
+msgstr "Створити новий Турнір"
+
+msgid "Date begin"
+msgstr "Дата початку"
+
+msgid "Error"
+msgstr "Помилка"
+
+msgid "Full Team Name"
+msgstr "Повна назва команди"
+
+msgid "Hero"
+msgstr "Герой"
+
+msgid "Invite"
+msgstr "Запрошення"
+
+#, fuzzy
+msgid "Invite|Accepted"
+msgstr "Запрошення"
 
 msgid "Login"
 msgstr "Ввійти"
 
+msgid "Logout"
+msgstr "Вийти"
+
+msgid "Lose"
+msgstr "Програшів"
+
+msgid "Match"
+msgstr "Матч"
+
+#, fuzzy
+msgid "Match history"
+msgstr "Матч"
+
+msgid "Matches"
+msgstr "Матчі"
+
+#, fuzzy
+msgid "Match|Agora link"
+msgstr "Матч"
+
+#, fuzzy
+msgid "Match|End"
+msgstr "Матч"
+
+#, fuzzy
+msgid "Match|Match begins"
+msgstr "Матч"
+
+msgid "Max teams"
+msgstr "Кількість гравців"
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "Name must be between 3 and 16 characters"
+msgstr "Ім'я повинно бути від 3 до 16 символів"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Passwords Don't Match"
+msgstr "Паролі не збігаються"
+
+msgid "Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace"
+msgstr "Паролі повинні бути від 7 до 36 символів, щонайменше мати 1 цифру, 1 велику літеру та не повинні мати пробілів"
+
+msgid "Payment"
+msgstr "Взнос"
+
+#, fuzzy
+msgid "Played"
+msgstr "Зіграно"
+
+msgid "Players"
+msgstr "Гравці"
+
+msgid "Please sign in"
+msgstr "Будь ласка, увійдить в систему"
+
+msgid "Please sign up"
+msgstr "Будь ласка, зареєструйтесь"
+
+msgid "Post"
+msgstr "Оголошення"
+
+#, fuzzy
+msgid "Post|Text"
+msgstr "Оголошення"
+
+#, fuzzy
+msgid "Post|Title"
+msgstr "Оголошення"
+
+msgid "Prize pool"
+msgstr "Призовий фонд"
+
+msgid "Profile"
+msgstr "Профіль"
+
+msgid "Profile Team"
+msgstr "Профіль команди"
+
+msgid "Rating"
+msgstr "Рейтинг"
+
+msgid "Recent matches"
+msgstr "Останні матчі"
+
+msgid "Registration"
+msgstr "Реєстрація"
+
+msgid "Remember me"
+msgstr "Запам'ятати мене"
+
+msgid "Score"
+msgstr "Рахунок"
+
+msgid "Send"
+msgstr "Відправити"
+
 msgid "Sign Up"
 msgstr "Реєстрація"
 
-msgid "Logout"
-msgstr "Вийти"
+msgid "Sign in"
+msgstr "Увійти"
+
+msgid "Team"
+msgstr "Команда"
+
+msgid "Team Tag / Abbreviation"
+msgstr "Коротка назва / Абревіатура"
+
+msgid "Team URL"
+msgstr "Сайт команди"
+
+msgid "Teams"
+msgstr "Команди"
+
+#, fuzzy
+msgid "Teams of player"
+msgstr "Команди"
+
+#, fuzzy
+msgid "Team|Country"
+msgstr "Країна"
+
+#, fuzzy
+msgid "Team|Full name"
+msgstr "Назва команди"
+
+#, fuzzy
+msgid "Team|Image"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Name"
+msgstr "Назва"
+
+#, fuzzy
+msgid "Team|Rating"
+msgstr "Рейтинг"
+
+#, fuzzy
+msgid "Team|Tag name"
+msgstr "Назва команди"
+
+msgid "The player has not yet been involved in a team"
+msgstr "Цей гравець не буре участі в жодній команді"
+
+msgid "To register for the tournament you need to be authorized"
+msgstr "Для участі в турнірі ви повинні бути авторизовані"
+
+msgid "Tournament"
+msgstr "Турнір"
+
+msgid "Tournaments"
+msgstr "Турніри"
+
+#, fuzzy
+msgid "Tournament|End"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Max team"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Payment"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Prize"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Title"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Tournament begins"
+msgstr "Турнір"
+
+msgid "User"
+msgstr "Користувач"
+
+#, fuzzy
+msgid "User name"
+msgstr "Користувач"
+
+#, fuzzy
+msgid "User|Kda"
+msgstr "Користувач"
+
+#, fuzzy
+msgid "User|Lose"
+msgstr "Користувач"
+
+#, fuzzy
+msgid "User|Name"
+msgstr "Користувач"
+
+#, fuzzy
+msgid "User|Played matches"
+msgstr "Зіграно матчів"
+
+#, fuzzy
+msgid "User|Win"
+msgstr "Користувач"
+
+msgid "Win"
+msgstr "Перемог"
+
+msgid "matches"
+msgstr "матчі"
+
+#, fuzzy
+msgid "played"
+msgstr "Зіграно"
+
+msgid "winrate"
+msgstr "відсоток перемог"

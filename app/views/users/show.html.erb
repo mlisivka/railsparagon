@@ -3,18 +3,18 @@
     <div class="col-md-4">
 			<div class="cover">
     	  <div class="profile">
-    	    <div class="title">Profile</div>
+    	    <div class="title"><%= _('Profile') %></div>
     	    <table class="table table-condensed stats">
     	      <tr>
-    	        <td>Played</td>
+    	        <td><%= _('Played') %></td>
     	        <td>126</td>
     	      </tr>
     	      <tr>
-    	        <td>Win</td>
+    	        <td><%= _('Win') %></td>
     	        <td>71(89%)</td>
     	      </tr>
     	      <tr>
-    	        <td>Lose</td>
+    	        <td><%= _('Lose') %></td>
     	        <td>55</td>
     	      </tr>
     	      <tr>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="cover">
 				<div>
-					<div class="title">Teams of player</div>
+					<div class="title"><%= _('Teams of player') %></div>
 	    	  <% if current_user && current_user.id != params[:id].to_i %>
 	    	 	 <div id="pick-team">
 	    	     <div class="btn-group btn-input clearfix team-select">
@@ -39,31 +39,31 @@
 							 <% end %>
 	    	     	</ul>
 	    	     </div>
-						 <button class="btn btn-primary btn-send" id="send_inv">Send</button>
+						 <button class="btn btn-primary btn-send" id="send_inv"><%= _('Send') %></button>
 	    	  	</div>
 	    	  <% end %>
 					<% unless @team_of_user.blank? %>
 			  		  <% @team_of_user.each do |i| %>
 						<div class="team-info">
 						  <img src="http://placehold.it/60">
-						  Name: <%= i.full_name %>
+						  <%= s_('Team|Name') %>: <%= i.full_name %>
 						  <br>
-						  Country: <%= i.country %>
+						  <%= _('Country') %>: <%= i.country %>
 						  <br>
-						  Rating: <%= i.rating %>
+						  <%= _('Rating') %>: <%= i.rating %>
 						</div>
 		  	  		  <% end %>
 					<% else %>
-						<p>The player has not yet been involved in a team</p>
+						<p><%= _('The player has not yet been involved in a team') %></p>
 					<% end %>
 				</div>
 			</div>
 		</div>
 		
     <div class="col-md-8">
-			<div class="cover">
+		<div class="cover">
     	  <div class="result-match">
-    	    <div class="title">Match history</div>
+    	    <div class="title"><%= _('Match history') %></div>
     	    <div class="match">
     	      <div class="match-info">11/04/2016, 04:44<div class="pull-right event">The International</div></div>
     	      <div class="match-main">
@@ -86,8 +86,8 @@
     	    	      <table class="table table-condensed team-1">
     	    	        <thead>
     	    	          <tr>
-    	    	            <th>Hero</th>
-    	    	            <th>Name</th>
+    	    	            <th><%= _('Hero') %></th>
+    	    	            <th><%= _('Name') %></th>
     	    	            <th>KDA</th>
     	    	          </tr>
     	    	        </thead>
@@ -118,17 +118,17 @@
     	    	            <td>4.68</td>
     	    	          </tr>
     	    	          <tr>
-    	    	            <td>Score: 25/52/106</td>
+    	    	            <td><%= _('Score') %>: 25/52/106</td>
     	    	          </tr>
     	    	        </tbody>
     	    	      </table>
     	    	    </div>
     	    	    <div class="col-md-6 team">
-    	    	      <table class="table table-condensed team-2">
+    	    	      <table class="table table-condensed team-1">
     	    	        <thead>
     	    	          <tr>
-    	    	            <th>Hero</th>
-    	    	            <th>Name</th>
+    	    	            <th><%= _('Hero') %></th>
+    	    	            <th><%= _('Name') %></th>
     	    	            <th>KDA</th>
     	    	          </tr>
     	    	        </thead>
@@ -159,7 +159,7 @@
     	    	            <td>4.68</td>
     	    	          </tr>
     	    	          <tr>
-    	    	            <td>Score: 25/52/106</td>
+    	    	            <td><%= _('Score') %>: 25/52/106</td>
     	    	          </tr>
     	    	        </tbody>
     	    	      </table>
@@ -189,8 +189,8 @@
     	    	      <table class="table table-condensed team-1">
     	    	        <thead>
     	    	          <tr>
-    	    	            <th>Hero</th>
-    	    	            <th>Name</th>
+    	    	            <th><%= _('Hero') %></th>
+    	    	            <th><%= _('Name') %></th>
     	    	            <th>KDA</th>
     	    	          </tr>
     	    	        </thead>
@@ -221,17 +221,17 @@
     	    	            <td>4.68</td>
     	    	          </tr>
     	    	          <tr>
-    	    	            <td>Score: 25/52/106</td>
+    	    	            <td><%= _('Score') %>: 25/52/106</td>
     	    	          </tr>
     	    	        </tbody>
     	    	      </table>
     	    	    </div>
     	    	    <div class="col-md-6 team">
-    	    	      <table class="table table-condensed team-2">
+    	    	      <table class="table table-condensed team-1">
     	    	        <thead>
     	    	          <tr>
-    	    	            <th>Hero</th>
-    	    	            <th>Name</th>
+    	    	            <th><%= _('Hero') %></th>
+    	    	            <th><%= _('Name') %></th>
     	    	            <th>KDA</th>
     	    	          </tr>
     	    	        </thead>
@@ -262,16 +262,16 @@
     	    	            <td>4.68</td>
     	    	          </tr>
     	    	          <tr>
-    	    	            <td>Score: 25/52/106</td>
+    	    	            <td><%= _('Score') %>: 25/52/106</td>
     	    	          </tr>
     	    	        </tbody>
     	    	      </table>
     	    	    </div>
     	    	  </div>
     	    	</div>
-    	    </div>
-				</div>
-    	</div>
+    	      </div>
+			</div>
+    	  </div>
 		</div>
-  </div>
-</div>
+	  </div>
+	</div>

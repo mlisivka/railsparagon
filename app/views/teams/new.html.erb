@@ -1,18 +1,18 @@
 <% if current_user %>
 	<div class="container">
 		<div class="cover">
-	    <div class="title">Create new Team</div>
+	    <div class="title"><%= _('Create new Team') %></div>
 	    <%= form_for Team.new do |i| %>
 	
-	      <b>Full Team Name</b><br>
+	      <b><%= _('Full Team Name') %></b><br>
 	      <%= i.text_field :full_name %><br>
-	      <b>Team Tag / Abbreviation</b><br>
+	      <b><%= _('Team Tag / Abbreviation') %></b><br>
 	      <br>
-	      <b>Specify Country</b><br>
+	      <b><%= _('Country') %></b><br>
 	      <%= i.text_field :country %><br>
-	      <b>Team URL</b><br>
+	      <b><%= _('Team URL') %></b><br>
 	
-	    	<p><%= i.submit "Create Team" %></p>
+	    	<p><%= i.submit _('Create Team') %></p>
 	
 	    <% end %>
 	  </div>

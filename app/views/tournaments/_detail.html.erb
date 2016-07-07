@@ -1,10 +1,10 @@
 <div class="team-info" style="background: #fff">
   <img src="http://placehold.it/60">
-  Name: <%= @current_team.full_name %>
+  <%= _('Name') %>: <%= @current_team.full_name %>
   <br>
-  Country: <%= @current_team.country %>
+  <%= _('Country') %>: <%= @current_team.country %>
   <br>
-  Rating: <%= @current_team.rating %>
+  <%= _('Rating') %>: <%= @current_team.rating %>
 </div>
 <div class="team-player">
   <ul class="list-group">

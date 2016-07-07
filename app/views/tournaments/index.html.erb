@@ -7,15 +7,15 @@
         <div class="tournament-info">
           <table class="table table-condensed tour">
             <tr>
-              <td>payment</td>
+              <td><%= _('Payment') %></td>
               <td>$<%= i.payment %></td>
             </tr>
             <tr>
-              <td>teams</td>
+              <td><%= _('Teams') %></td>
               <td>6/<%= i.max_team %></td>
             </tr>
             <tr>
-              <td>prize pool</td>
+              <td><%= _('Prize pool') %></td>
               <td>$<%= i.prize %></td>
             </tr>
             <tr>
@@ -24,7 +24,7 @@
             </tr>
           </table>
         </div>
-        <%= link_to 'Registration', tournament_path(:id => i.id), class: "btn btn-primary btn-reg" %>
+        <%= link_to _('Registration'), tournament_path(:id => i.id), class: "btn btn-primary btn-reg" %>
       </div>
     </div>
     <% end %>

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-06 20:01+0300\n"
-"PO-Revision-Date: 2016-07-06 20:01+0300\n"
+"POT-Creation-Date: 2016-07-07 13:56+0300\n"
+"PO-Revision-Date: 2016-07-07 13:56+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,13 +18,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Captain"
+msgstr ""
+
+msgid "Choose Team"
+msgstr ""
+
+msgid "Confirm Password"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "Create Match"
+msgstr ""
+
+msgid "Create New Team"
+msgstr ""
+
+msgid "Create Post"
+msgstr ""
+
+msgid "Create Team"
+msgstr ""
+
+msgid "Create new Post"
+msgstr ""
+
+msgid "Create new Team"
+msgstr ""
+
+msgid "Create new Tournament"
+msgstr ""
+
+msgid "Date begin"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Full Team Name"
+msgstr ""
+
+msgid "Hero"
+msgstr ""
+
 msgid "Invite"
 msgstr ""
 
 msgid "Invite|Accepted"
 msgstr ""
 
+msgid "Login"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
+msgid "Lose"
+msgstr ""
+
 msgid "Match"
+msgstr ""
+
+msgid "Match history"
 msgstr ""
 
 msgid "Matches"
@@ -39,6 +96,39 @@ msgstr ""
 msgid "Match|Match begins"
 msgstr ""
 
+msgid "Max teams"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Name must be between 3 and 16 characters"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Passwords Don't Match"
+msgstr ""
+
+msgid "Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace"
+msgstr ""
+
+msgid "Payment"
+msgstr ""
+
+msgid "Played"
+msgstr ""
+
+msgid "Players"
+msgstr ""
+
+msgid "Please sign in"
+msgstr ""
+
+msgid "Please sign up"
+msgstr ""
+
 msgid "Post"
 msgstr ""
 
@@ -48,10 +138,52 @@ msgstr ""
 msgid "Post|Title"
 msgstr ""
 
+msgid "Prize pool"
+msgstr ""
+
 msgid "Profile"
 msgstr ""
 
+msgid "Profile Team"
+msgstr ""
+
+msgid "Rating"
+msgstr ""
+
+msgid "Recent matches"
+msgstr ""
+
+msgid "Registration"
+msgstr ""
+
+msgid "Remember me"
+msgstr ""
+
+msgid "Score"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Sign Up"
+msgstr ""
+
+msgid "Sign in"
+msgstr ""
+
 msgid "Team"
+msgstr ""
+
+msgid "Team Tag / Abbreviation"
+msgstr ""
+
+msgid "Team URL"
+msgstr ""
+
+msgid "Teams"
+msgstr ""
+
+msgid "Teams of player"
 msgstr ""
 
 msgid "Team|Country"
@@ -63,10 +195,19 @@ msgstr ""
 msgid "Team|Image"
 msgstr ""
 
+msgid "Team|Name"
+msgstr ""
+
 msgid "Team|Rating"
 msgstr ""
 
 msgid "Team|Tag name"
+msgstr ""
+
+msgid "The player has not yet been involved in a team"
+msgstr ""
+
+msgid "To register for the tournament you need to be authorized"
 msgstr ""
 
 msgid "Tournament"
@@ -96,6 +237,9 @@ msgstr ""
 msgid "User"
 msgstr ""
 
+msgid "User name"
+msgstr ""
+
 msgid "User|Kda"
 msgstr ""
 
@@ -109,4 +253,16 @@ msgid "User|Played matches"
 msgstr ""
 
 msgid "User|Win"
+msgstr ""
+
+msgid "Win"
+msgstr ""
+
+msgid "matches"
+msgstr ""
+
+msgid "played"
+msgstr ""
+
+msgid "winrate"
 msgstr ""

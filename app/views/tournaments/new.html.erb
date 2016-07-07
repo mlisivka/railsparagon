@@ -1,15 +1,15 @@
 <div class="container">
-  <div class="title">Create new Tournament</div>
+  <div class="title"><%= _('Create new Tournament') %></div>
   <br>
 	<%= form_for Tournament.new do |i| %>
 
-		<p>Name:			 	 <%= i.text_field :title 							%></p>
+		<p><%= _('Name') %>:			 	 <%= i.text_field :title 							%></p>
 		<p>Time_start: 	 <%= i.datetime_field :tournament_begins %></p>
-		<p>Max Teams:		 <%= i.number_field :max_team 				%></p>
-		<p>Paynemt:		 	 <%= i.number_field :payment 					%></p>
-		<p>Prize:		 		 <%= i.number_field :prize 						%></p>
+		<p><%= _('Max teams') %>:		 <%= i.number_field :max_team 				%></p>
+		<p><%= _('Payment') %>:		 	 <%= i.number_field :payment 					%></p>
+		<p><%= _('Prize pool') %>:		 		 <%= i.number_field :prize 						%></p>
 
-		<p><%= i.submit "Create Match" %></p>
+		<p><%= i.submit _('Create Match') %></p>
 
 	<% end %>
 </div>

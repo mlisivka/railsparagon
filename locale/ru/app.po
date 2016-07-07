@@ -17,26 +17,274 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4"
 " && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "\n"
-msgid "Matches"
-msgstr "Матчи"
 
-msgid "Profile"
-msgstr "Профиль"
+msgid "Captain"
+msgstr ""
 
-msgid "Team"
+#, fuzzy
+msgid "Choose Team"
 msgstr "Команда"
 
-msgid "Tournaments"
-msgstr "Турниры"
+msgid "Confirm Password"
+msgstr ""
 
-msgid "Recent matches"
-msgstr "Последние матчи"
+msgid "Country"
+msgstr ""
+
+msgid "Create Match"
+msgstr ""
+
+#, fuzzy
+msgid "Create New Team"
+msgstr "Команда"
+
+msgid "Create Post"
+msgstr ""
+
+#, fuzzy
+msgid "Create Team"
+msgstr "Команда"
+
+msgid "Create new Post"
+msgstr ""
+
+#, fuzzy
+msgid "Create new Team"
+msgstr "Команда"
+
+msgid "Create new Tournament"
+msgstr ""
+
+msgid "Date begin"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+#, fuzzy
+msgid "Full Team Name"
+msgstr "Команда"
+
+msgid "Hero"
+msgstr ""
+
+msgid "Invite"
+msgstr ""
+
+msgid "Invite|Accepted"
+msgstr ""
 
 msgid "Login"
 msgstr "Войти"
 
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Lose"
+msgstr ""
+
+#, fuzzy
+msgid "Match"
+msgstr "Матчи"
+
+#, fuzzy
+msgid "Match history"
+msgstr "Матчи"
+
+msgid "Matches"
+msgstr "Матчи"
+
+msgid "Match|Agora link"
+msgstr ""
+
+msgid "Match|End"
+msgstr ""
+
+msgid "Match|Match begins"
+msgstr ""
+
+msgid "Max teams"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Name must be between 3 and 16 characters"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Passwords Don't Match"
+msgstr ""
+
+msgid "Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace"
+msgstr ""
+
+msgid "Payment"
+msgstr ""
+
+msgid "Played"
+msgstr ""
+
+msgid "Players"
+msgstr ""
+
+msgid "Please sign in"
+msgstr ""
+
+msgid "Please sign up"
+msgstr ""
+
+msgid "Post"
+msgstr ""
+
+msgid "Post|Text"
+msgstr ""
+
+msgid "Post|Title"
+msgstr ""
+
+msgid "Prize pool"
+msgstr ""
+
+msgid "Profile"
+msgstr "Профиль"
+
+#, fuzzy
+msgid "Profile Team"
+msgstr "Профиль"
+
+msgid "Rating"
+msgstr ""
+
+msgid "Recent matches"
+msgstr "Последние матчи"
+
+msgid "Registration"
+msgstr ""
+
+msgid "Remember me"
+msgstr ""
+
+msgid "Score"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
 msgid "Sign Up"
 msgstr "Регистрация"
 
-msgid "Logout"
-msgstr "Выйти"
+#, fuzzy
+msgid "Sign in"
+msgstr "Регистрация"
+
+msgid "Team"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team Tag / Abbreviation"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team URL"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Teams"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Teams of player"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Country"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Full name"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Image"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Name"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Rating"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Tag name"
+msgstr "Команда"
+
+msgid "The player has not yet been involved in a team"
+msgstr ""
+
+msgid "To register for the tournament you need to be authorized"
+msgstr ""
+
+#, fuzzy
+msgid "Tournament"
+msgstr "Турниры"
+
+msgid "Tournaments"
+msgstr "Турниры"
+
+#, fuzzy
+msgid "Tournament|End"
+msgstr "Турниры"
+
+msgid "Tournament|Max team"
+msgstr ""
+
+msgid "Tournament|Payment"
+msgstr ""
+
+msgid "Tournament|Prize"
+msgstr ""
+
+msgid "Tournament|Title"
+msgstr ""
+
+msgid "Tournament|Tournament begins"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "User name"
+msgstr ""
+
+msgid "User|Kda"
+msgstr ""
+
+msgid "User|Lose"
+msgstr ""
+
+msgid "User|Name"
+msgstr ""
+
+msgid "User|Played matches"
+msgstr ""
+
+msgid "User|Win"
+msgstr ""
+
+msgid "Win"
+msgstr ""
+
+#, fuzzy
+msgid "matches"
+msgstr "Матчи"
+
+msgid "played"
+msgstr ""
+
+msgid "winrate"
+msgstr ""

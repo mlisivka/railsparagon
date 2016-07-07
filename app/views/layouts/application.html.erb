@@ -45,8 +45,8 @@
                         invites you to the team
                         <b><%= link_to i.team.full_name, team_path(i.team) %></b>
                         <div class="notify-btn">
-                          <a class="btn btn-warning btn-sm" value="false">Reject</a>
-                          <a class="btn btn-success btn-sm" value="true">Accept</a>
+                          <a class="btn btn-warning btn-sm" value="false"><%= _('') %>Reject</a>
+                          <a class="btn btn-success btn-sm" value="true"><%= _('') %>Accept</a>
                         </div>
                       </div>
                 	<% end %>

@@ -1,6 +1,6 @@
 <% if current_user %>
   <div class="container">
-    <div class="title">Profile Team</div>
+    <div class="title"><%= _('Profile Team') %></div>
     <div class="row">
       <div class="col-sm-3">
         <div class="left-navbar">
@@ -8,7 +8,7 @@
             <% @teams.each do |i| %>
               <li class="list-group-item"><a href="#"><%= i.full_name %></a></li>
             <% end %>
-            <li class="list-group-item"><%= link_to 'Create New Team', new_team_path %></li>
+            <li class="list-group-item"><%= link_to _('Create New Team'), new_team_path %></li>
           </ul>
         </div>
       </div>
@@ -17,11 +17,11 @@
           <div class="team-holder">
             <img src="http://placehold.it/80" class="team-logo-lg">
             <div class="team-description">
-              Name <br> Country
+              <%= _('Name') %> <br> <%= _('Country') %>
             </div>
           </div>
           <div class="team-info-holder">
-            <div class="statistic">Rating winrate matches played</div>
+            <div class="statistic"><%= _('Rating') %> <%= _('winrate') %> <%= _('matches') %> <%= _('played') %></div>
             <div class="players">
   						<div class="team-player">
               	<ul class="list-group">
