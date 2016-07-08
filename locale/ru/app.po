@@ -178,7 +178,7 @@ msgid "The player has not yet been involved in a team"
 msgstr "Этот игрок не берет участия не в одной команде"
 
 msgid "To register for the tournament you need to be authorized"
-msgstr "Для участия в турнире вы должны быть авторизаваны"
+msgstr "Для участия в турнире вы должны быть авторизованы"
 
 msgid "Tournament"
 msgstr "Турнир"

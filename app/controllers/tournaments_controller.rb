@@ -5,6 +5,7 @@ class TournamentsController < ApplicationController
   end
 
   def show
+    @tournament = Tournament.find(params[:id])
     @captain = Team.where(id: params[:team_id], captain_id: current_user)
     @current_team = Team.find_by_id(params[:team_id])
     tournament = Tournament.find(params[:id])
@@ -34,7 +35,7 @@ class TournamentsController < ApplicationController
     unless @tournament.teams.include?(@team)
       @tournament.teams << @team
     else
-      @tournament.errors.add(:team, "This team has already been registered for this tournament")
+      @tournament.errors.add(:team, "This team has already been registered on this tournament")
     end
     respond_to do |format|
         format.js {}

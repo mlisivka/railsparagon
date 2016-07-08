@@ -6,10 +6,10 @@
       	<div class="col-sm-4">
       	  <div class="tournament-info-sm">
 						<ul class="list-group">
-							<li class="list-group-item">Tournament #1</li>
-	      	    <li class="list-group-item"><%= _('Prize pool') %>&nbsp;&nbsp;<span class="label label-warning">100$</span></li>
-	      	    <li class="list-group-item"><%= _('Payment') %>&nbsp;&nbsp;<span class="label label-warning">10$</span></li>
-	      	    <li class="list-group-item"><%= _('Date begin') %>&nbsp;&nbsp; 20.08.2017 14:30</li>
+							<li class="list-group-item"><%= @tournament.title %></li>
+	      	    <li class="list-group-item"><%= _('Prize pool') %>&nbsp;&nbsp;<span class="label label-warning"><%= @tournament.prize %>$</span></li>
+	      	    <li class="list-group-item"><%= _('Payment') %>&nbsp;&nbsp;<span class="label label-warning"><%= @tournament.payment %>$</span></li>
+	      	    <li class="list-group-item"><%= _('Date begin') %>&nbsp;&nbsp; <%= @tournament.tournament_begins.strftime('%d/%m/%Y %H:%M') %></li>
 						</ul>
       	  </div>
       	  <% if current_user %>
