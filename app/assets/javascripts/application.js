@@ -55,10 +55,13 @@ $(document).ready(function() {
         $("#pick-team").after("<div class='error_msg'>Invitation not sent!</div>");
       },
       success: function(data) {
-        var obj = JSON.parse(data);
-        if (obj.error.user[0]) {
-          $("#pick-team").after("<div class='error_msg'>" + obj.error.user[0] + "</div>");
-        } else {
+				if (data) {
+	        var obj = JSON.parse(data);
+        	if (obj.error.user[0]) {
+        	  $("#pick-team").after("<div class='error_msg'>" + obj.error.user[0] + "</div>");
+        	} 
+				}
+				else {
           $("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
         }
       }

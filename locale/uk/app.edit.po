@@ -81,9 +81,8 @@ msgstr "Програшів"
 msgid "Match"
 msgstr "Матч"
 
-#, fuzzy
 msgid "Match history"
-msgstr "Матч"
+msgstr "Історія матчів"
 
 msgid "Matches"
 msgstr "Матчі"
@@ -121,7 +120,6 @@ msgstr "Паролі повинні бути від 7 до 36 символів, 
 msgid "Payment"
 msgstr "Взнос"
 
-#, fuzzy
 msgid "Played"
 msgstr "Зіграно"
 
@@ -190,31 +188,24 @@ msgstr "Сайт команди"
 msgid "Teams"
 msgstr "Команди"
 
-#, fuzzy
 msgid "Teams of player"
 msgstr "Команди"
 
-#, fuzzy
 msgid "Team|Country"
 msgstr "Країна"
 
-#, fuzzy
 msgid "Team|Full name"
 msgstr "Назва команди"
 
-#, fuzzy
 msgid "Team|Image"
 msgstr "Команда"
 
-#, fuzzy
 msgid "Team|Name"
 msgstr "Назва"
 
-#, fuzzy
 msgid "Team|Rating"
 msgstr "Рейтинг"
 
-#, fuzzy
 msgid "Team|Tag name"
 msgstr "Назва команди"
 
@@ -257,9 +248,8 @@ msgstr "Турнір"
 msgid "User"
 msgstr "Користувач"
 
-#, fuzzy
 msgid "User name"
-msgstr "Користувач"
+msgstr "Ім'я"
 
 #, fuzzy
 msgid "User|Kda"
@@ -267,13 +257,11 @@ msgstr "Користувач"
 
 #, fuzzy
 msgid "User|Lose"
-msgstr "Користувач"
+msgstr "Програшів"
 
-#, fuzzy
 msgid "User|Name"
-msgstr "Користувач"
+msgstr "Ім'я"
 
-#, fuzzy
 msgid "User|Played matches"
 msgstr "Зіграно матчів"
 
@@ -287,12 +275,8 @@ msgstr "Перемог"
 msgid "matches"
 msgstr "матчі"
 
-#, fuzzy
 msgid "played"
 msgstr "Зіграно"
 
 msgid "winrate"
 msgstr "відсоток перемог"
-
-#~ msgid "Team name"
-#~ msgstr "Назва команди"

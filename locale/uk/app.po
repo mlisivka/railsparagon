@@ -20,7 +20,7 @@ msgid "Captain"
 msgstr "Капітан"
 
 msgid "Choose Team"
-msgstr "Вибрати команду"
+msgstr "Виберіть команду"
 
 msgid "Confirm Password"
 msgstr "Підтвердження паролю"
@@ -43,7 +43,6 @@ msgstr "Створити Команду"
 msgid "Create new Post"
 msgstr "Створити нове оголошення"
 
-#, fuzzy
 msgid "Create new Team"
 msgstr "Створити нову Команду"
 
@@ -65,10 +64,6 @@ msgstr "Герой"
 msgid "Invite"
 msgstr "Запрошення"
 
-#, fuzzy
-msgid "Invite|Accepted"
-msgstr "Запрошення"
-
 msgid "Login"
 msgstr "Ввійти"
 
@@ -81,27 +76,14 @@ msgstr "Програшів"
 msgid "Match"
 msgstr "Матч"
 
-#, fuzzy
 msgid "Match history"
-msgstr "Матч"
+msgstr "Історія матчів"
 
 msgid "Matches"
 msgstr "Матчі"
 
-#, fuzzy
-msgid "Match|Agora link"
-msgstr "Матч"
-
-#, fuzzy
-msgid "Match|End"
-msgstr "Матч"
-
-#, fuzzy
-msgid "Match|Match begins"
-msgstr "Матч"
-
 msgid "Max teams"
-msgstr "Кількість гравців"
+msgstr "Кількість команд"
 
 msgid "Name"
 msgstr "Ім'я"
@@ -121,7 +103,6 @@ msgstr "Паролі повинні бути від 7 до 36 символів, 
 msgid "Payment"
 msgstr "Взнос"
 
-#, fuzzy
 msgid "Played"
 msgstr "Зіграно"
 
@@ -135,14 +116,6 @@ msgid "Please sign up"
 msgstr "Будь ласка, зареєструйтесь"
 
 msgid "Post"
-msgstr "Оголошення"
-
-#, fuzzy
-msgid "Post|Text"
-msgstr "Оголошення"
-
-#, fuzzy
-msgid "Post|Title"
 msgstr "Оголошення"
 
 msgid "Prize pool"
@@ -175,6 +148,9 @@ msgstr "Відправити"
 msgid "Sign Up"
 msgstr "Реєстрація"
 
+msgid "User|Sign up"
+msgstr "Зареєструватись"
+
 msgid "Sign in"
 msgstr "Увійти"
 
@@ -190,33 +166,11 @@ msgstr "Сайт команди"
 msgid "Teams"
 msgstr "Команди"
 
-#, fuzzy
 msgid "Teams of player"
-msgstr "Команди"
+msgstr "Команди гравця"
 
-#, fuzzy
-msgid "Team|Country"
-msgstr "Країна"
-
-#, fuzzy
-msgid "Team|Full name"
-msgstr "Назва команди"
-
-#, fuzzy
-msgid "Team|Image"
-msgstr "Команда"
-
-#, fuzzy
 msgid "Team|Name"
 msgstr "Назва"
-
-#, fuzzy
-msgid "Team|Rating"
-msgstr "Рейтинг"
-
-#, fuzzy
-msgid "Team|Tag name"
-msgstr "Назва команди"
 
 msgid "The player has not yet been involved in a team"
 msgstr "Цей гравець не буре участі в жодній команді"
@@ -230,56 +184,17 @@ msgstr "Турнір"
 msgid "Tournaments"
 msgstr "Турніри"
 
-#, fuzzy
-msgid "Tournament|End"
-msgstr "Турнір"
-
-#, fuzzy
-msgid "Tournament|Max team"
-msgstr "Турнір"
-
-#, fuzzy
-msgid "Tournament|Payment"
-msgstr "Турнір"
-
-#, fuzzy
-msgid "Tournament|Prize"
-msgstr "Турнір"
-
-#, fuzzy
-msgid "Tournament|Title"
-msgstr "Турнір"
-
-#, fuzzy
-msgid "Tournament|Tournament begins"
-msgstr "Турнір"
-
 msgid "User"
 msgstr "Користувач"
 
-#, fuzzy
 msgid "User name"
-msgstr "Користувач"
+msgstr "Ім'я"
 
-#, fuzzy
-msgid "User|Kda"
-msgstr "Користувач"
-
-#, fuzzy
-msgid "User|Lose"
-msgstr "Користувач"
-
-#, fuzzy
 msgid "User|Name"
-msgstr "Користувач"
+msgstr "Ім'я"
 
-#, fuzzy
 msgid "User|Played matches"
 msgstr "Зіграно матчів"
-
-#, fuzzy
-msgid "User|Win"
-msgstr "Користувач"
 
 msgid "Win"
 msgstr "Перемог"
@@ -287,7 +202,6 @@ msgstr "Перемог"
 msgid "matches"
 msgstr "матчі"
 
-#, fuzzy
 msgid "played"
 msgstr "Зіграно"
 
