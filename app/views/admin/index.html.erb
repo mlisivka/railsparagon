@@ -1,0 +1,45 @@
+		<div class="jumbotron">
+		      <div class="container-fluid">
+		        <div class="titlebar_left">
+							<h2>Title</h2>
+						</div>
+						<div class="titlebar_right">
+							<a href="#" class="btn btn-info" role="button">New</a>
+							<a href="#" class="btn btn-info" role="button">Delete</a>
+							<a href="#" class="btn btn-info" role="button">Edit</a>
+						</div>
+					</div>
+		    </div>
+    <div class="container-fluid">
+      <div class="content">
+				<div class="col-sm-9">
+					<select>
+						<option>Batch action</option>
+					</select>
+					<table class="table table-striped" id="table">
+						<thead>
+						    <tr>
+									<% @config_column_name.each do |i| %>
+									<th><%= i %></th>
+									<% end %>
+						    </tr>
+						  </thead>
+						  <tbody>
+								<% @users.each do |value| %>
+						    <tr>
+									<% @config_column_name.each do |j| %>
+						      <td><%= value[j] %></td>
+									<% end %>
+						    </tr>
+								<% end %>
+						  </tbody>
+					</table>
+				</div>
+				<div class="col-sm-3">Filter</div>
+      </div>
+    </div>
+		<script>
+		$(document).ready( function () {
+		    $('#table').DataTable();
+		} );
+		</script>

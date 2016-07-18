@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'posts#index'
+  
   resources :session, only: [:new, :create, :destroy]
 
   get  'signup', to: 'users#new'
@@ -7,18 +9,20 @@ Rails.application.routes.draw do
   post 'login', to: 'session#create'
   get  'logout', to: 'session#destroy', as: 'logout'
 
-  resources :posts
-  resources :teams
+  resources :posts, :teams, :matches, :invites
+  
   resources :users do
     get :send_invite, on: :member
   end
-  resources :matches
+  
   resources :tournaments do
     get :registration_team, on: :member
   end
-  resources :invites
 
-  root 'posts#index'
+  namespace :admin do
+    root '/admin#dashboard'
+    resources :posts, :teams, :users, :matches, :tournaments, :invites
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

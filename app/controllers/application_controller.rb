@@ -23,8 +23,7 @@ class ApplicationController < ActionController::Base
   def store_location
     prev = Rails.application.routes.recognize_path(request.referer)
     session[:return_to] = root_path
-    session[:return_to] = request.referer if request.get? && prev[:controller] != "session" && prev != {controller: "users", action: "new"}
-    puts session[:return_to]
+    session[:return_to] = request.referer if request.get? && request.referer && prev[:controller] != "session" && prev != {controller: "users", action: "new"}
   end
   
   def set_gettext_locale
