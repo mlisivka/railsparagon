@@ -25,8 +25,9 @@
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="admin.html">Dashboard</a></li>
-		        <li><a href="model.html">Model</a></li>
+		        <li><%= link_to "Dashboard", admin_root_path %></li>
+		        <li><%= link_to "User", admin_users_path %></li>
+						<li><%= link_to "Tournaments", admin_tournaments_path %></li>
 		      </ul>
 		    </div>
 		  </div>

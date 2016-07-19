@@ -1,7 +1,7 @@
 		<div class="jumbotron">
 		      <div class="container-fluid">
 		        <div class="titlebar_left">
-							<h2>Title</h2>
+							<h2><%= controller.controller_name.humanize %></h2>
 						</div>
 						<div class="titlebar_right">
 							<a href="#" class="btn btn-info" role="button">New</a>
@@ -19,16 +19,20 @@
 					<table class="table table-striped" id="table">
 						<thead>
 						    <tr>
-									<% @config_column_name.each do |i| %>
-									<th><%= i %></th>
+									<% names_of_columns.each do |col| %>
+									<th><%= col.humanize %></th>
 									<% end %>
 						    </tr>
 						  </thead>
 						  <tbody>
-								<% @users.each do |value| %>
+								<% @controller_data.each do |value| %>
 						    <tr>
-									<% @config_column_name.each do |j| %>
-						      <td><%= value[j] %></td>
+									<% names_of_columns.each do |col| %>
+						      <td><% if col == "id" %>
+												<%= link_to value[col], admin_user_path(value) %>
+											<% else %>
+												<%= value[col] %>
+											<% end %></td>
 									<% end %>
 						    </tr>
 								<% end %>
