@@ -1,9 +1,9 @@
 class AdminController < ApplicationController
   layout "admin"
   
-  def index
+  def index(options={}, &block)
     @controller_data = controller_name.classify.constantize.all
-    @column = column
+    @column = options[:column] || all_columns
   end
   
   def new
@@ -14,10 +14,6 @@ class AdminController < ApplicationController
   
   def all_columns
     controller_name.classify.constantize.column_names
-  end
-  
-  def column(column = all_columns)
-    column
   end
   
 end
