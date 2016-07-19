@@ -1,0 +1,36 @@
+<div class="jumbotron">
+  <div class="container-fluid">
+    <div class="titlebar_left">
+      <h2><%= controller.controller_name.humanize %></h2>
+		</div>
+    <div class="titlebar_right">
+			<a href="#" class="btn btn-info" role="button">Delete</a>
+			<a href="#" class="btn btn-info" role="button">Edit</a>
+		</div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="content">
+    <div class="col-sm-12">
+      <div class="well">
+				
+				<%= form_for User.new do |i| %>
+				<% @column.each do |col| %>
+				<div class="form-group row">
+						<%= i.label :name, col.humanize , class: "col-sm-2 form-control-label" %>
+				    <div class="col-sm-10">
+							<%= i.text_field :name, autofocus: true, class: "form-control" %>
+				    </div>
+				  </div>
+				<% end %>
+				
+			    <div class="form-group row">
+			      <div class="col-sm-offset-2 col-sm-10">
+							<%= i.submit "Submit", class: "btn btn-default" %>
+			      </div>
+			    </div>
+		    <% end %>
+      </div>
+    </div>
+  </div>
+</div>

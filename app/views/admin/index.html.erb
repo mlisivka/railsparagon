@@ -19,7 +19,7 @@
 					<table class="table table-striped" id="table">
 						<thead>
 						    <tr>
-									<% column.each do |col| %>
+									<% @column.each do |col| %>
 									<th><%= col.humanize %></th>
 									<% end %>
 									<th></th>
@@ -28,7 +28,7 @@
 						  <tbody>
 								<% @controller_data.each do |value| %>
 						    <tr>
-									<% column.each do |col| %>
+									<% @column.each do |col| %>
 						      <td><%= value[col] %></td>
 									<% end %>
 									<td>

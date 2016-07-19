@@ -1,18 +1,22 @@
 class AdminController < ApplicationController
   layout "admin"
-  helper_method :column
   
   def index
     @controller_data = controller_name.classify.constantize.all
+    @column = column
+  end
+  
+  def new
+    @column = column - ["id", "created_at", "updated_at"]
   end
   
   private
   
-  def names_of_columns
+  def all_columns
     controller_name.classify.constantize.column_names
   end
   
-  def column(column = names_of_columns)
+  def column(column = all_columns)
     column
   end
   
