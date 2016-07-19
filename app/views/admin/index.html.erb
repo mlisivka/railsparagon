@@ -22,18 +22,20 @@
 									<% column.each do |col| %>
 									<th><%= col.humanize %></th>
 									<% end %>
+									<th></th>
 						    </tr>
 						  </thead>
 						  <tbody>
 								<% @controller_data.each do |value| %>
 						    <tr>
 									<% column.each do |col| %>
-						      <td><% if col == "id" %>
-												<%= link_to value[col], admin_user_path(value) %>
-											<% else %>
-												<%= value[col] %>
-											<% end %></td>
+						      <td><%= value[col] %></td>
 									<% end %>
+									<td>
+										<%= link_to "Show", url_for([:admin, value]) %>
+										<%= link_to "Edit", url_for([:edit, :admin, value]) %>
+										<%= link_to "Delete", url_for([:admin, value]), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
+									</td>
 						    </tr>
 								<% end %>
 						  </tbody>

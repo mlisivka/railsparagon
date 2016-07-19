@@ -1,5 +1,7 @@
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap-sprockets
+
 $(document).ready(function() {
   var path = window.location.pathname;
   var team_id; // id for sending invites to the player
