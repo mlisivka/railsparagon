@@ -4,12 +4,8 @@ class Admin::UsersController < AdminController
     super column: ['id', 'name', 'created_at']
   end
   
-  private
-  
-  #@column = ['id', 'name', 'created_at']
-  
-  #def column
-    #['id', 'name', 'created_at']
-    #end
+  def show
+    super column_without: ['team_id']
+  end
   
 end

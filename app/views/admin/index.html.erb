@@ -4,9 +4,7 @@
 							<h2><%= controller.controller_name.humanize %></h2>
 						</div>
 						<div class="titlebar_right">
-							<a href="#" class="btn btn-info" role="button">New</a>
-							<a href="#" class="btn btn-info" role="button">Delete</a>
-							<a href="#" class="btn btn-info" role="button">Edit</a>
+							<%= link_to "New", url_for(action: :new), class: "btn btn-info" %>
 						</div>
 					</div>
 		    </div>
@@ -26,7 +24,7 @@
 						    </tr>
 						  </thead>
 						  <tbody>
-								<% @controller_data.each do |value| %>
+								<% @value.each do |value| %>
 						    <tr>
 									<% @column.each do |col| %>
 						      <td><%= value[col] %></td>
