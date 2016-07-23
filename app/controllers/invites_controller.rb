@@ -8,27 +8,14 @@ class InvitesController < ApplicationController
   
   def create
     invite = Invite.new
-    team = Team.find(params[:team_id])
-    recipient = User.find(params[:user_id])
-    team.invites.each do |i|
-      if i.recipient == recipient
-        if i.accepted == true
-          invite.errors.add(:user, "This user is already a member of this team") # Цей користувач вже є учасником цієї команди
-        elsif i.accepted.nil?
-          invite.errors.add(:user, "This user has already received an invitation to this team") #Цей користувач вже отримав запрошення в цю команду
-        end
-      end
-    end
-    invite.team = team
-    invite.recipient = recipient
+    invite.team = Team.find(params[:team_id])
+    invite.recipient = User.find(params[:user_id])
     invite.sender = current_user
-    #invite = Invite.new(sender_id: current_user.id, recipient_id: params[:user_id], team_id: params[:team_id]) #unless invite.team.include?(team1) && invite.recipient.include?(recipient) && invite.sended.include?(current_user.id)
     respond_to do |format|
-      if invite.errors.blank?
-        invite.save unless invite.recipient == invite.sender
+      if invite.save
         format.html { render nothing: true }
       else
-        format.html { render json: { error: invite.errors } }
+        format.html { render json: { error: invite.errors } }#full_messages.to_sentence
       end
     end
   end
