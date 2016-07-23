@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   private
 
   def player_limit team
-    if team.users.count >= 5
-      errors.add :team, "This team has too many players, maximum: 5"
+    if self.teams.count >= 5
+      errors.add :team, "This player has too many teams, maximum: 5"
       raise ActiveRecord::Rollback
     end
   end
