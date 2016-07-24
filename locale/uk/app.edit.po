@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Accept"
+msgstr ""
+
 msgid "Captain"
 msgstr "Капітан"
 
 msgid "Choose Team"
-msgstr "Вибрати команду"
+msgstr "Виберіть команду"
 
 msgid "Confirm Password"
 msgstr "Підтвердження паролю"
@@ -43,7 +46,6 @@ msgstr "Створити Команду"
 msgid "Create new Post"
 msgstr "Створити нове оголошення"
 
-#, fuzzy
 msgid "Create new Team"
 msgstr "Створити нову Команду"
 
@@ -100,7 +102,10 @@ msgid "Match|Match begins"
 msgstr "Матч"
 
 msgid "Max teams"
-msgstr "Кількість гравців"
+msgstr "Кількість команд"
+
+msgid "Must be given please"
+msgstr ""
 
 msgid "Name"
 msgstr "Ім'я"
@@ -161,6 +166,9 @@ msgstr "Останні матчі"
 msgid "Registration"
 msgstr "Реєстрація"
 
+msgid "Reject"
+msgstr ""
+
 msgid "Remember me"
 msgstr "Запам'ятати мене"
 
@@ -168,6 +176,10 @@ msgid "Score"
 msgstr "Рахунок"
 
 msgid "Send"
+msgstr "Відправити"
+
+#, fuzzy
+msgid "Sender not must be recipient"
 msgstr "Відправити"
 
 msgid "Sign Up"
@@ -189,28 +201,48 @@ msgid "Teams"
 msgstr "Команди"
 
 msgid "Teams of player"
-msgstr "Команди"
+msgstr "Команди гравця"
 
+#, fuzzy
 msgid "Team|Country"
 msgstr "Країна"
 
+#, fuzzy
 msgid "Team|Full name"
-msgstr "Назва команди"
+msgstr "Команда"
 
+#, fuzzy
 msgid "Team|Image"
 msgstr "Команда"
 
 msgid "Team|Name"
 msgstr "Назва"
 
+#, fuzzy
 msgid "Team|Rating"
 msgstr "Рейтинг"
 
+#, fuzzy
 msgid "Team|Tag name"
-msgstr "Назва команди"
+msgstr "Команда"
 
 msgid "The player has not yet been involved in a team"
 msgstr "Цей гравець не буре участі в жодній команді"
+
+msgid "This name is already taken, choose another please"
+msgstr ""
+
+msgid "This player has too many teams, maximum: 5"
+msgstr ""
+
+msgid "This team has too many players, maximum: 5"
+msgstr ""
+
+msgid "This user has already received an invitation to this team"
+msgstr ""
+
+msgid "This user is already a member of this team"
+msgstr ""
 
 msgid "To register for the tournament you need to be authorized"
 msgstr "Для участі в турнірі ви повинні бути авторизовані"
@@ -264,6 +296,9 @@ msgstr "Ім'я"
 
 msgid "User|Played matches"
 msgstr "Зіграно матчів"
+
+msgid "User|Sign up"
+msgstr "Зареєструватись"
 
 #, fuzzy
 msgid "User|Win"

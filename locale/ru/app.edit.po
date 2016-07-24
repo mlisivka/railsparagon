@@ -18,61 +18,60 @@ msgstr ""
 " && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "\n"
 
-msgid "Captain"
+msgid "Accept"
 msgstr ""
 
-#, fuzzy
+msgid "Captain"
+msgstr "Капитан"
+
 msgid "Choose Team"
-msgstr "Команда"
+msgstr "Выберите команду"
 
 msgid "Confirm Password"
-msgstr ""
+msgstr "Подтверждение пароля"
 
 msgid "Country"
-msgstr ""
+msgstr "Страна"
 
 msgid "Create Match"
-msgstr ""
+msgstr "Создать Матч"
 
-#, fuzzy
 msgid "Create New Team"
-msgstr "Команда"
+msgstr "Создать новую команду"
 
 msgid "Create Post"
-msgstr ""
+msgstr "Создать объявление"
 
-#, fuzzy
 msgid "Create Team"
-msgstr "Команда"
+msgstr "Создать команду"
 
 msgid "Create new Post"
-msgstr ""
+msgstr "Создать новое объявление"
 
-#, fuzzy
 msgid "Create new Team"
-msgstr "Команда"
+msgstr "Створити нову Команду"
 
 msgid "Create new Tournament"
-msgstr ""
+msgstr "Создать новый турнир"
 
 msgid "Date begin"
-msgstr ""
+msgstr "Дата начала"
 
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
-#, fuzzy
 msgid "Full Team Name"
-msgstr "Команда"
+msgstr "Полное название команды"
 
 msgid "Hero"
-msgstr ""
+msgstr "Герой"
 
 msgid "Invite"
-msgstr ""
+msgstr "Приглашение"
 
+#, fuzzy
 msgid "Invite|Accepted"
-msgstr ""
+msgstr "Приглашение"
 
 msgid "Login"
 msgstr "Войти"
@@ -81,127 +80,134 @@ msgid "Logout"
 msgstr "Выйти"
 
 msgid "Lose"
-msgstr ""
+msgstr "Проигрышей"
 
-#, fuzzy
 msgid "Match"
-msgstr "Матчи"
+msgstr "Матч"
 
-#, fuzzy
 msgid "Match history"
-msgstr "Матчи"
+msgstr "История матчей"
 
 msgid "Matches"
 msgstr "Матчи"
 
+#, fuzzy
 msgid "Match|Agora link"
-msgstr ""
+msgstr "Матч"
 
+#, fuzzy
 msgid "Match|End"
-msgstr ""
+msgstr "Матч"
 
+#, fuzzy
 msgid "Match|Match begins"
-msgstr ""
+msgstr "Матч"
 
 msgid "Max teams"
+msgstr "Количество команд"
+
+msgid "Must be given please"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 msgid "Name must be between 3 and 16 characters"
-msgstr ""
+msgstr "Имя должно быть от 3 до 16 символов"
 
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 msgid "Passwords Don't Match"
-msgstr ""
+msgstr "Пароли не совпадают"
 
 msgid "Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace"
-msgstr ""
+msgstr "Пароли должны быть от 7 до 36 символов, как минимум иметь 1 цифру, 1 большую букву и не должны иметь пробелов"
 
 msgid "Payment"
-msgstr ""
+msgstr "Взнос"
 
 msgid "Played"
-msgstr ""
+msgstr "Сыграно"
 
 msgid "Players"
-msgstr ""
+msgstr "Игроки"
 
 msgid "Please sign in"
-msgstr ""
+msgstr "Пожалуйста, войдите в систему"
 
 msgid "Please sign up"
-msgstr ""
+msgstr "Пожалуйста, зарегистрируйтесь"
 
 msgid "Post"
-msgstr ""
+msgstr "Объявления"
 
+#, fuzzy
 msgid "Post|Text"
-msgstr ""
+msgstr "Объявления"
 
+#, fuzzy
 msgid "Post|Title"
-msgstr ""
+msgstr "Объявления"
 
 msgid "Prize pool"
-msgstr ""
+msgstr "Призовой фонд"
 
 msgid "Profile"
 msgstr "Профиль"
 
-#, fuzzy
 msgid "Profile Team"
-msgstr "Профиль"
+msgstr "Профиль команди"
 
 msgid "Rating"
-msgstr ""
+msgstr "Рейтинг"
 
 msgid "Recent matches"
 msgstr "Последние матчи"
 
 msgid "Registration"
+msgstr "Регистрация"
+
+msgid "Reject"
 msgstr ""
 
 msgid "Remember me"
-msgstr ""
+msgstr "Запомни меня"
 
 msgid "Score"
-msgstr ""
+msgstr "Счёт"
 
 msgid "Send"
-msgstr ""
+msgstr "Отправить"
+
+#, fuzzy
+msgid "Sender not must be recipient"
+msgstr "Отправить"
 
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#, fuzzy
 msgid "Sign in"
-msgstr "Регистрация"
+msgstr "Войти"
 
 msgid "Team"
 msgstr "Команда"
 
-#, fuzzy
 msgid "Team Tag / Abbreviation"
-msgstr "Команда"
+msgstr "Короткое название / Аббревиатура"
 
-#, fuzzy
 msgid "Team URL"
-msgstr "Команда"
+msgstr "Сайт команди"
 
-#, fuzzy
 msgid "Teams"
-msgstr "Команда"
+msgstr "Команды"
 
-#, fuzzy
 msgid "Teams of player"
-msgstr "Команда"
+msgstr "Команды игрока"
 
 #, fuzzy
 msgid "Team|Country"
-msgstr "Команда"
+msgstr "Страна"
 
 #, fuzzy
 msgid "Team|Full name"
@@ -211,83 +217,103 @@ msgstr "Команда"
 msgid "Team|Image"
 msgstr "Команда"
 
-#, fuzzy
 msgid "Team|Name"
-msgstr "Команда"
+msgstr "Название"
 
 #, fuzzy
 msgid "Team|Rating"
-msgstr "Команда"
+msgstr "Рейтинг"
 
 #, fuzzy
 msgid "Team|Tag name"
 msgstr "Команда"
 
 msgid "The player has not yet been involved in a team"
+msgstr "Этот игрок не берет участия не в одной команде"
+
+msgid "This name is already taken, choose another please"
+msgstr ""
+
+msgid "This player has too many teams, maximum: 5"
+msgstr ""
+
+msgid "This team has too many players, maximum: 5"
+msgstr ""
+
+msgid "This user has already received an invitation to this team"
+msgstr ""
+
+msgid "This user is already a member of this team"
 msgstr ""
 
 msgid "To register for the tournament you need to be authorized"
-msgstr ""
+msgstr "Для участия в турнире вы должны быть авторизованы"
 
-#, fuzzy
 msgid "Tournament"
-msgstr "Турниры"
+msgstr "Турнир"
 
 msgid "Tournaments"
 msgstr "Турниры"
 
 #, fuzzy
 msgid "Tournament|End"
-msgstr "Турниры"
-
-msgid "Tournament|Max team"
-msgstr ""
-
-msgid "Tournament|Payment"
-msgstr ""
-
-msgid "Tournament|Prize"
-msgstr ""
-
-msgid "Tournament|Title"
-msgstr ""
-
-msgid "Tournament|Tournament begins"
-msgstr ""
-
-msgid "User"
-msgstr ""
-
-msgid "User name"
-msgstr ""
-
-msgid "User|Kda"
-msgstr ""
-
-msgid "User|Lose"
-msgstr ""
-
-msgid "User|Name"
-msgstr ""
-
-msgid "User|Played matches"
-msgstr ""
-
-msgid "User|Win"
-msgstr ""
-
-msgid "Win"
-msgstr ""
+msgstr "Турнир"
 
 #, fuzzy
+msgid "Tournament|Max team"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Payment"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Prize"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Title"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Tournament begins"
+msgstr "Турнир"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "User name"
+msgstr "Имя"
+
+#, fuzzy
+msgid "User|Kda"
+msgstr "Пользователь"
+
+#, fuzzy
+msgid "User|Lose"
+msgstr "Проигрышей"
+
+msgid "User|Name"
+msgstr "Имя"
+
+msgid "User|Played matches"
+msgstr "Сыграно матчей"
+
+msgid "User|Sign up"
+msgstr "Зарегистрироватся"
+
+#, fuzzy
+msgid "User|Win"
+msgstr "Пользователь"
+
+msgid "Win"
+msgstr "Побед"
+
 msgid "matches"
-msgstr "Матчи"
+msgstr "матчи"
 
 msgid "played"
-msgstr ""
+msgstr "Сыграно"
 
 msgid "winrate"
-msgstr ""
-
-#~ msgid "Team name"
-#~ msgstr "Команда"
+msgstr "процент побед"

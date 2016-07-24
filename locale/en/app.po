@@ -17,6 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "Accept"
+msgstr ""
+
 msgid "Captain"
 msgstr ""
 
@@ -98,6 +101,9 @@ msgstr ""
 msgid "Max teams"
 msgstr ""
 
+msgid "Must be given please"
+msgstr ""
+
 msgid "Name"
 msgstr ""
 
@@ -155,6 +161,9 @@ msgstr ""
 msgid "Registration"
 msgstr ""
 
+msgid "Reject"
+msgstr ""
+
 msgid "Remember me"
 msgstr ""
 
@@ -162,6 +171,9 @@ msgid "Score"
 msgstr ""
 
 msgid "Send"
+msgstr ""
+
+msgid "Sender not must be recipient"
 msgstr ""
 
 msgid "Sign Up"
@@ -204,6 +216,21 @@ msgid "Team|Tag name"
 msgstr ""
 
 msgid "The player has not yet been involved in a team"
+msgstr ""
+
+msgid "This name is already taken, choose another please"
+msgstr ""
+
+msgid "This player has too many teams, maximum: 5"
+msgstr ""
+
+msgid "This team has too many players, maximum: 5"
+msgstr ""
+
+msgid "This user has already received an invitation to this team"
+msgstr ""
+
+msgid "This user is already a member of this team"
 msgstr ""
 
 msgid "To register for the tournament you need to be authorized"
@@ -249,6 +276,9 @@ msgid "User|Name"
 msgstr ""
 
 msgid "User|Played matches"
+msgstr ""
+
+msgid "User|Sign up"
 msgstr ""
 
 msgid "User|Win"

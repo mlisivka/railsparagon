@@ -16,6 +16,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Accept"
+msgstr "Прийняти"
+
 msgid "Captain"
 msgstr "Капітан"
 
@@ -64,6 +67,10 @@ msgstr "Герой"
 msgid "Invite"
 msgstr "Запрошення"
 
+#, fuzzy
+msgid "Invite|Accepted"
+msgstr "Запрошення"
+
 msgid "Login"
 msgstr "Ввійти"
 
@@ -82,8 +89,23 @@ msgstr "Історія матчів"
 msgid "Matches"
 msgstr "Матчі"
 
+#, fuzzy
+msgid "Match|Agora link"
+msgstr "Матч"
+
+#, fuzzy
+msgid "Match|End"
+msgstr "Матч"
+
+#, fuzzy
+msgid "Match|Match begins"
+msgstr "Матч"
+
 msgid "Max teams"
 msgstr "Кількість команд"
+
+msgid "Field can not be empty"
+msgstr "Поле не може бути порожнім"
 
 msgid "Name"
 msgstr "Ім'я"
@@ -118,6 +140,14 @@ msgstr "Будь ласка, зареєструйтесь"
 msgid "Post"
 msgstr "Оголошення"
 
+#, fuzzy
+msgid "Post|Text"
+msgstr "Оголошення"
+
+#, fuzzy
+msgid "Post|Title"
+msgstr "Оголошення"
+
 msgid "Prize pool"
 msgstr "Призовий фонд"
 
@@ -136,6 +166,9 @@ msgstr "Останні матчі"
 msgid "Registration"
 msgstr "Реєстрація"
 
+msgid "Reject"
+msgstr "Відхилити"
+
 msgid "Remember me"
 msgstr "Запам'ятати мене"
 
@@ -145,11 +178,11 @@ msgstr "Рахунок"
 msgid "Send"
 msgstr "Відправити"
 
+msgid "Sender not must be recipient"
+msgstr "Відправник не може бути одержувачем"
+
 msgid "Sign Up"
 msgstr "Реєстрація"
-
-msgid "User|Sign up"
-msgstr "Зареєструватись"
 
 msgid "Sign in"
 msgstr "Увійти"
@@ -169,11 +202,38 @@ msgstr "Команди"
 msgid "Teams of player"
 msgstr "Команди гравця"
 
+#, fuzzy
+msgid "Team|Country"
+msgstr "Країна"
+
+#, fuzzy
+msgid "Team|Full name"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Image"
+msgstr "Команда"
+
 msgid "Team|Name"
 msgstr "Назва"
 
 msgid "The player has not yet been involved in a team"
-msgstr "Цей гравець не буре участі в жодній команді"
+msgstr "Цей гравець не бере участі в жодній команді"
+
+msgid "This name is already taken, choose another please"
+msgstr "Це ім'я вже зайняте, будь ласка виберіть інше"
+
+msgid "This user has exceeded the limit teams, maximum: 5"
+msgstr "Цей користувач перевищив ліміт команд, максимум: 5"
+
+msgid "This team has too many players, maximum: 10"
+msgstr "Ця команда має забагато гравців, максимум: 10"
+
+msgid "This user has already received an invitation to this team"
+msgstr "Цей користувач вже отримав запрошення в цю команду"
+
+msgid "This user is already a member of this team"
+msgstr "Цей користувач вже є учасником цієї команди"
 
 msgid "To register for the tournament you need to be authorized"
 msgstr "Для участі в турнірі ви повинні бути авторизовані"
@@ -184,17 +244,56 @@ msgstr "Турнір"
 msgid "Tournaments"
 msgstr "Турніри"
 
+#, fuzzy
+msgid "Tournament|End"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Max team"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Payment"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Prize"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Title"
+msgstr "Турнір"
+
+#, fuzzy
+msgid "Tournament|Tournament begins"
+msgstr "Турнір"
+
 msgid "User"
 msgstr "Користувач"
 
 msgid "User name"
 msgstr "Ім'я"
 
+#, fuzzy
+msgid "User|Kda"
+msgstr "Користувач"
+
+#, fuzzy
+msgid "User|Lose"
+msgstr "Програшів"
+
 msgid "User|Name"
 msgstr "Ім'я"
 
 msgid "User|Played matches"
 msgstr "Зіграно матчів"
+
+msgid "User|Sign up"
+msgstr "Зареєструватись"
+
+#, fuzzy
+msgid "User|Win"
+msgstr "Користувач"
 
 msgid "Win"
 msgstr "Перемог"

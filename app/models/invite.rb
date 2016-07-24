@@ -10,21 +10,21 @@ class Invite < ActiveRecord::Base
     invite.send_self
   end
   
-  def send_self # Відправник не може бути приймачем
+  def send_self # Відправник не може бути одержувачем
     if self.sender == self.recipient
-      errors.add(:recipient, "Sender not must be recipient")
+      errors.add(:recipient, _('Sender not must be recipient'))
     end
   end
   
   def already_member # Цей користувач вже є учасником цієї команди
     self.team.invites.map do |i|
-      self.errors.add(:user, "This user is already a member of this team") if i.accepted == true && i.recipient == self.recipient
+      self.errors.add(:user, _('This user is already a member of this team')) if i.accepted == true && i.recipient == self.recipient
     end
   end
   
   def already_received # Цей користувач вже отримав запрошення в цю команду
     self.team.invites.map do |i|
-      self.errors.add(:user, "This user has already received an invitation to this team") if i.accepted.nil? && i.recipient == self.recipient
+      self.errors.add(:user, _('This user has already received an invitation to this team')) if i.accepted.nil? && i.recipient == self.recipient
     end
   end
 

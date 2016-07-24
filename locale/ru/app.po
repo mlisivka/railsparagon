@@ -18,6 +18,9 @@ msgstr ""
 " && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "\n"
 
+msgid "Accept"
+msgstr "Принять"
+
 msgid "Captain"
 msgstr "Капитан"
 
@@ -66,6 +69,10 @@ msgstr "Герой"
 msgid "Invite"
 msgstr "Приглашение"
 
+#, fuzzy
+msgid "Invite|Accepted"
+msgstr "Приглашение"
+
 msgid "Login"
 msgstr "Войти"
 
@@ -84,8 +91,23 @@ msgstr "История матчей"
 msgid "Matches"
 msgstr "Матчи"
 
+#, fuzzy
+msgid "Match|Agora link"
+msgstr "Матч"
+
+#, fuzzy
+msgid "Match|End"
+msgstr "Матч"
+
+#, fuzzy
+msgid "Match|Match begins"
+msgstr "Матч"
+
 msgid "Max teams"
 msgstr "Количество команд"
+
+msgid "Field can not be empty"
+msgstr "Поле не может быть пустым"
 
 msgid "Name"
 msgstr "Имя"
@@ -120,6 +142,14 @@ msgstr "Пожалуйста, зарегистрируйтесь"
 msgid "Post"
 msgstr "Объявления"
 
+#, fuzzy
+msgid "Post|Text"
+msgstr "Объявления"
+
+#, fuzzy
+msgid "Post|Title"
+msgstr "Объявления"
+
 msgid "Prize pool"
 msgstr "Призовой фонд"
 
@@ -138,6 +168,9 @@ msgstr "Последние матчи"
 msgid "Registration"
 msgstr "Регистрация"
 
+msgid "Reject"
+msgstr "Отклонить"
+
 msgid "Remember me"
 msgstr "Запомни меня"
 
@@ -147,11 +180,11 @@ msgstr "Счёт"
 msgid "Send"
 msgstr "Отправить"
 
+msgid "Sender not must be recipient"
+msgstr "Отправитель не может быть получателем"
+
 msgid "Sign Up"
 msgstr "Регистрация"
-
-msgid "User|Sign up"
-msgstr "Зарегистрироватся"
 
 msgid "Sign in"
 msgstr "Войти"
@@ -171,11 +204,46 @@ msgstr "Команды"
 msgid "Teams of player"
 msgstr "Команды игрока"
 
+#, fuzzy
+msgid "Team|Country"
+msgstr "Страна"
+
+#, fuzzy
+msgid "Team|Full name"
+msgstr "Команда"
+
+#, fuzzy
+msgid "Team|Image"
+msgstr "Команда"
+
 msgid "Team|Name"
 msgstr "Название"
 
+#, fuzzy
+msgid "Team|Rating"
+msgstr "Рейтинг"
+
+#, fuzzy
+msgid "Team|Tag name"
+msgstr "Команда"
+
 msgid "The player has not yet been involved in a team"
 msgstr "Этот игрок не берет участия не в одной команде"
+
+msgid "This name is already taken, choose another please"
+msgstr "Это имя уже занято, пожалуйста выберите другое"
+
+msgid "This player has too many teams, maximum: 5"
+msgstr "Этот пользователь превысил лимит команд, максимум 5"
+
+msgid "This team has too many players, maximum: 5"
+msgstr "Эта команда имеет слишком много игроков, максимум: 10"
+
+msgid "This user has already received an invitation to this team"
+msgstr "Этот пользователь уже получил приглашение в эту команду"
+
+msgid "This user is already a member of this team"
+msgstr "Этот пользователь уже является участником этой команды"
 
 msgid "To register for the tournament you need to be authorized"
 msgstr "Для участия в турнире вы должны быть авторизованы"
@@ -186,17 +254,56 @@ msgstr "Турнир"
 msgid "Tournaments"
 msgstr "Турниры"
 
+#, fuzzy
+msgid "Tournament|End"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Max team"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Payment"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Prize"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Title"
+msgstr "Турнир"
+
+#, fuzzy
+msgid "Tournament|Tournament begins"
+msgstr "Турнир"
+
 msgid "User"
 msgstr "Пользователь"
 
 msgid "User name"
 msgstr "Имя"
 
+#, fuzzy
+msgid "User|Kda"
+msgstr "Пользователь"
+
+#, fuzzy
+msgid "User|Lose"
+msgstr "Проигрышей"
+
 msgid "User|Name"
 msgstr "Имя"
 
 msgid "User|Played matches"
 msgstr "Сыграно матчей"
+
+msgid "User|Sign up"
+msgstr "Зарегистрироватся"
+
+#, fuzzy
+msgid "User|Win"
+msgstr "Пользователь"
 
 msgid "Win"
 msgstr "Побед"

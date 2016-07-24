@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-07 23:03+0300\n"
-"PO-Revision-Date: 2016-07-07 23:03+0300\n"
+"POT-Creation-Date: 2016-07-24 18:02+0300\n"
+"PO-Revision-Date: 2016-07-24 18:02+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,6 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Accept"
+msgstr ""
 
 msgid "Captain"
 msgstr ""
@@ -99,6 +102,9 @@ msgstr ""
 msgid "Max teams"
 msgstr ""
 
+msgid "Must be given please"
+msgstr ""
+
 msgid "Name"
 msgstr ""
 
@@ -156,6 +162,9 @@ msgstr ""
 msgid "Registration"
 msgstr ""
 
+msgid "Reject"
+msgstr ""
+
 msgid "Remember me"
 msgstr ""
 
@@ -163,6 +172,9 @@ msgid "Score"
 msgstr ""
 
 msgid "Send"
+msgstr ""
+
+msgid "Sender not must be recipient"
 msgstr ""
 
 msgid "Sign Up"
@@ -205,6 +217,21 @@ msgid "Team|Tag name"
 msgstr ""
 
 msgid "The player has not yet been involved in a team"
+msgstr ""
+
+msgid "This name is already taken, choose another please"
+msgstr ""
+
+msgid "This player has too many teams, maximum: 5"
+msgstr ""
+
+msgid "This team has too many players, maximum: 5"
+msgstr ""
+
+msgid "This user has already received an invitation to this team"
+msgstr ""
+
+msgid "This user is already a member of this team"
 msgstr ""
 
 msgid "To register for the tournament you need to be authorized"
@@ -250,6 +277,9 @@ msgid "User|Name"
 msgstr ""
 
 msgid "User|Played matches"
+msgstr ""
+
+msgid "User|Sign up"
 msgstr ""
 
 msgid "User|Win"
