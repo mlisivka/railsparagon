@@ -10,7 +10,7 @@ class Invite < ActiveRecord::Base
     invite.send_self
   end
   
-  def send_self
+  def send_self # Відправник не може бути приймачем
     if self.sender == self.recipient
       errors.add(:recipient, "Sender not must be recipient")
     end
