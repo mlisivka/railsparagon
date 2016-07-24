@@ -8,4 +8,8 @@ class Admin::UsersController < AdminController
     super column_without: ['team_id']
   end
   
+  def new
+    super column_without: ['team_id']
+  end
+  
 end

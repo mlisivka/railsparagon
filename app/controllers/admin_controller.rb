@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   layout "admin"
+  before_filter :check_if_admin
   
   def index(options={}, &block)
     @value = controller_name.classify.constantize.all
@@ -28,6 +29,10 @@ class AdminController < ApplicationController
   
   def all_columns
     controller_name.classify.constantize.column_names
+  end
+  
+  def check_if_admin
+    render_403 unless params[:admin]
   end
   
 end

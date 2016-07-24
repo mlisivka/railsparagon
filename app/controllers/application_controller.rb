@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_gettext_locale
   
   protect_from_forgery with: :exception
-  helper_method :current_user, :team_invite, :log_in, :log_out, :store_location
+  helper_method :current_user, :team_invite
 
   def team_invite
     current_user.invitions.where("accepted IS NULL")
@@ -29,6 +29,14 @@ class ApplicationController < ActionController::Base
   def set_gettext_locale
     requested_locale = params[:locale] || session[:locale] || cookies[:locale] ||  request.env['HTTP_ACCEPT_LANGUAGE']
     session[:locale] = FastGettext.set_locale(requested_locale)
+  end
+  
+  def render_404
+    render file: 'public/404.html', status: 404, layout: false
+  end
+  
+  def render_403
+    render file: 'public/403.html', status: 403, layout: false
   end
 
 end
