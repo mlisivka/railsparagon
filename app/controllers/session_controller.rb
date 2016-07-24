@@ -1,12 +1,9 @@
 class SessionController < ApplicationController
   rescue_from ActionController::RedirectBackError, with: :redirect_to_default
-
-  def new
-    store_location
-  end
+  before_filter :store_location, only:[:new, :destroy]
 
   def create
-    user = User.find_by_name(params[:name])
+    user = User.where(name: params[:name]).first
     if user
        log_in user
        redirect_to session.delete(:return_to), notice: 'Logged In!'
@@ -16,7 +13,6 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    store_location
     log_out
     redirect_to session.delete(:return_to), notice: 'Logged Out!'
   end

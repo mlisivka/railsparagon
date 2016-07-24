@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
+  before_filter :store_location, only:[:new]
 
   def index
     @users = User.all
-  end
-
-  def new
-    store_location
   end
 
   def create
