@@ -17,8 +17,8 @@ class Invite < ActiveRecord::Base
   end
   
   def already_member # Цей користувач вже є учасником цієї команди
-    self.team.invites.map do |i|
-      self.errors.add(:user, _('This user is already a member of this team')) if i.accepted == true && i.recipient == self.recipient
+    self.team.users.map do |i|
+      self.errors.add(:user, _('This user is already a member of this team')) if i == self.recipient
     end
   end
   
