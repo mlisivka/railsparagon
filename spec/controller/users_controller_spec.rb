@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
   
-  describe ".create" do
+  describe '.create' do
     
     it 'when validation pass' do
       session[:return_to] = root_path
@@ -15,6 +15,21 @@ describe UsersController, type: :controller do
       expect(response).to render_template :new
     end
     
+  end
+  
+  describe '.show' do
+  
+    it 'when user found' do
+      create(:user)
+      get :show, id: 1
+      expect(response).to render_template :show
+    end
+    
+    it 'when user not found' do
+      get :show, id: 0
+      expect(response.status).to eq(404)
+    end
+  
   end
   
 end

@@ -42,8 +42,8 @@
 						 <button class="btn btn-primary btn-send" id="send_inv"><%= _('Send') %></button>
 	    	  	</div>
 	    	  <% end %>
-					<% unless @team_of_user.blank? %>
-			  		  <% @team_of_user.each do |i| %>
+					<% unless @user.teams.blank? %>
+			  		  <% @user.teams.each do |i| %>
 						<div class="team-info">
 						  <img src="http://placehold.it/60">
 						  <%= s_('Team|Name') %>: <%= i.full_name %>
