@@ -5,9 +5,9 @@ class Invite < ActiveRecord::Base
   belongs_to :recipient, class_name: "User"
   
   validate do |invite|
-    invite.already_member
     invite.already_received
     invite.send_self
+    invite.already_member
   end
   
   def send_self # Відправник не може бути одержувачем
