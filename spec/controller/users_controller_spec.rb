@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
   
+  when_not_found :show
+  
   describe '.create' do
     
     it 'when validation pass' do
@@ -23,11 +25,6 @@ describe UsersController, type: :controller do
       create(:user)
       get :show, id: 1
       expect(response).to render_template :show
-    end
-    
-    it 'when user not found' do
-      get :show, id: 0
-      expect(response.status).to eq(404)
     end
   
   end

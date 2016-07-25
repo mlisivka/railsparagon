@@ -5,10 +5,10 @@ describe SessionController, type: :controller do
   describe '.create' do
     
     it 'when user found' do
-      create(:user, name: "admin")
+      user = create(:user, name: "admin")
       session[:return_to] = root_path
-      post :create, name: "admin" 
-      expect(session[:user_id]).to eq(1)
+      post :create, name: user.name
+      expect(session[:user_id]).to eq(user.id)
       expect(response).to redirect_to root_path
     end
     
