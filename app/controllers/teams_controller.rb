@@ -9,9 +9,11 @@ class TeamsController < ApplicationController
   end
 
   def create
-    user = User.find(current_user)
-    @team = user.teams.create(full_name: team_params[:full_name], country: team_params[:country], image: team_params[:image], captain_id: user.id)
-    if @team.errors.empty?
+    @team = Team.new(team_params)
+    @team.captain_id = current_user.id
+    @team.users << current_user
+    @team.errors
+    if @team.save
       redirect_to teams_path
     else
       render "new"
