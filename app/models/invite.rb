@@ -4,7 +4,7 @@ class Invite < ActiveRecord::Base
   belongs_to :sender,    class_name: "User"
   belongs_to :recipient, class_name: "User"
   
-  validate do |invite|
+  validate on: :create do |invite|
     invite.already_received
     invite.send_self
     invite.already_member

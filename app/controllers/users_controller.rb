@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.where(id: params[:id]).first
     render_404 unless @user
-    @teams = Team.where(captain_id: current_user)
+    @teams = current_user.teams
   end
 
   private
