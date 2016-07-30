@@ -21,10 +21,9 @@ class InvitesController < ApplicationController
   end
 
   def update
-    @invite = Invite.find_by_id(params[:id])
-    @invite.update(accepted: params[:accepted])
+    invite = Invite.update(params[:id], accepted: params[:accepted])
     if params[:accepted] == "true"
-      current_user.teams << @invite.team
+      current_user.teams << invite.team
     end
     respond_to do |format|
       format.html { render nothing: true }
