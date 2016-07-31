@@ -3,6 +3,6 @@ $(".error_msg").remove();
 	$("tbody").append("<%= escape_javascript(render 'team') %>")
 <% else %>
 	<% @tournament.errors.each do |attribute, error| %>
-		$("#pick-team").after('<div class="error_msg"><%= _('Error') %></div>')
+		$("#pick-team").after('<div class="error_msg"><%= error %></div>')
 	<% end %>
 <% end %>

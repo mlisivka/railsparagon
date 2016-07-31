@@ -34,11 +34,7 @@ class TournamentsController < ApplicationController
   def registration_team
     @tournament = Tournament.find(params[:id])
     @team = Team.find(params[:team_id])
-    unless @tournament.teams.include?(@team)
-      @tournament.teams << @team
-    else
-      @tournament.errors.add(:team, "This team has already been registered on this tournament")
-    end
+    @tournament.teams << @team
     #if @tournament.teams.length == 8
     #  generate_matches(@tournament.teams)
     #end
