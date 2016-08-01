@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'posts#index'
-  
+
   resources :session, only: [:new, :create, :destroy]
 
   get  'signup', to: 'users#new'
@@ -10,13 +10,14 @@ Rails.application.routes.draw do
   get  'logout', to: 'session#destroy', as: 'logout'
 
   resources :posts, :teams, :matches, :invites
-  
+
   resources :users do
     get :send_invite, on: :member
   end
-  
+
   resources :tournaments do
     get :registration_team, on: :member
+    get :detail, on: :member
   end
 
   namespace :admin do

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :store_location, only:[:new]
 
   def index
-    @users = User.all
+    @users = User.all.includes(:teams)
   end
 
   def create

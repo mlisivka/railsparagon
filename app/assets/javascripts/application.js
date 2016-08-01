@@ -61,7 +61,7 @@ $(document).ready(function() {
 	        var obj = JSON.parse(data);
         	if (obj.error.user[0]) {
         	  $("#pick-team").after("<div class='error_msg'>" + obj.error.user[0] + "</div>");
-        	} 
+        	}
 				}
 				else {
           $("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
@@ -71,6 +71,7 @@ $(document).ready(function() {
   });
   $('.dropdown-menu#request > li > a').click(function() {
     $.ajax({
+      url: path + '/detail',
       type: 'GET',
       data: {
         team_id: team_id
