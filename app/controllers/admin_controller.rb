@@ -3,13 +3,13 @@ class AdminController < ApplicationController
   before_filter :check_if_admin
   
   def index(options={}, &block)
-    @value = controller_name.classify.constantize.all
+    @value = controller.all
     @column = options[:column] || all_columns
   end
   
   def show(options={}, &block)
     p options[:column_without]
-    @value = controller_name.classify.constantize.find(params[:id])
+    @record = controller.where(params[:id]).first
     if options[:column_without]
       @column = all_columns - options[:column_without]
     else
@@ -18,6 +18,16 @@ class AdminController < ApplicationController
   end
   
   def new(options={}, &block)
+    @record = controller.new
+    if options[:column_without]
+      @column = all_columns - ["id", "created_at", "updated_at"] - options[:column_without]
+    else
+      @column = all_columns - ["id", "created_at", "updated_at"]
+    end
+  end
+  
+  def edit(options={}, &block)
+    @record = controller.where(id: params[:id]).first
     if options[:column_without]
       @column = all_columns - ["id", "created_at", "updated_at"] - options[:column_without]
     else
@@ -28,11 +38,15 @@ class AdminController < ApplicationController
   private
   
   def all_columns
-    controller_name.classify.constantize.column_names
+    controller.column_names
   end
   
   def check_if_admin
     render_403 unless params[:admin]
+  end
+  
+  def controller
+    controller_name.classify.constantize
   end
   
 end

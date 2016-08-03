@@ -8,4 +8,8 @@ class Admin::TournamentsController < AdminController
     super column_without: ['team_id', 'end']
   end
   
+  def edit
+    super column_without: ['team_id', 'end']
+  end
+  
 end

@@ -12,4 +12,8 @@ class Admin::UsersController < AdminController
     super column_without: ['team_id']
   end
   
+  def edit
+    super column_without: ['team_id']
+  end
+  
 end
