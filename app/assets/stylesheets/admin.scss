@@ -1,0 +1,14 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+@import "bootstrap/forms";
+
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+
+.navbar{
+	margin-bottom: 0;
+}
