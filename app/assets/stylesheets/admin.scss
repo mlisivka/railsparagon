@@ -1,22 +1,14 @@
-@import "bootstrap";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
 
-.jumbotron{
-	margin-top:-20px;
-	padding:0;
-	height: 54px;
-}
-.titlebar_left{
-	float:left;
-}
-.titlebar_right{
-	float:right;
-	margin:10px
-}
-.title{
-	padding:6px;
-	background-color: #f5f5f5;
-	border:1px solid #e3e3e3;
-	margin-bottom:-4px;
-	position:relative;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+@import "bootstrap/forms";
+
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+
+.navbar{
+	margin-bottom: 0;
 }
