@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :invites
+    resources :matches
+    resources :posts
+    resources :teams
+    resources :tournaments
+    resources :users
+
+    root to: "invites#index"
+  end
+
   root 'posts#index'
   
   resources :session, only: [:new, :create, :destroy]
@@ -17,11 +28,6 @@ Rails.application.routes.draw do
   
   resources :tournaments do
     get :registration_team, on: :member
-  end
-
-  namespace :admin do
-    root '/admin#dashboard'
-    resources :posts, :teams, :users, :matches, :tournaments, :invites
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

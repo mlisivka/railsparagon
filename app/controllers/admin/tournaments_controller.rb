@@ -1,15 +1,19 @@
-class Admin::TournamentsController < AdminController
-  
-  def show
-    super column_without: ['team_id']
+module Admin
+  class TournamentsController < Admin::ApplicationController
+    # To customize the behavior of this controller,
+    # simply overwrite any of the RESTful actions. For example:
+    #
+    # def index
+    #   super
+    #   @resources = Tournament.all.paginate(10, params[:page])
+    # end
+
+    # Define a custom finder by overriding the `find_resource` method:
+    # def find_resource(param)
+    #   Tournament.find_by!(slug: param)
+    # end
+
+    # See https://administrate-docs.herokuapp.com/customizing_controller_actions
+    # for more information
   end
-  
-  def new
-    super column_without: ['team_id', 'end']
-  end
-  
-  def edit
-    super column_without: ['team_id', 'end']
-  end
-  
 end

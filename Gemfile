@@ -15,6 +15,8 @@ end
 
 gem 'gettext'
 gem 'gettext_i18n_rails'
+gem 'administrate'
+gem 'bourbon'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -26,6 +28,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'bootstrap-sass', '~> 3.3.1'
+
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
