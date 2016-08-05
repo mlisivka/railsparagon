@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.where(id: params[:id]).first
     render_404 unless @user
-    @teams = current_user.teams if current_user
+    @teams = current_user.teams if user_signed_in?
   end
 
   private

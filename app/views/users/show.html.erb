@@ -27,7 +27,7 @@
 			<div class="cover">
 				<div>
 					<div class="title"><%= _('Teams of player') %></div>
-	    	  <% if current_user && current_user.id != params[:id].to_i %>
+	    	  <% if user_signed_in? && current_user.id != params[:id].to_i %>
 	    	 	 <div id="pick-team">
 	    	     <div class="btn-group btn-input clearfix team-select">
 	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">

@@ -33,6 +33,12 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 						<li id="divider"></li>
+						<li>
+							<span id="locale" class="glyphicon glyphicon-globe" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
+							<ul class="dropdown-menu" id="locale_list" style="display: none">
+								<%= locale_swither(FastGettext.available_locales) %>
+               </ul>
+            </li>
             <% if user_signed_in? %>
 							<% unless team_invite.empty? %>
 							<li>

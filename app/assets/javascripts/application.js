@@ -115,5 +115,11 @@ $(document).ready(function() {
     } else if ($("#notify").is(':visible') && !$(e.target).closest("#notify").length && e.target.id != "notify-cl") {
       $("#notify").hide();
     }
+		if(e.target.id == "locale"){
+			$("#locale_list").toggle();
+		}
+		else{
+			$("#locale_list").hide();
+		}
   });
 });

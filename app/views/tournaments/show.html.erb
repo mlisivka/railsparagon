@@ -12,7 +12,7 @@
 	      	    <li class="list-group-item"><%= _('Date begin') %>&nbsp;&nbsp; <%= @tournament.tournament_begins.strftime('%d/%m/%Y %H:%M') %></li>
 						</ul>
       	  </div>
-      	  <% if current_user %>
+      	  <% if user_signed_in? %>
       	  	<div id="pick-team">
  	    	    	<div class="btn-group btn-input clearfix team-select">
  	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
