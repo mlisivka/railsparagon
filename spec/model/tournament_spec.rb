@@ -10,7 +10,7 @@ describe Tournament do
 
     it '#team_dublicate' do
       tournament.teams << team
-      expect{ tournament.teams. << team }.to raise_exception ActiveRecord::Rollback
+      expect{ tournament.teams << team }.to raise_exception ActiveRecord::Rollback
     end
    
     it '#team_limit' do

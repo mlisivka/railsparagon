@@ -9,6 +9,8 @@ describe User do
   describe '.before_add' do
 
     it '#team_limit' do
+      team.users << users
+      puts team.errors.inspect
       expect{ team.users << users }.to raise_exception ActiveRecord::Rollback
     end
 
