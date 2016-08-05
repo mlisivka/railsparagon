@@ -17,6 +17,7 @@ gem 'gettext'
 gem 'gettext_i18n_rails'
 gem 'administrate'
 gem 'bourbon'
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

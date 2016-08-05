@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   namespace :admin do
     resources :invites
     resources :matches
@@ -13,12 +14,12 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :session, only: [:new, :create, :destroy]
+  #resources :session, only: [:new, :create, :destroy]
 
-  get  'signup', to: 'users#new'
-  get  'login', to: 'session#new', as: 'login'
-  post 'login', to: 'session#create'
-  get  'logout', to: 'session#destroy', as: 'logout'
+  #get  'signup', to: 'users#new'
+  #get  'login', to: 'session#new', as: 'login'
+  #post 'login', to: 'session#create'
+  #get  'logout', to: 'session#destroy', as: 'logout'
 
   resources :posts, :teams, :matches, :invites
 

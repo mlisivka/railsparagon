@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :store_location, only:[:new]
+  #before_filter :store_location, only:[:new]
 
   def index
     @users = User.all.includes(:teams)
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name)#, :password, :confirm_password
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
 end

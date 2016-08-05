@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
   has_and_belongs_to_many :teams, before_add: :player_limit
@@ -6,11 +10,12 @@ class User < ActiveRecord::Base
   has_many :invitions,    class_name: "Invite", foreign_key: "recipient_id"
   has_many :send_invites, class_name: "Invite", foreign_key: "sender_id"
   
-  validates :name,
+  validates :name, on: :create,
     presence: { message: _('Field can not be empty') },
     format: { with: /\A[A-Za-z0-9]{3,16}\z/, message: _('Name must be between 3 and 16 characters') },
     uniqueness: { message: _('This name is already taken, choose another please') }
-  #validates :password, confirmation: true
+  validates_uniqueness_of :email
+  validates :password, confirmation: true
   
   private
 

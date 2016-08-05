@@ -2,14 +2,16 @@ class ApplicationController < ActionController::Base
   before_filter :set_gettext_locale
 
   protect_from_forgery with: :exception
-  helper_method :current_user, :team_invite
+  helper_method :team_invite
+  
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
 
   def team_invite
     current_user.invitions.where("accepted IS NULL")
-  end
-
-  def current_user
-    User.find_by_id(session[:user_id])
   end
 
   def log_in(user)
