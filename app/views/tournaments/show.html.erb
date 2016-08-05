@@ -30,7 +30,7 @@
     	      </div>
     	    <% else %>
     	      <div><%= _('To register for the tournament you need to be authorized') %></div>
-    	      <%= link_to _('Login'), login_path %>
+    	      <%= link_to _('Login'), new_user_session_path %>
     	    <% end %>
     	  </div>
     	  <div class="col-sm-8">
@@ -40,7 +40,7 @@
     	          <tr>
     	            <th>#</th>
     	            <th></th>
-    	            <th><%= s_('Team|Name') %></th>
+    	            <th><%= s_('Team|Name') %><span class="pull-right"><%= @tournament.teams.length %>/<%= @tournament.max_team %></span></th>
     	          </tr>
     	        </thead>
     	        <tbody>
