@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require ckeditor/init
 
 $(document).ready(function() {
   var path = window.location.pathname;

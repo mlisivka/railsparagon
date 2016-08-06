@@ -21,6 +21,16 @@ class UserDashboard < Administrate::BaseDashboard
     team_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    email: Field::String,
+    encrypted_password: Field::String,
+    reset_password_token: Field::String,
+    reset_password_sent_at: Field::DateTime,
+    remember_created_at: Field::DateTime,
+    sign_in_count: Field::Number,
+    current_sign_in_at: Field::DateTime,
+    last_sign_in_at: Field::DateTime,
+    current_sign_in_ip: Field::String,
+    last_sign_in_ip: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,8 +39,9 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :name,
+    :posts,
     :teams,
+    :invitions,
     :send_invites,
   ].freeze
 
@@ -43,6 +54,7 @@ class UserDashboard < Administrate::BaseDashboard
     :send_invites,
     :id,
     :name,
+    :email,
     :played_matches,
     :win,
     :lose,
@@ -50,22 +62,20 @@ class UserDashboard < Administrate::BaseDashboard
     :team_id,
     :created_at,
     :updated_at,
+    :sign_in_count,
+    :current_sign_in_at,
+    :last_sign_in_at,
+    :current_sign_in_ip,
+    :last_sign_in_ip,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :posts,
-    :teams,
-    :invitions,
-    :send_invites,
     :name,
-    :played_matches,
-    :win,
-    :lose,
-    :kda,
-    :team_id,
+    :email,
+    :encrypted_password,
   ].freeze
 
   # Overwrite this method to customize how users are displayed

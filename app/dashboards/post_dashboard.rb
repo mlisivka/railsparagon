@@ -11,7 +11,8 @@ class PostDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
-    text: Field::Text,
+    content: CkeditorField,
+    image: PaperclipField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,18 +24,20 @@ class PostDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
+    :image,
     :id,
     :title,
-    :text,
+    :content,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
+    :image,
     :id,
     :title,
-    :text,
+    :content,
     :created_at,
     :updated_at,
   ].freeze
@@ -44,8 +47,9 @@ class PostDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
+    :image,
     :title,
-    :text,
+    :content,
   ].freeze
 
   # Overwrite this method to customize how posts are displayed

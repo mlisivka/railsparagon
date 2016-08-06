@@ -18,6 +18,8 @@ gem 'gettext_i18n_rails'
 gem 'administrate'
 gem 'bourbon'
 gem 'devise'
+gem 'paperclip', '4.3.7'
+gem 'ckeditor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
