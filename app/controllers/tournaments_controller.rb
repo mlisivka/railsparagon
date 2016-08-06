@@ -10,18 +10,6 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.where(id: params[:id]).first
   end
 
-  def update
-  end
-
-  def create
-    @tournament = Tournament.create(tournament_params)
-    if @tournament.errors.empty?
-      redirect_to tournaments_path
-    else
-      render "new"
-    end
-  end
-
   def registration_team
     @tournament = Tournament.find(params[:id])
     @team = Team.find(params[:team_id])
