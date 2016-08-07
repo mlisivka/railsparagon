@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(id: params[:id]).first
+    @user = !params[:name].nil? ? User.where('lower(name) = ?', params[:name].downcase).first : current_user
+    puts @user.inspect
     render_404 unless @user
     @teams = current_user.teams if user_signed_in?
   end
