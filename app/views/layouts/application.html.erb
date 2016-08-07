@@ -4,7 +4,7 @@
 		
     <title>ParagonRails</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, async: true %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,10 +60,10 @@
                 </li>
 								<% end %>
 							<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), destroy_user_session_path, :method => :delete %></li>
+              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), logout_path, :method => :delete %></li>
             <% else %>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> #{_('Log in')}"), new_user_session_path %></li>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> #{_('Sign up')}"), new_user_registration_path %></li>
+              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> #{_('Log in')}"), login_path %></li>
+              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> #{_('Sign up')}"), register_path %></li>
             <% end %>
           </ul>
         </div>

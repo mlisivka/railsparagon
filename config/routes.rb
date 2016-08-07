@@ -4,26 +4,32 @@ Rails.application.routes.draw do
   
   mount Ckeditor::Engine => '/ckeditor'
   
-  devise_for :users
+  devise_for :users, skip: :session
+  devise_scope :user do
+    get    '/login' => 'devise/sessions#new'
+    post   '/login' => 'devise/sessions#create'
+    delete '/logout' => 'devise/sessions#destroy'
+    get    '/register' => 'devise/registrations#new'
+  end
   
   namespace :admin do
     resources :posts, :tournaments, :teams, :invites, :users, :matches
 
-    root to: "invites#index"
+    root to: 'posts#index'
   end
 
-  resources :posts, :matches
+  resources :posts, :matches, only: [:index, :show]
   resources :invites
   resources :teams
   
-  get '/profile', to: "users#show"
-   get '/profile/:name', to: "users#show"
+  get '/profile', to: 'users#show'
+  get '/profile/:name', to: 'users#show', as: 'user'
 
-  resources :users do
+  resources :users, only: :index do
     get :send_invite, on: :member
   end
 
-  resources :tournaments do
+  resources :tournaments, only: [:index, :show] do
     get :registration_team, on: :member
     get :detail, on: :member
   end

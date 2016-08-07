@@ -509,3 +509,16 @@ border-top: solid 8px #87CEEB;
 	color: red;
 	text-align: center;
 }
+.alert{
+  margin-top: -20px;
+  border-radius: 0;
+}
+.alert-success{
+	background-color: #DFF2BF;
+}
+.alert-danger{
+	background-color: #FFBABA;
+}
+.alert-warning{
+	background-color: #FEEFB3;
+}

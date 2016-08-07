@@ -7,8 +7,8 @@ describe UsersController, type: :controller do
   describe '.show' do
   
     it 'when user found' do
-      create(:user)
-      get :show, id: 1
+      user = create(:user)
+      get :show, name: user.name
       expect(response).to render_template :show
     end
   
