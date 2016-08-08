@@ -62,8 +62,8 @@
 							<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
               <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), logout_path, :method => :delete %></li>
             <% else %>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> #{_('Log in')}"), login_path %></li>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> #{_('Sign up')}"), register_path %></li>
+              <li><%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> #{_('Log in')}"), login_path %></li>
+              <li><%= link_to raw("<span class='glyphicon glyphicon-user'></span> #{_('Sign up')}"), register_path %></li>
             <% end %>
           </ul>
         </div>
@@ -79,11 +79,60 @@
 
     <%= yield %>
     <footer class="footer">
-      <div class="container">
-  		  <p class="navbar-text pull-left" style="text-align: center;width: 100%;margin-left: auto">
-  			Copyright © 2016 - Site Built By SpiriKoN
-  		  </p>
-      </div>
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
+								<h3>About</h3>
+								<ul class="list-unstyled">
+									<li><a href="#">Contact</a></li>
+									<li><a href="#">Feedback</a></li>
+									<li><a href="#">Tree on a lake</a></li>
+									<li><a href="#">Don’t stop questioning</a></li>
+								</ul>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
+									<h3>Latest news</h3>
+									<ul class="list-unstyled">
+										<li><a href="#">Solace of a lonely highway</a></li>
+										<li><a href="#">Write with purpose</a></li>
+										<li><a href="#">Tree on a lake</a></li>
+										<li><a href="#">Don’t stop questioning</a></li>
+									</ul>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
+									<h3>Language</h3>
+									<ul class="list-unstyled">
+										<li><a href="#">English</a></li>
+										<li><a href="#">Українська</a></li>
+										<li><a href="#">Русский</a></li>
+										<li><a href="#">Polski</a></li>
+									</ul>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
+									<h3>Latest Tournament</h3>
+									<ul class="list-unstyled">
+										<li><a href="#">Solace of a lonely highway</a></li>
+										<li><a href="#">Write with purpose</a></li>
+										<li><a href="#">Tree on a lake</a></li>
+										<li><a href="#">Don’t stop questioning</a></li>
+									</ul>
+							</div>
+						</div>
+					</div>
+				<section style="background-color:#28354f">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="social">
+									<a href="#" class="social-icon twitter"><span>TW</span></a>
+									<a href="#" class="social-icon facebook"><span>FB</span></a>
+									<a href="#" class="social-icon vk"><span>VK</span></a>
+								</div>
+								<p style="text-align: center">Copyright © 2016 RailsParagon</p>
+							</div>
+						</div>
+					</div>
+				</section>
     </footer>
   </body>
 </html>

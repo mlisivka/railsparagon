@@ -36,7 +36,6 @@ html {
  min-height: 100%;
 }
 body{
-  margin-bottom: 60px;
 	//background: url(asset-path('bg_o.jpg')) no-repeat center center fixed;
 	//background: url(asset-path('paragon1.jpg')) no-repeat center center fixed;
 	//background: url(asset-path('paragon2.jpg')) no-repeat center center fixed;
@@ -83,7 +82,7 @@ body{
 }
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: -230px;
   width: 100%;
   background-color: $main_colora;
   color: $orange;
@@ -379,7 +378,6 @@ a.spoiler.change:after {
     margin-right: -30px;
   }
 }
-
 .left-navbar li {
   background-color: #F8F8F8;
 }
@@ -416,9 +414,6 @@ a.spoiler.change:after {
 .players {
   width: 60%;
   margin: auto;
-}
-.recent-matches{
-  //background: url('http://cdn.dota2lounge.com/img/sub.jpg');
 }
 .recent-matches>ul {
   //margin-top: 10px;
@@ -521,4 +516,46 @@ border-top: solid 8px #87CEEB;
 }
 .alert-warning{
 	background-color: #FEEFB3;
+}
+.col-centered{
+  text-align:center;
+}
+.social{
+	text-align: center;
+	margin-top: 7px;
+}
+.social a {
+	position: relative;
+	display: inline-block;
+	min-width: 40px;
+	padding: 10px 0px;
+	margin: 0px 4px;
+	overflow: hidden;
+	text-align: center;
+	background-color: rgb(215, 215, 215);
+	border-radius: 50%;
+}
+a.social-icon {
+	text-decoration: none;
+}
+a.social-icon:hover {
+	color: #fff !important;
+}
+a.facebook {
+	color: #3b5998 !important;
+}
+a.facebook:hover {		
+	background-color: #3b5998 !important;
+}
+a.twitter {
+	color: #1da1f2 !important;
+}
+a.twitter:hover {
+	background-color: #1da1f2 !important;
+}
+a.vk{
+  color: #507299 !important;
+}
+a.vk:hover{
+  background-color: #507299 !important;
 }
