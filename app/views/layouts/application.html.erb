@@ -73,7 +73,7 @@
     <% flash.each do |key, value| %>
       <%= content_tag(:div, class: "alert alert-success fade in", id: "success-alert") do %>
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Success!<%= key %></strong><%= value %>
+        <strong><%= key %>!</strong><%= value %>
       <% end %>
     <% end %>
 
