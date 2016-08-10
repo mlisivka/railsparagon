@@ -3,6 +3,7 @@ class CreateMatches < ActiveRecord::Migration
     create_table :matches do |t|
       t.datetime :match_begins
       t.string   :agora_link
+      t.string   :password
       t.string   :status, default: "not happened", null: false
       t.timestamps null: false
     end

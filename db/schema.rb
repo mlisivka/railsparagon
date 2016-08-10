@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160810102448) do
   create_table "matches", force: :cascade do |t|
     t.datetime "match_begins"
     t.string   "agora_link"
+    t.string   "password"
     t.string   "status",       default: "not happened", null: false
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false

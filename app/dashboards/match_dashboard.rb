@@ -12,6 +12,7 @@ class MatchDashboard < Administrate::BaseDashboard
     id: Field::Number,
     match_begins: Field::DateTime,
     agora_link: Field::String,
+    password: Field::String,
     status: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -36,6 +37,7 @@ class MatchDashboard < Administrate::BaseDashboard
     :id,
     :match_begins,
     :agora_link,
+    :password,
     :status,
     :created_at,
     :updated_at,
@@ -48,6 +50,7 @@ class MatchDashboard < Administrate::BaseDashboard
     :teams,
     :match_begins,
     :agora_link,
+    :password,
     :status,
   ].freeze
 
