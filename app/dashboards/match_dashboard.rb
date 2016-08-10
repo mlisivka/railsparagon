@@ -8,11 +8,11 @@ class MatchDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    teams: Field::HasMany,
     id: Field::Number,
     match_begins: Field::DateTime,
-    team_id: Field::Number,
     agora_link: Field::String,
-    end: Field::Boolean,
+    status: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,20 +23,20 @@ class MatchDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :teams,
     :id,
     :match_begins,
-    :team_id,
     :agora_link,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :teams,
     :id,
     :match_begins,
-    :team_id,
     :agora_link,
-    :end,
+    :status,
     :created_at,
     :updated_at,
   ].freeze
@@ -45,10 +45,10 @@ class MatchDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :teams,
     :match_begins,
-    :team_id,
     :agora_link,
-    :end,
+    :status,
   ].freeze
 
   # Overwrite this method to customize how matches are displayed

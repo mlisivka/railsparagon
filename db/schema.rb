@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806145444) do
+ActiveRecord::Schema.define(version: 20160810102448) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -40,12 +40,16 @@ ActiveRecord::Schema.define(version: 20160806145444) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.datetime "match_begins",                 null: false
-    t.integer  "team_id",                      null: false
-    t.string   "agora_link",                   null: false
-    t.boolean  "end",          default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "match_begins"
+    t.string   "agora_link"
+    t.string   "status",       default: "not happened", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  create_table "matches_teams", id: false, force: :cascade do |t|
+    t.integer "match_id"
+    t.integer "team_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -61,14 +65,14 @@ ActiveRecord::Schema.define(version: 20160806145444) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "full_name",  null: false
+    t.string   "full_name",    null: false
     t.string   "tag_name"
     t.string   "country"
     t.integer  "rating"
-    t.string   "image"
-    t.integer  "captain_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "captain_id",   null: false
+    t.datetime "desired_time"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "teams_tournaments", id: false, force: :cascade do |t|

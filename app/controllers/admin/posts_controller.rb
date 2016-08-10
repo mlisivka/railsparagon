@@ -7,16 +7,17 @@ module Admin
     #   super
     #   @resources = Post.all.paginate(10, params[:page])
     # end
-    
+
     def create
       post = Post.new(post_params)
+      #post.user = current_user
       if post.save
         redirect_to admin_post_path(post)
       else
         render :new
       end
     end
-    
+
     def update
       post = Post.find(params[:id])
       post.update(post_params)
@@ -35,7 +36,7 @@ module Admin
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
     private
-    
+
     def post_params
       params.require(:post).permit(:title, :content, :image, :user_id)
     end

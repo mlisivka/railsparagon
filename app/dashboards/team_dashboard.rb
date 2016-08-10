@@ -11,13 +11,14 @@ class TeamDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     invites: Field::HasMany,
     tournaments: Field::HasMany,
+    matches: Field::HasMany,
     id: Field::Number,
     full_name: Field::String,
     tag_name: Field::String,
     country: Field::String,
     rating: Field::Number,
-    image: Field::String,
     captain_id: Field::Number,
+    desired_time: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -28,25 +29,24 @@ class TeamDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
-    :full_name,
     :users,
     :tournaments,
+    :matches,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :users,
-    :invites,
     :tournaments,
+    :matches,
     :id,
     :full_name,
     :tag_name,
     :country,
     :rating,
-    :image,
     :captain_id,
+    :desired_time,
     :created_at,
     :updated_at,
   ].freeze
@@ -56,20 +56,18 @@ class TeamDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :users,
-    :invites,
-    :tournaments,
     :full_name,
     :tag_name,
     :country,
     :rating,
-    :image,
     :captain_id,
+    :desired_time,
   ].freeze
 
   # Overwrite this method to customize how teams are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(team)
-  #   "Team ##{team.id}"
-  # end
+  def display_resource(team)
+    "#{team.full_name}"
+  end
 end
