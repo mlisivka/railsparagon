@@ -10,12 +10,12 @@
             <div class="match-main">
               <div class="match-left">
                 <div class="main-team">
-                  <b><%= i.teams[0].full_name %></b>
+                  <b><%= i.teams[0].full_name if i.teams[0] %></b>
                   <img src="http://placehold.it/50x50" class="team-logo" style="float: right;"></img>
                 </div>
                 <b>VS</b>
                 <div class="main-team">
-                  <b><%= i.teams[1].full_name %></b>
+                  <b><%= i.teams[1].full_name if i.teams[1] %></b>
                   <img src="http://placehold.it/50x50" class="team-logo" style="float: left;"></img>
                 </div>
               </div>

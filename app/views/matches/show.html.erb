@@ -2,6 +2,9 @@
   <div class="title"><%= _('Match') %> <%= @match.id %></div>
   <div class="row">
     <div class="container">
+      <% @match.teams.each do |t| %>
+        <%= @match.password if t.users.include? current_user %>
+      <% end %>
       <div class="match-full">
         <% @match.teams.includes(:users).each do |i| %>
           <div class="col-sm-6">

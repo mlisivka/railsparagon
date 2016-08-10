@@ -6,6 +6,8 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.where(id: params[:id]).first
+    @match.teams.each{ |t| puts true if t.users.include? current_user }
+    render_404 unless @match
   end
 
 end
