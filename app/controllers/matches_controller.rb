@@ -1,10 +1,11 @@
 class MatchesController < ApplicationController
 
   def index
+    @matches = Match.all.eager_load(:teams)
   end
 
   def show
-    #@matchId = Match.find(params[:id])
+    @match = Match.where(id: params[:id]).first
   end
 
 end

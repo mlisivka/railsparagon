@@ -1,92 +1,30 @@
 <div class="container">
-  <div class="title"><%= _('Match') %> #1</div>
+  <div class="title"><%= _('Match') %> <%= @match.id %></div>
   <div class="row">
     <div class="container">
       <div class="match-full">
-        <div class="col-sm-6">
-          <div class="half-team">
-            <div class="match-header">
-              <img src="http://placehold.it/80" class="team-emblem">
-              <b>Team1</b>
-            </div>
-            <div class="team-player-match">
-              <ul class="list-group">
-                <li class="list-group-item blue-border">BlackNigga&nbsp;&nbsp;<span class="label label-primary">Captain</span>
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">WhiteNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">YellowNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">GreenNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">BlueNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-              </ul>
+        <% @match.teams.includes(:users).each do |i| %>
+          <div class="col-sm-6">
+            <div class="half-team">
+              <div class="match-header">
+                <img src="http://placehold.it/80" class="team-emblem">
+                <b><%= i.full_name %></b>
+              </div>
+              <div class="team-player-match">
+                <ul class="list-group">
+                  <% i.users.each do |u| %>
+                    <li class="list-group-item blue-border"><%= u.name %><!--&nbsp;&nbsp;<span class="label label-primary">Captain</span>-->
+                      <div class="heroes">
+                        <div class="hero"><img src="http://placehold.it/32"></div>
+                        <div class="hero"><img src="http://placehold.it/32"></div>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="half-team">
-            <div class="match-header">
-              <img src="http://placehold.it/80" class="team-emblem">
-              <b>Team1</b>
-            </div>
-            <div class="team-player-match">
-              <ul class="list-group">
-                <li class="list-group-item blue-border">BlackNigga&nbsp;&nbsp;<span class="label label-primary">Captain</span>
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">WhiteNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">YellowNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">GreenNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-                <li class="list-group-item blue-border">BlueNigga
-                  <div class="heroes">
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                    <div class="hero"><img src="http://placehold.it/32"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
