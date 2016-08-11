@@ -9,14 +9,18 @@ class User < ActiveRecord::Base
 
   has_many :invitions,    class_name: "Invite", foreign_key: "recipient_id"
   has_many :send_invites, class_name: "Invite", foreign_key: "sender_id"
-  
+
   validates :name,
     presence: { message: _('Field can not be empty') },
     format: { with: /\A[A-Za-z0-9]{3,16}\z/, message: _('Name must be between 3 and 16 characters') },
     uniqueness: { case_sensitive: false, message: _('This name is already taken, choose another please') }
   validates_uniqueness_of :email
   validates :password, confirmation: true
-  
+
+  def to_param
+    name
+  end
+
   private
 
   def player_limit team

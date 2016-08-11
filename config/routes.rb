@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root 'posts#index'
-  
+
   mount Ckeditor::Engine => '/ckeditor'
-  
+
   devise_for :users, skip: :session
   devise_scope :user do
     get    '/login' => 'devise/sessions#new'
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     delete '/logout' => 'devise/sessions#destroy'
     get    '/register' => 'devise/registrations#new'
   end
-  
+
   namespace :admin do
     resources :posts, :tournaments, :teams, :invites, :users, :matches
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :posts, :matches, only: [:index, :show]
   resources :invites
   resources :teams
-  
+
   get '/profile', to: 'users#show'
   get '/profile/:name', to: 'users#show', as: 'user'
 
