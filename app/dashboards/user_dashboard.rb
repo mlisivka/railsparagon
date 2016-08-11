@@ -7,6 +7,11 @@ class UserDashboard < Administrate::BaseDashboard
   # Each different type represents an Administrate::Field object,
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
+
+  def find_resource(param)
+    User.find_by!(name: param)
+  end
+
   ATTRIBUTE_TYPES = {
     posts: Field::HasMany,
     teams: Field::HasMany,
