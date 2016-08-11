@@ -14,11 +14,13 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts, :tournaments, :teams, :invites, :users, :matches
-
     root to: 'posts#index'
   end
 
-  resources :posts, :matches, only: [:index, :show]
+  resources :posts, only: [:index, :show]
+  resources :matches, only: [:index, :show] do
+    post :desired_time, on: :member
+  end
   resources :invites
   resources :teams
 

@@ -1,9 +1,15 @@
 <div class="container">
-  <div class="title"><%= _('Match') %> <%= @match.id %></div>
+  <div class="title"><%= _('Match') %> #<%= @match.id %></div>
   <div class="row">
     <div class="container">
       <% @match.teams.each do |t| %>
-        <%= @match.password if t.users.include? current_user %>
+        <% if t.users.include? current_user %>
+          <%= @match.password %>
+          <%= form_tag action: "desired_time" do %>
+            <%= text_field_tag :desired_time %>
+            <%= submit_tag "GO" %>
+          <% end %>
+        <% end %>
       <% end %>
       <div class="match-full">
         <% @match.teams.includes(:users).each do |i| %>
