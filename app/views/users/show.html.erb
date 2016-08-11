@@ -27,7 +27,7 @@
 			<div class="cover">
 				<div>
 					<div class="title"><%= _('Teams of player') %></div>
-	    	  <% if user_signed_in? && current_user.id != params[:id].to_i %>
+	    	  <% unless current_user == @user || @teams.blank? %>
 	    	 	 <div id="pick-team">
 	    	     <div class="btn-group btn-input clearfix team-select">
 	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
@@ -43,23 +43,23 @@
 	    	  	</div>
 	    	  <% end %>
 					<% unless @user.teams.blank? %>
-			  		  <% @user.teams.each do |i| %>
-						<div class="team-info">
-						  <img src="http://placehold.it/60">
-						  <%= s_('Team|Name') %>: <%= i.full_name %>
-						  <br>
-						  <%= _('Country') %>: <%= i.country %>
-						  <br>
-						  <%= _('Rating') %>: <%= i.rating %>
-						</div>
-		  	  		  <% end %>
+		  		  <% @user.teams.each do |i| %>
+  						<div class="team-info">
+  						  <img src="http://placehold.it/60">
+  						  <%= s_('Team|Name') %>: <%= i.full_name %>
+  						  <br>
+  						  <%= _('Country') %>: <%= i.country %>
+  						  <br>
+  						  <%= _('Rating') %>: <%= i.rating %>
+  						</div>
+  	  		  <% end %>
 					<% else %>
 						<p><%= _('The player has not yet been involved in a team') %></p>
 					<% end %>
 				</div>
 			</div>
 		</div>
-		
+
     <div class="col-md-8">
 		<div class="cover">
     	  <div class="result-match">
