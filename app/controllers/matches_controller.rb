@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
   before_filter :find_match, only: [:show, :desired_time]
 
   def index
-    @matches = Match.all.eager_load(:teams)
+    @matches = Match.all.includes(:teams)
   end
 
   def show
