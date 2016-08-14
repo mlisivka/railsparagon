@@ -473,6 +473,22 @@ a.spoiler.change:after {
 .team-player-match {
   margin-bottom: -10px;
 }
+.match-pass{
+	width: 100%;
+	float: left;
+	font-size: 16px;
+	border-top: solid 1px #87CEEB;
+	border-bottom: solid 1px #87CEEB;
+}
+.match-pass>b {
+	color: #28354f;
+	font-size:18px;
+}
+.confirm-time{
+	width: 100%;
+	float: left;
+	border-bottom: solid 1px #87CEEB;
+}
 .blue-border {
   border: solid 1px #87CEEB;
 }
@@ -531,7 +547,7 @@ border-top: solid 8px #87CEEB;
 	background-color: #FEEFB3;
 }
 .col-centered{
-  text-align:center;
+  text-align: center;
 }
 .social{
 	text-align: center;

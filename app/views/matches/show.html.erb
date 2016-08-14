@@ -2,22 +2,13 @@
   <div class="title"><%= _('Match') %> #<%= @match.id %></div>
   <div class="row">
     <div class="container">
-      <% @match.teams.each do |t| %>
-        <% if t.users.include? current_user %>
-          <%= @match.password %>
-          <%= form_tag action: "desired_time" do %>
-            <%= text_field_tag :desired_time %>
-            <%= submit_tag "GO" %>
-          <% end %>
-        <% end %>
-      <% end %>
       <div class="match-full">
         <% @match.teams.includes(:users).each do |i| %>
           <div class="col-sm-6">
             <div class="half-team">
-              <div class="match-header">
-                <img src="http://placehold.it/80" class="team-emblem">
+              <div class="match-header match-left">
                 <b><%= i.full_name %></b>
+                <img src="http://placehold.it/50x50" class="team-logo" style="float: right;"></img>
               </div>
               <div class="team-player-match">
                 <ul class="list-group">
@@ -34,6 +25,17 @@
             </div>
           </div>
         <% end %>
+	      <% @match.teams.each do |t| %>
+	        <% if t.users.include? current_user %>
+	          <div class="match-pass col-centered"><b>Password:</b></br><%= @match.password %></div>
+						<div class="confirm-time">
+	          <%= form_tag action: "desired_time" do %>
+	            <%= text_field_tag :desired_time %>
+	            <%= submit_tag "GO" %>
+	          <% end %>
+					</div>
+	        <% end %>
+	      <% end %>
       </div>
     </div>
   </div>
