@@ -5,22 +5,22 @@
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="initial-scale=1" />
   <title>Login | <%= Rails.application.class.parent_name.titlecase %></title>
-	<%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'admin_login', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <%= form_tag admin_login_path do %>
-    <%= params[:login] %>
-
-    <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
+  <div class="container">
+    <div id="login-form">
+      <h3>Login</h3>
+      <div class="fieldset">
+        <%= form_tag admin_login_path do %>
+          <h4><%= params[:login] %></h4>
+          <%= password_field_tag :password, "", placeholder: "Password" %>
+          <%= submit_tag "Login" %>
+        <% end %>
+      </div>
     </div>
-
-    <div class="actions">
-      <%= submit_tag "Log in" %>
-    </div>
-  <% end %>
+  </div>
 </body>
 </html>
