@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+  get 'session/new'
+  end
+
   root 'posts#index'
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -15,6 +19,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts, :tournaments, :teams, :invites, :users, :matches
     root to: 'posts#index'
+    get 'login/:login' => "session#new", as: "login"
+    post 'login/:login' => "session#create"
+    get  'logout', to: 'session#destroy', as: 'logout'
   end
 
   resources :posts, only: [:index, :show]

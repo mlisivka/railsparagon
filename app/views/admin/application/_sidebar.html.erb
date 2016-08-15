@@ -8,18 +8,18 @@ as defined by the routes in the `admin/` namespace
 %>
 
 <ul class="nav navbar-nav">
-  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
-    <li>
-      <%= link_to(
-        display_resource_name(resource),
-        [namespace, resource],
-        class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
-      ) %>
-    </li>
-  <% end %>
+  <li><%= link_to _('Posts'), admin_posts_path %></li>
+  <li><%= link_to _('Users'), admin_users_path %></li>
+  <li><%= link_to _('Tournaments'), admin_tournaments_path %></li>
+  <li><%= link_to _('Teams'), admin_teams_path %></li>
+  <li><%= link_to _('Matches'), admin_matches_path %></li>
+  <li><%= link_to _('Invites'), admin_invites_path %></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
   <li>
     <%= link_to "Go to site", root_path %>
+  </li>
+  <li>
+    <%= link_to "Logout", admin_logout_path %>
   </li>
 </ul>

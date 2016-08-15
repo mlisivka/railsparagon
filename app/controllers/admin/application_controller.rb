@@ -9,7 +9,15 @@ module Admin
     before_filter :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      render_403 unless current_admin
+    end
+
+    def current_admin
+      AdminUser.where(id: session[:admin_id]).first
+    end
+
+    def render_403
+      render file: 'public/403.html', status: 403, layout: false
     end
 
     # Override this value to specify the number of elements to display at a time
