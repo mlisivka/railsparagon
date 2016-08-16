@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160815112032) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "user_id",            null: false
+    t.integer  "author_id",          null: false
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

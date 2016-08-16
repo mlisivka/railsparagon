@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :posts
   has_and_belongs_to_many :teams, before_add: :player_limit
 
   has_many :invitions,    class_name: "Invite", foreign_key: "recipient_id"

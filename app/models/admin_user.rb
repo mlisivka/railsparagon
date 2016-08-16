@@ -1,5 +1,7 @@
 class AdminUser < ActiveRecord::Base
 
+  has_many :posts
+
   def self.authenticate(login, password)
     admin = find_by_login(login)
     if admin && admin.encrypted_password == BCrypt::Engine.hash_secret(password, admin.password_salt)
