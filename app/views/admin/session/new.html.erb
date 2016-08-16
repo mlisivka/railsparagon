@@ -16,6 +16,9 @@
       <div class="fieldset">
         <%= form_tag admin_login_path do %>
           <h4><%= params[:login] %></h4>
+          <% if @admin.encrypted_password.empty? %>
+            <b>Enter New Password</b>
+          <% end %>
           <%= password_field_tag :password, "", placeholder: "Password" %>
           <%= submit_tag "Login" %>
         <% end %>

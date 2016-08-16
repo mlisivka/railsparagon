@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :posts, :tournaments, :teams, :invites, :users, :matches
+    resources :posts, :tournaments, :teams, :invites, :users, :matches, :admin_users
     root to: 'posts#index'
     get 'login/:login' => "session#new", as: "login"
     post 'login/:login' => "session#create"

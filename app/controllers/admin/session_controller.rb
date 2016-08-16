@@ -9,9 +9,15 @@ class Admin::SessionController < ApplicationController
   end
 
   def create
+    @admin = AdminUser.find_by_login(params[:login])
+    if @admin.encrypted_password.empty?
+      @admin.update_attributes(password_salt: BCrypt::Engine.generate_salt)
+      @admin.update_attributes(encrypted_password: BCrypt::Engine.hash_secret(params[:password], @admin.password_salt))
+    end
     admin = AdminUser.authenticate(params[:login], params[:password])
     if admin
       session[:admin_id] = admin.id
+      admin.update_tracked_fields(request)
       redirect_to admin_root_path
     else
       render :new
