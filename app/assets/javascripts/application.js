@@ -42,7 +42,7 @@ $(document).ready(function() {
   $("#send_inv").click(function(e) {
   	$('.success.msg').remove();
   	$('.error_msg').remove();
-    var id = path.substring(path.lastIndexOf('/') + 1);
+    var user_name = path.substring(path.lastIndexOf('/') + 1);
     $.ajax({
       url: "/invites",
       type: 'POST',
@@ -51,7 +51,7 @@ $(document).ready(function() {
       },
       data: {
         team_id: team_id,
-        user_id: id
+        user: user_name
       },
       error: function(XMLHttpRequest, errorTextStatus, error) {
         console.log("Failed: " + errorTextStatus + " ;" + error);

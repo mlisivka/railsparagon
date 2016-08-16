@@ -12,8 +12,6 @@ class InviteDashboard < Administrate::BaseDashboard
     sender: Field::BelongsTo.with_options(class_name: "User"),
     recipient: Field::BelongsTo.with_options(class_name: "User"),
     id: Field::Number,
-    sender_id: Field::Number,
-    recipient_id: Field::Number,
     accepted: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -52,9 +50,6 @@ class InviteDashboard < Administrate::BaseDashboard
     :team,
     :sender,
     :recipient,
-    :sender_id,
-    :recipient_id,
-    :accepted,
   ].freeze
 
   # Overwrite this method to customize how invites are displayed

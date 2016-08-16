@@ -5,11 +5,11 @@ class InvitesController < ApplicationController
 
   def destroy
   end
-  
+
   def create
     invite = Invite.new
     invite.team = Team.find(params[:team_id])
-    invite.recipient = User.find(params[:user_id])
+    invite.recipient = User.find_by_name(params[:user])
     invite.sender = current_user
     respond_to do |format|
       if invite.save
