@@ -27,7 +27,6 @@ class PostDashboard < Administrate::BaseDashboard
     :image,
     :id,
     :title,
-    :content,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
