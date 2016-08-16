@@ -12,22 +12,26 @@
 	      	    <li class="list-group-item"><%= _('Date begin') %>&nbsp;&nbsp; <%= @tournament.tournament_begins.strftime('%d/%m/%Y %H:%M') %></li>
 						</ul>
       	  </div>
-      	  <% if user_signed_in? || !current_user.teams.blank? %>
-      	  	<div id="pick-team">
- 	    	    	<div class="btn-group btn-input clearfix team-select">
- 	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
- 	    	        <span data-bind="label"><%= _('Choose Team') %></span>&nbsp;<span class="caret"></span>
- 	    	      </button>
- 	    	      <ul class="dropdown-menu" id="request">
- 							 <% current_user.teams.each do |i| %>
- 							 	<li><a data-team-id="<%= i.id %>"><%= i.full_name %></a></li>
- 							 <% end %>
- 	    	     	</ul>
- 	    	     </div>
-    	        <button class="btn btn-primary btn-send" id="register"><%= _('Send') %></button>
-						</div>
-    	      <div id="team-detail">
-    	      </div>
+          <% if user_signed_in? %>
+            <% unless current_user.teams.blank? %>
+        	  	<div id="pick-team">
+   	    	    	<div class="btn-group btn-input clearfix team-select">
+   	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
+   	    	        <span data-bind="label"><%= _('Choose Team') %></span>&nbsp;<span class="caret"></span>
+   	    	      </button>
+   	    	      <ul class="dropdown-menu" id="request">
+   							 <% current_user.teams.each do |i| %>
+   							 	<li><a data-team-id="<%= i.id %>"><%= i.full_name %></a></li>
+   							 <% end %>
+   	    	     	</ul>
+   	    	     </div>
+      	        <button class="btn btn-primary btn-send" id="register"><%= _('Send') %></button>
+  						</div>
+      	      <div id="team-detail">
+      	      </div>
+            <% else %>
+              You have no teams for play in this tournament
+            <% end %>
     	    <% else %>
     	      <div><%= _('To register for the tournament you need to be authorized') %></div>
     	      <%= link_to _('Login'), login_path %>

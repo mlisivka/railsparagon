@@ -557,7 +557,7 @@ border-top: solid 8px #87CEEB;
 	position: relative;
 	display: inline-block;
 	min-width: 40px;
-	padding: 10px 0px;
+	padding: 6px 0px;
 	margin: 0px 4px;
 	overflow: hidden;
 	text-align: center;
@@ -565,6 +565,8 @@ border-top: solid 8px #87CEEB;
 	border-radius: 50%;
 }
 a.social-icon {
+  font-family: 'fontello';
+  font-size: 20px;
 	text-decoration: none;
 }
 a.social-icon:hover {
@@ -573,8 +575,11 @@ a.social-icon:hover {
 a.facebook {
 	color: #3b5998 !important;
 }
-a.facebook:hover {		
+a.facebook:hover {
 	background-color: #3b5998 !important;
+}
+a.facebook:before {
+  content: '\f09a';
 }
 a.twitter {
 	color: #1da1f2 !important;
@@ -582,9 +587,25 @@ a.twitter {
 a.twitter:hover {
 	background-color: #1da1f2 !important;
 }
+a.twitter:before {
+  content: '\f099';
+}
 a.vk{
   color: #507299 !important;
 }
 a.vk:hover{
   background-color: #507299 !important;
+}
+a.vk:before {
+  content: '\f189';
+}
+@font-face {
+  font-family: 'fontello';
+  src: asset-url('fontello.eot');
+  src: asset-url('fontello.eot') format('embedded-opentype'),
+       asset-url('fontello.woff') format('woff'),
+       asset-url('fontello.ttf') format('truetype'),
+       asset-url('fontello.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

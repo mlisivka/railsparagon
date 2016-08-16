@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-		
+
     <title>ParagonRails</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, async: true %>
@@ -85,36 +85,30 @@
 								<h3>About</h3>
 								<ul class="list-unstyled">
 									<li><a href="#">Contact</a></li>
-									<li><a href="#">Feedback</a></li>
-									<li><a href="#">Tree on a lake</a></li>
-									<li><a href="#">Don’t stop questioning</a></li>
+									<li><a href="#">About</a></li>
+									<li><a href="#">Sitemap</a></li>
 								</ul>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
 									<h3>Latest news</h3>
 									<ul class="list-unstyled">
-										<li><a href="#">Solace of a lonely highway</a></li>
-										<li><a href="#">Write with purpose</a></li>
-										<li><a href="#">Tree on a lake</a></li>
-										<li><a href="#">Don’t stop questioning</a></li>
+                    <% Post.last(4).reverse.each do |p| %>
+										<li><%= link_to p.title, post_path(p) %></li>
+                    <% end %>
+									</ul>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
+									<h3>Latest tournaments</h3>
+									<ul class="list-unstyled">
+                    <% Tournament.last(4).reverse.each do |t| %>
+										<li><%= link_to t.title, tournament_path(t) %></li>
+                    <% end %>
 									</ul>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
 									<h3>Language</h3>
 									<ul class="list-unstyled">
-										<li><a href="#">English</a></li>
-										<li><a href="#">Українська</a></li>
-										<li><a href="#">Русский</a></li>
-										<li><a href="#">Polski</a></li>
-									</ul>
-							</div>
-							<div class="col-xs-12 col-sm-6 col-md-3 col-centered">
-									<h3>Latest Tournament</h3>
-									<ul class="list-unstyled">
-										<li><a href="#">Solace of a lonely highway</a></li>
-										<li><a href="#">Write with purpose</a></li>
-										<li><a href="#">Tree on a lake</a></li>
-										<li><a href="#">Don’t stop questioning</a></li>
+										<%= locale_swither(FastGettext.available_locales) %>
 									</ul>
 							</div>
 						</div>
@@ -124,9 +118,9 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="social">
-									<a href="#" class="social-icon twitter"><span>TW</span></a>
-									<a href="#" class="social-icon facebook"><span>FB</span></a>
-									<a href="#" class="social-icon vk"><span>VK</span></a>
+									<a href="#" class="social-icon twitter"></a>
+									<a href="#" class="social-icon facebook"></a>
+									<a href="#" class="social-icon vk"></a>
 								</div>
 								<p style="text-align: center">Copyright © 2016 RailsParagon</p>
 							</div>
