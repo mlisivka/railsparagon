@@ -82,7 +82,7 @@ body{
 }
 .footer {
   position: absolute;
-  bottom: -230px;
+  bottom: -233px;
   width: 100%;
   background-color: $main_colora;
   color: $orange;
@@ -358,6 +358,7 @@ a.spoiler.change:after {
 }
 #pick-team{
 	overflow: hidden;
+  padding-bottom: 8px;
 }
 #pick-team .dropdown-menu{
   min-width: 100%;
@@ -551,7 +552,7 @@ border-top: solid 8px #87CEEB;
 }
 .social{
 	text-align: center;
-	margin-top: 7px;
+	margin-top: 10px;
 }
 .social a {
 	position: relative;

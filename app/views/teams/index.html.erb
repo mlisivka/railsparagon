@@ -1,51 +1,33 @@
 <h1>This team/index</h1>
 <a href="teams/1">Show you teams</a>
-<h1>All Teams</h1>
-<style>
-
-table {
-  margin: 15px;
-  font: 1em 'times';
-  border: 1px solid #000;
-  border-collapse: collapse;
-}
-td, th {
-  padding: 5px;
-  border: 1px solid #000;
-}
-th {
-  font-size: .9em;
-  color: #fff;
-  background-color: #666;
-  text-align: left;
-}
-tr ~ tr > td:nth-child(2n+1) {
-  background: #7cded5;
-}
-tr ~ tr > td:nth-child(2n) {
-  background: #fffd7a;
-}
-
-</style>
-<table>
-	<tr>
-		<th>Id</th>
-		<th><%= _('Name') %></th>
-		<th><%= _('Country') %></th>
-		<th><%= _('Rating') %></th>
-		<th><%= _('Captain') %></th>
-		<th><%= _('Players') %></th>
-	</tr>
- <% @teams.each do |i| %>
-	<tr>
-		<td><%= i.id %></td>
-		<td><%= i.full_name %></td>
-    <td><%= i.country %></td>
-    <td><%= i.rating %></td>
-    <td><%= i.captain_id %></td>
-    <td><% i.users.each do |u| %>
-          <%= u.name %>,
-        <% end %></td>
-	</tr>
-<% end %>
-</table>
+<div class="container">
+  <div class="title">All Teams</div>
+  <div class="cover">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+      		<th>Id</th>
+      		<th><%= _('Name') %></th>
+      		<th><%= _('Country') %></th>
+      		<th><%= _('Rating') %></th>
+      		<th><%= _('Captain') %></th>
+      		<th><%= _('Players') %></th>
+      	</tr>
+      </thead>
+      <tbody>
+        <% @teams.each do |i| %>
+        	<tr>
+        		<td><%= i.id %></td>
+        		<td><%= i.full_name %></td>
+            <td><%= i.country %></td>
+            <td><%= i.rating %></td>
+            <td><%= i.captain_id %></td>
+            <td>
+              <%= i.users.map(&:name).to_sentence %>
+            </td>
+        	</tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

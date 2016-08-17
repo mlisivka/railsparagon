@@ -1,47 +1,25 @@
 <div class="container">
-  <div class="row">
-  <style>
-  table {
-    margin: 15px;
-    font: 1em 'times';
-    border: 1px solid #000;
-    border-collapse: collapse;
-  }
-  td, th {
-    padding: 5px;
-    border: 1px solid #000;
-  }
-  th {
-    font-size: .9em;
-    color: #fff;
-    background-color: #666;
-    text-align: left;
-  }
-  tr ~ tr > td:nth-child(2n+1) {
-    background: #7cded5;
-  }
-  tr ~ tr > td:nth-child(2n) {
-    background: #fffd7a;
-  }
-
-  </style>
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Teams</th>
-    </tr>
-   <% @users.each do |i| %>
-    <tr>
-      <td><%= i.id %></td>
-      <td><%= link_to i.name, user_path(i) %></td>
-      <td>
-        <% i.teams.each do |u| %>
-          <%= u.full_name %>,
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-  </table>
+  <div class="title">All Users</div>
+  <div class="cover">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>Teams</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |i| %>
+         <tr>
+           <td><%= i.id %></td>
+           <td><%= link_to i.name, user_path(i) %></td>
+           <td>
+             <%= i.teams.map(&:full_name).to_sentence %>
+           </td>
+         </tr>
+       <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
