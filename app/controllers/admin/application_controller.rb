@@ -13,7 +13,7 @@ module Admin
     end
 
     def current_admin
-      AdminUser.find(session[:admin_id])
+      AdminUser.find_by_id(session[:admin_id])
     end
 
     def render_403

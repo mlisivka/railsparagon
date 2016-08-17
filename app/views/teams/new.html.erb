@@ -1,21 +1,29 @@
 <% if user_signed_in? %>
 	<div class="container">
-		<div class="cover">
-	    <div class="title"><%= _('Create new Team') %></div>
-	    <%= form_for Team.new do |i| %>
-	
-	      <b><%= _('Full Team Name') %></b><br>
-	      <%= i.text_field :full_name %><br>
-	      <b><%= _('Team Tag / Abbreviation') %></b><br>
-	      <br>
-	      <b><%= _('Country') %></b><br>
-	      <%= i.text_field :country %><br>
-	      <b><%= _('Team URL') %></b><br>
-	
-	    	<p><%= i.submit _('Create Team') %></p>
-	
-	    <% end %>
-	  </div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+  			<div class="cover">
+  		    <div class="title"><%= _('Create new Team') %></div>
+          <div class="team-create">
+    		    <%= form_for Team.new do |i| %>
+              <div class="form-group">
+                <%= i.label :full_name, _('Full Team Name') + ":" %>
+                <%= i.text_field :full_name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= i.label :tag_name, _('Team Tag / Abbreviation') + ":" %>
+                <%= i.text_field :tag_name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= i.label :country, _('Country') + ":" %>
+                <%= i.text_field :country, class: "form-control" %>
+              </div>
+              <%= i.submit _('Create Team'), class: "btn btn-primary" %>
+    		    <% end %>
+          </div>
+  		  </div>
+      </div>
+		</div>
 	</div>
 <% else %>
   <% controller.redirect_to login_path %>
