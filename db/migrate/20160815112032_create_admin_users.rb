@@ -15,6 +15,7 @@ class CreateAdminUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :admin_users, :login, unique: true
+    add_index :admin_users, :login,   unique: true
+    add_index :admin_users, :role_id
   end
 end

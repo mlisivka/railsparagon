@@ -7,5 +7,6 @@ class CreateMatches < ActiveRecord::Migration
       t.string   :status, default: "not happened", null: false
       t.timestamps null: false
     end
+    add_index :matches, :status
   end
 end

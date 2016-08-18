@@ -9,5 +9,6 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :team_id
       t.timestamps null: false
     end
+    add_index :users, :name, unique: true
   end
 end

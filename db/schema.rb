@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160815112032) do
   end
 
   add_index "admin_users", ["login"], name: "index_admin_users_on_login", unique: true
+  add_index "admin_users", ["role_id"], name: "index_admin_users_on_role_id"
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -64,6 +65,8 @@ ActiveRecord::Schema.define(version: 20160815112032) do
     t.datetime "updated_at",                            null: false
   end
 
+  add_index "matches", ["status"], name: "index_matches_on_status"
+
   create_table "matches_teams", id: false, force: :cascade do |t|
     t.integer "match_id"
     t.integer "team_id"
@@ -81,16 +84,21 @@ ActiveRecord::Schema.define(version: 20160815112032) do
     t.datetime "updated_at",         null: false
   end
 
+  add_index "posts", ["title"], name: "index_posts_on_title"
+
   create_table "teams", force: :cascade do |t|
-    t.string   "full_name",    null: false
+    t.string   "full_name",        null: false
     t.string   "tag_name"
     t.string   "country"
     t.integer  "rating"
-    t.integer  "captain_id",   null: false
-    t.datetime "desired_time"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "captain_id",       null: false
+    t.integer  "specification_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
+
+  add_index "teams", ["full_name"], name: "index_teams_on_full_name", unique: true
+  add_index "teams", ["tag_name"], name: "index_teams_on_tag_name", unique: true
 
   create_table "teams_tournaments", id: false, force: :cascade do |t|
     t.integer "team_id"
@@ -114,6 +122,10 @@ ActiveRecord::Schema.define(version: 20160815112032) do
     t.datetime "updated_at",                        null: false
   end
 
+  add_index "tournaments", ["max_team"], name: "index_tournaments_on_max_team"
+  add_index "tournaments", ["payment"], name: "index_tournaments_on_payment"
+  add_index "tournaments", ["prize"], name: "index_tournaments_on_prize"
+
   create_table "users", force: :cascade do |t|
     t.string   "name",                                null: false
     t.integer  "played_matches"
@@ -136,6 +148,7 @@ ActiveRecord::Schema.define(version: 20160815112032) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["name"], name: "index_users_on_name", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

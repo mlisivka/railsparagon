@@ -10,5 +10,8 @@ class CreateTournaments < ActiveRecord::Migration
       t.datetime :tournament_begins, null: false
       t.timestamps null: false
     end
+    add_index :tournaments, :max_team
+    add_index :tournaments, :payment
+    add_index :tournaments, :prize
   end
 end
