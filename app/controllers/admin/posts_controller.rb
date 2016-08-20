@@ -21,6 +21,7 @@ module Admin
     def update
       post = Post.find(params[:id])
       post.update(post_params)
+      puts params[:post][:image]
       if post.errors.empty?
         redirect_to admin_post_path(post)
       else
