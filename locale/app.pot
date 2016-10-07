@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-24 18:02+0300\n"
-"PO-Revision-Date: 2016-07-24 18:02+0300\n"
+"POT-Creation-Date: 2016-10-07 07:23+0300\n"
+"PO-Revision-Date: 2016-10-07 07:23+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,6 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 msgid "Accept"
+msgstr ""
+
+msgid "Admin"
 msgstr ""
 
 msgid "Captain"
@@ -33,31 +36,31 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-msgid "Create Match"
-msgstr ""
-
 msgid "Create New Team"
-msgstr ""
-
-msgid "Create Post"
 msgstr ""
 
 msgid "Create Team"
 msgstr ""
 
-msgid "Create new Post"
-msgstr ""
-
 msgid "Create new Team"
-msgstr ""
-
-msgid "Create new Tournament"
 msgstr ""
 
 msgid "Date begin"
 msgstr ""
 
-msgid "Error"
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Field can not be empty"
+msgstr ""
+
+msgid "Forgot your password?"
 msgstr ""
 
 msgid "Full Team Name"
@@ -69,13 +72,16 @@ msgstr ""
 msgid "Invite"
 msgstr ""
 
+msgid "Invites"
+msgstr ""
+
 msgid "Invite|Accepted"
 msgstr ""
 
-msgid "Login"
+msgid "Log in"
 msgstr ""
 
-msgid "Logout"
+msgid "Login"
 msgstr ""
 
 msgid "Lose"
@@ -99,25 +105,19 @@ msgstr ""
 msgid "Match|Match begins"
 msgstr ""
 
-msgid "Max teams"
-msgstr ""
-
-msgid "Must be given please"
-msgstr ""
-
 msgid "Name"
 msgstr ""
 
 msgid "Name must be between 3 and 16 characters"
 msgstr ""
 
+msgid "Next matches"
+msgstr ""
+
+msgid "Next tournaments"
+msgstr ""
+
 msgid "Password"
-msgstr ""
-
-msgid "Passwords Don't Match"
-msgstr ""
-
-msgid "Passwords must be between 7 and 36 characters, at least 1 number, at least 1 letter, and no whitespace"
 msgstr ""
 
 msgid "Payment"
@@ -136,6 +136,9 @@ msgid "Please sign up"
 msgstr ""
 
 msgid "Post"
+msgstr ""
+
+msgid "Posts"
 msgstr ""
 
 msgid "Post|Text"
@@ -165,9 +168,6 @@ msgstr ""
 msgid "Reject"
 msgstr ""
 
-msgid "Remember me"
-msgstr ""
-
 msgid "Score"
 msgstr ""
 
@@ -177,19 +177,19 @@ msgstr ""
 msgid "Sender not must be recipient"
 msgstr ""
 
-msgid "Sign Up"
+msgid "Sign in"
 msgstr ""
 
-msgid "Sign in"
+msgid "Sign in with #{OmniAuth::Utils.camelize(provider)}"
+msgstr ""
+
+msgid "Sign up"
 msgstr ""
 
 msgid "Team"
 msgstr ""
 
 msgid "Team Tag / Abbreviation"
-msgstr ""
-
-msgid "Team URL"
 msgstr ""
 
 msgid "Teams"
@@ -216,19 +216,31 @@ msgstr ""
 msgid "Team|Tag name"
 msgstr ""
 
+msgid "The maximum number of teams in the tournament reached"
+msgstr ""
+
 msgid "The player has not yet been involved in a team"
+msgstr ""
+
+msgid "This abbreviation is already taken, choose another please"
 msgstr ""
 
 msgid "This name is already taken, choose another please"
 msgstr ""
 
-msgid "This player has too many teams, maximum: 5"
+msgid "This team has already been registered on this tournament"
 msgstr ""
 
-msgid "This team has too many players, maximum: 5"
+msgid "This team has too many players, maximum: 10"
+msgstr ""
+
+msgid "This team name is already taken, choose another please"
 msgstr ""
 
 msgid "This user has already received an invitation to this team"
+msgstr ""
+
+msgid "This user has exceeded the limit teams, maximum: 5"
 msgstr ""
 
 msgid "This user is already a member of this team"
@@ -265,6 +277,9 @@ msgid "User"
 msgstr ""
 
 msgid "User name"
+msgstr ""
+
+msgid "Users"
 msgstr ""
 
 msgid "User|Kda"
