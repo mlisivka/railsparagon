@@ -416,10 +416,11 @@ a.spoiler.change:after {
 }
 .team-description {
   margin-top: 10px;
+	padding: 10px;
   height: 100px;
   width: calc(100% - 140px);
   float: left;
-  background: #888;
+	border: 1px solid #888;
 }
 .team-holder {
   margin-bottom: 20px;

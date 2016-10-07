@@ -10,7 +10,7 @@
           <div class="col-md-8">
             <div class="content">
               <h3><a href="/posts/<%= i.id %>"><%= i.title %></a></h3>
-              <div class="text"><%= truncate(raw(i.content), length: 400, escape: false) %></div>
+              <div class="text"><%= truncate(raw(i.content), length: 300, escape: false) %></div>
               <div class="info"><%= i.created_at.strftime('%d/%m/%Y %H:%M') %></div>
             </div>
           </div>

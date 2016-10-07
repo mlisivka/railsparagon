@@ -17,11 +17,11 @@
           <div class="team-holder">
             <img src="http://placehold.it/80" class="team-logo-lg">
             <div class="team-description">
-              <%= s_('Team|Name') %> <br> <%= _('Country') %>
+              <%= _('Team|Name') %>: <%= Team.find(params[:id]).full_name %><br> <%= _('Country') %>: <%= Team.find(params[:id]).country %>
             </div>
           </div>
           <div class="team-info-holder">
-            <div class="statistic"><%= _('Rating') %> <%= _('winrate') %> <%= _('matches') %> <%= _('played') %></div>
+            <!--<div class="statistic"><%= _('Rating') %> <%= _('winrate') %> <%= _('matches') %> <%= _('played') %></div>-->
             <div class="players">
   						<div class="team-player">
               	<ul class="list-group">
