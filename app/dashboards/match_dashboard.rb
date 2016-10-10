@@ -9,6 +9,7 @@ class MatchDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     teams: Field::HasMany,
+    tournament: Field::BelongsTo,
     id: Field::Number,
     match_begins: Field::DateTime,
     agora_link: Field::String,
@@ -25,6 +26,7 @@ class MatchDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :teams,
+    :tournament,
     :id,
     :match_begins,
     :agora_link,
@@ -34,6 +36,7 @@ class MatchDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :teams,
+    :tournament,
     :id,
     :match_begins,
     :agora_link,
@@ -48,6 +51,7 @@ class MatchDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :teams,
+    :tournament,
     :match_begins,
     :agora_link,
     :password,

@@ -5,6 +5,7 @@ class CreateMatches < ActiveRecord::Migration
       t.string   :agora_link
       t.string   :password
       t.string   :status, default: "not happened", null: false
+      t.integer  :tournament_id
       t.timestamps null: false
     end
     add_index :matches, :status

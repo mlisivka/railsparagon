@@ -66,7 +66,7 @@ class TournamentDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how tournaments are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(tournament)
-  #   "Tournament ##{tournament.id}"
-  # end
+  def display_resource(tournament)
+    "#{tournament.title}"
+  end
 end
