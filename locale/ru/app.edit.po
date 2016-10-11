@@ -133,8 +133,15 @@ msgstr "Взнос"
 msgid "Played"
 msgstr "Сыграно"
 
+#, fuzzy
+msgid "Player \\\"%{name}\\\" already belongs to the registered teams. Please change team staff"
+msgstr "Игроки"
+
 msgid "Players"
 msgstr "Игроки"
+
+msgid "Please select the players who will play in this tournament"
+msgstr ""
 
 msgid "Please sign in"
 msgstr "Пожалуйста, войдите в систему"
@@ -176,6 +183,9 @@ msgid "Registration"
 msgstr "Регистрация"
 
 msgid "Reject"
+msgstr ""
+
+msgid "Remember me"
 msgstr ""
 
 msgid "Score"
@@ -267,6 +277,9 @@ msgstr ""
 msgid "To register for the tournament you need to be authorized"
 msgstr "Для участия в турнире вы должны быть авторизованы"
 
+msgid "To take part in the tournament your team must be at least 5 players"
+msgstr ""
+
 msgid "Tournament"
 msgstr "Турнир"
 
@@ -341,13 +354,21 @@ msgid "winrate"
 msgstr "процент побед"
 
 #, fuzzy
+#~ msgid ""
+#~ "Player \"%{name}\" already belongs to the registered teams. Please change team s"
+#~ "taff"
+#~ msgstr "Игроки"
+
+#~ msgid ""
+#~ "Player %{name} already belongs to the registered teams. Please change team sta"
+#~ "ff"
+#~ msgstr "Игроки"
+#~ msgid "Player "
+#~ msgstr "Игроки"
 #~ msgid "Match sticker"
 #~ msgstr "Матч"
-
-#, fuzzy
 #~ msgid "Tournaments sticker"
 #~ msgstr "Турниры"
-
 #~ msgid "Create Match"
 #~ msgstr "Создать Матч"
 #~ msgid "Create Post"

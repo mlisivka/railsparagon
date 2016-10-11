@@ -27,14 +27,12 @@ $(document).ready(function() {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       },
       data: {
+				players: $(".played_user:checked").val(),
         team_id: team_id
       },
       error: function(XMLHttpRequest, errorTextStatus, error) {
         console.log("Failed: " + errorTextStatus + " ;" + error);
         $("#pick-team").after("<div class='error_msg'>Error!</div>");
-      },
-      success: function() {
-        //$("#pick-team").after("<div class='success_msg'>Invitation sent!</div>");
       }
     });
   });

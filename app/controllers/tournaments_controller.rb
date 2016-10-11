@@ -11,9 +11,8 @@ class TournamentsController < ApplicationController
   end
 
   def registration_team
-    @tournament = Tournament.find(params[:id])
     @team = Team.find(params[:team_id])
-    @tournament.teams << @team if @team.users.include?(current_user)
+    @registration = Player.create(team_id: params[:team_id], tournament_id: params[:id], players_id: params[:players]) if @team.users.include?(current_user)
     #if @tournament.teams.length == 8
     #  generate_matches(@tournament.teams)
     #end
@@ -22,7 +21,7 @@ class TournamentsController < ApplicationController
 
   def detail
     @current_team = Team.where(id: params[:team_id]).first
-
+    @team_players = @current_team.users
     respond_to :js
   end
 

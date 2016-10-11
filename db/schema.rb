@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815112032) do
+ActiveRecord::Schema.define(version: 20161010162113) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "login",              default: "", null: false
@@ -60,9 +60,10 @@ ActiveRecord::Schema.define(version: 20160815112032) do
     t.datetime "match_begins"
     t.string   "agora_link"
     t.string   "password"
-    t.string   "status",       default: "not happened", null: false
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.string   "status",        default: "not happened", null: false
+    t.integer  "tournament_id"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   add_index "matches", ["status"], name: "index_matches_on_status"
@@ -70,6 +71,14 @@ ActiveRecord::Schema.define(version: 20160815112032) do
   create_table "matches_teams", id: false, force: :cascade do |t|
     t.integer "match_id"
     t.integer "team_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "tournament_id"
+    t.integer  "players_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -116,6 +125,7 @@ ActiveRecord::Schema.define(version: 20160815112032) do
     t.integer  "payment"
     t.integer  "prize"
     t.integer  "team_id"
+    t.integer  "match_id"
     t.boolean  "end",               default: false
     t.datetime "tournament_begins",                 null: false
     t.datetime "created_at",                        null: false

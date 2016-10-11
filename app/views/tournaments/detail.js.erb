@@ -1,1 +1,15 @@
 $("#team-detail").html("<%= j render('detail') %>")
+$(".modal-dialog").html("<%= j render('choose_players') %>")
+console.log($(".played_user").length);
+if ($(".played_user").length > 5) {
+	$('#myModal').modal('show');
+}
+else if ($(".played_user").length == 5) {
+	$(".played_user").prop('checked', true);
+	$('#myModal').modal('show');
+}
+else {
+	$(".error_msg").remove();
+	$("#pick-team").after('<div class="error_msg"><%= _("To take part in the tournament your team must be at least 5 players") %></div>')
+}
+	

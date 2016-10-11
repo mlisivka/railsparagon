@@ -79,9 +79,6 @@ msgstr "Запрошення"
 msgid "Log in"
 msgstr "Увійти"
 
-msgid "Log out"
-msgstr "Вийти"
-
 msgid "Login"
 msgstr "Увійти"
 
@@ -130,8 +127,14 @@ msgstr "Взнос"
 msgid "Played"
 msgstr "Зіграно"
 
+msgid "Player \"%{name}\" already belongs to the registered teams. Please change team staff"
+msgstr "Гравець \"%{name}\" вже належить до зареєстрованих команд. Будь ласка, поміняйте склад команди"
+
 msgid "Players"
 msgstr "Гравці"
+
+msgid "Please select the players who will play in this tournament"
+msgstr "Будь ласка, виберіть гравців, які гратимуть в цьому турнірі"
 
 msgid "Please sign in"
 msgstr "Будь ласка, увійдить в систему"
@@ -173,6 +176,9 @@ msgstr "Реєстрація"
 
 msgid "Reject"
 msgstr "Відхилити"
+
+msgid "Remember me"
+msgstr "Запам'ятати мене"
 
 msgid "Score"
 msgstr "Рахунок"
@@ -234,7 +240,7 @@ msgid "The player has not yet been involved in a team"
 msgstr "Цей гравець не буре участі в жодній команді"
 
 msgid "This abbreviation is already taken, choose another please"
-msgstr "Цю аббривіатуру зайнято, будь ласка виберіть іншу"
+msgstr "Цю абревіатуру зайнято, будь ласка виберіть іншу"
 
 msgid "This name is already taken, choose another please"
 msgstr "Це ім'я вже зайняте, будь ласка виберіть інше"
@@ -259,6 +265,9 @@ msgstr "Цей користувач вже є учасником цієї ком
 
 msgid "To register for the tournament you need to be authorized"
 msgstr "Для участі в турнірі ви повинні бути авторизовані"
+
+msgid "To take part in the tournament your team must be at least 5 players"
+msgstr "Для того, щоб взяти участь в турнірі ваша команда повинна мати не менше 5 гравців"
 
 msgid "Tournament"
 msgstr "Турнір"
@@ -332,6 +341,3 @@ msgstr "Зіграно"
 
 msgid "winrate"
 msgstr "відсоток перемог"
-
-msgid "Remember me"
-msgstr "Запам'ятати мене"

@@ -125,7 +125,13 @@ msgstr ""
 msgid "Played"
 msgstr ""
 
+msgid "Player \\\"%{name}\\\" already belongs to the registered teams. Please change team staff"
+msgstr ""
+
 msgid "Players"
+msgstr ""
+
+msgid "Please select the players who will play in this tournament"
 msgstr ""
 
 msgid "Please sign in"
@@ -165,6 +171,9 @@ msgid "Registration"
 msgstr ""
 
 msgid "Reject"
+msgstr ""
+
+msgid "Remember me"
 msgstr ""
 
 msgid "Score"
@@ -246,6 +255,9 @@ msgid "This user is already a member of this team"
 msgstr ""
 
 msgid "To register for the tournament you need to be authorized"
+msgstr ""
+
+msgid "To take part in the tournament your team must be at least 5 players"
 msgstr ""
 
 msgid "Tournament"

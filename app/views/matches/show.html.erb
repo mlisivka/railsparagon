@@ -26,15 +26,17 @@
           </div>
         <% end %>
 	      <% @match.teams.each do |t| %>
-	        <% if t.users.include? current_user %>
-	          <div class="match-pass col-centered"><b>Password:</b></br><%= @match.password %></div>
-						<!--<div class="confirm-time">
-	          	<%= form_tag action: "desired_time" do %>
-	            	<%= text_field_tag :desired_time %>
-	            	<%= submit_tag "GO" %>
-	          	<% end %>
-						</div>-->
-	        <% end %>
+					<% @match.tournament.players.each do |m| %>
+	        	<% if t.id == m.players_id %>
+	        	  <div class="match-pass col-centered"><b>Password:</b></br><%= @match.password %></div>
+							<!--<div class="confirm-time">
+	        	  	<%= form_tag action: "desired_time" do %>
+	        	    	<%= text_field_tag :desired_time %>
+	        	    	<%= submit_tag "GO" %>
+	        	  	<% end %>
+							</div>-->
+	        	<% end %>
+					<% end %>
 	      <% end %>
       </div>
     </div>
