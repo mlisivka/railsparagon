@@ -18,8 +18,13 @@ $(document).ready(function() {
     }
     $(this).parent().next('.result-full').slideToggle();
   });
-  $("#register").click(function(e) {
+	function register(){
     var id = path.substring(path.lastIndexOf('/') + 1);
+		var players_id = new Array();
+		$(".played_user:checked").each(function () {
+			console.log(players_id);
+			players_id.push($(this).val());
+		});
     $.ajax({
       url: path + "/registration_team",
       type: 'GET',
@@ -27,7 +32,7 @@ $(document).ready(function() {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       },
       data: {
-				players: $(".played_user:checked").val(),
+				players: players_id,
         team_id: team_id
       },
       error: function(XMLHttpRequest, errorTextStatus, error) {
@@ -35,7 +40,7 @@ $(document).ready(function() {
         $("#pick-team").after("<div class='error_msg'>Error!</div>");
       }
     });
-  });
+	}
   $("#send_inv").click(function(e) {
   	$('.success.msg').remove();
   	$('.error_msg').remove();
@@ -77,7 +82,10 @@ $(document).ready(function() {
       dataType: "script",
       error: function(XMLHttpRequest, errorTextStatus, error) {
         console.log("Failed: " + errorTextStatus + " ;" + error);
-      }
+      },
+			success: function() {
+				document.getElementById("register").addEventListener("click", register);
+			}
     });
   });
   $(".notify-btn .btn").click(function(e) {

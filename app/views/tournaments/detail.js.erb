@@ -1,6 +1,6 @@
 $("#team-detail").html("<%= j render('detail') %>")
-$(".modal-dialog").html("<%= j render('choose_players') %>")
-console.log($(".played_user").length);
+$(".modal-body").html("<%= j render('choose_players') %>")
+$("#register").prop('disabled', false);
 if ($(".played_user").length > 5) {
 	$('#myModal').modal('show');
 }

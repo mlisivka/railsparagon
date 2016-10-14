@@ -12,7 +12,11 @@ class TournamentsController < ApplicationController
 
   def registration_team
     @team = Team.find(params[:team_id])
-    @registration = Player.create(team_id: params[:team_id], tournament_id: params[:id], players_id: params[:players]) if @team.users.include?(current_user)
+    @tournament = Tournament.find(params[:id])
+    params[:players].each do |p|
+      @registration = Player.create(team_id: params[:team_id], tournament_id: params[:id], players_id: p) if @team.users.include?(current_user)
+      break if @registration.errors.messages.empty?
+    end
     #if @tournament.teams.length == 8
     #  generate_matches(@tournament.teams)
     #end
