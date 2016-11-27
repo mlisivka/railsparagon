@@ -2,26 +2,33 @@ class Admin::SessionController < ApplicationController
   layout except: :new
 
   def new
-    if params[:login]
-      @admin = AdminUser.where(login: params[:login]).first
-      render_403 unless @admin
-    end
+    @admin = AdminUser.where(login: params[:login]).first
+    render_403 unless @admin
   end
 
   def create
-    @admin = AdminUser.find_by_login(params[:login])
-    if @admin.encrypted_password.empty?
-      @admin.update_attributes(password_salt: BCrypt::Engine.generate_salt)
-      @admin.update_attributes(encrypted_password: BCrypt::Engine.hash_secret(params[:password], @admin.password_salt))
-    end
-    admin = AdminUser.authenticate(params[:login], params[:password])
-    if admin
-      session[:admin_id] = admin.id
-      admin.update_tracked_fields(request)
+    save_password_if_admin_new
+    @admin = AdminUser.authenticate(params[:login], params[:password])
+    if @admin
+      admin_was_autheticate
       redirect_to admin_root_path
     else
       render :new
     end
+  end
+  
+  def save_password_if_admin_new
+    @admin = AdminUser.where(login: params[:login]).first
+    unless @admin.encrypted_password?
+      password_salt = BCrypt::Engine.generate_salt
+      @admin.update_attributes(encrypted_password: BCrypt::Engine.hash_secret(params[:password], password_salt),
+                              password_salt: password_salt)
+    end
+  end
+  
+  def admin_was_autheticate
+    session[:admin_id] = @admin.id
+    @admin.update_tracked_fields(request)
   end
 
   def destroy

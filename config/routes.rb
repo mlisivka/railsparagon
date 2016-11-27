@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   end
 
   resources :tournaments, only: [:index, :show] do
-    get :registration_team, on: :member
+    get '/registration_team', to: 'tournaments#register_team_to_the_tournament', on: :member
     get :detail, on: :member
   end
 

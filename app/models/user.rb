@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -16,6 +14,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates :password, confirmation: true
 
+  # In order to visit user page via name
   def to_param
     name
   end

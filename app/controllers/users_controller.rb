@@ -5,17 +5,25 @@ class UsersController < ApplicationController
   end
 
   def show
-    if user_signed_in?
-      @user = !params[:name].nil? ? User.where('lower(name) = ?', params[:name].downcase).first : current_user
-      @teams = current_user.teams
+    if params[:name].nil? && user_signed_in?
+      show_my_profile
+    elsif !params[:name].nil?
+      show_other_profile
     else
-      unless params[:name].nil?
-        @user = User.where('lower(name) = ?', params[:name].downcase).first
-      else
-        redirect_to login_path and return
-      end
+      redirect_to login_path and return
     end
     render_404 unless @user
+  end
+  
+  private
+  
+  def show_my_profile
+    @user = current_user
+  end
+  
+  def show_other_profile
+    @user = User.where('lower(name) = ?', params[:name].downcase).first
+    @teams = current_user.teams
   end
 
 end
