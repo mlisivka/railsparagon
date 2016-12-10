@@ -12,7 +12,6 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.captain_id = current_user.id
     @team.users << current_user
-    @team.errors
     if @team.save
       redirect_to teams_path
     else

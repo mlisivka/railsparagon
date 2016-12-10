@@ -7,12 +7,11 @@ class UsersController < ApplicationController
   def show
     if params[:name].nil? && user_signed_in?
       show_my_profile
-    elsif !params[:name].nil?
+    elsif params[:name]
       show_other_profile
     else
-      redirect_to login_path and return
+      redirect_to login_path
     end
-    render_404 unless @user
   end
   
   private
@@ -23,7 +22,8 @@ class UsersController < ApplicationController
   
   def show_other_profile
     @user = User.where('lower(name) = ?', params[:name].downcase).first
-    @teams = current_user.teams
+    render_404 unless @user
+    @teams = current_user.teams if current_user
   end
 
 end
