@@ -184,6 +184,7 @@ GEM
       json (~> 1.4)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
+    rspec-context-private (0.0.1)
     rspec-core (3.5.1)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -265,6 +266,7 @@ DEPENDENCIES
   railroady
   rails (= 4.2.5.1)
   rails_12factor (= 0.0.2)
+  rspec-context-private
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

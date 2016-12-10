@@ -6,7 +6,7 @@ describe Invite do
   let(:user) { create(:user) }
   let(:user1){ create(:user) }
 
-  describe ".validates" do
+  describe "#validates" do
 
     it '#send_self' do
       invite = build(:invite, sender: user, recipient: user)

@@ -36,6 +36,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 
 group :test do
   gem 'rspec-rails'
+  gem 'rspec-context-private'
   gem 'factory_girl_rails'
 end
 

@@ -1,19 +1,22 @@
-
 require 'rails_helper'
 
-describe User do
+describe Team do
 
   let(:team) { build(:team) }
-  let(:users){ create_list(:user, 11) }
+  let(:user) { build(:user) }
+  let(:users){ create_list(:user, 10) }
 
-  describe '.before_add' do
+  describe '#team_limit' do
 
-    it '#team_limit' do
+    it 'if a team exceeds a limit players' do
       team.users << users
-      puts team.errors.inspect
-      expect{ team.users << users }.to raise_exception ActiveRecord::Rollback
+      expect{ team.users << user }.to raise_exception ActiveRecord::Rollback
     end
-
+    
+    it 'if limit players not has been exceeded' do
+      expect{ team.users << users }.not_to raise_exception
+    end
+    
   end
 
 end
