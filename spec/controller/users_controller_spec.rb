@@ -6,18 +6,26 @@ describe UsersController, type: :controller do
   
   describe '#show' do
   
-    it 'when user signed in and go to other profile' do
-      sign_in(user, scope: :user)
-      get :show, name: user.name
-      expect(response).to render_template :show
+    context 'when user signed in' do
+      
+      before(:each) do
+        sign_in(user, scope: :user)
+      end
+      
+      after(:each) do
+        expect(response).to render_template :show
+      end
+      
+      it 'go to other profile' do
+        get :show, name: user.name
+      end
+      
+      it 'go to your profile' do
+        get :show
+      end
+      
     end
-    
-    it 'when user signed in and go to your profile' do
-      sign_in(user, scope: :user)
-      get :show
-      expect(response).to render_template :show
-    end
-    
+
     it 'when user not signed in and go to other profile' do
       get :show, name: user.name
       expect(response).to render_template :show

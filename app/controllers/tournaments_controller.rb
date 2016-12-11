@@ -27,8 +27,10 @@ class TournamentsController < ApplicationController
   
   def registration_players_to_the_tournament
     params[:players].each do |player|
-      @registration_players = Player.create(team_id: params[:team_id], tournament_id: params[:id], players_id: player) if @team.users.include?(current_user)
-      break if @registration_players.errors.messages.empty?
+      if @team.users.include?(current_user)
+        @registration_players = Player.create(team_id: params[:team_id], tournament_id: params[:id], players_id: player) 
+        break if @registration_players.errors.messages.empty?
+      end
     end
   end
 
