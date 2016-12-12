@@ -8,12 +8,20 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.where(id: params[:id]).first
   end
 
+  def detail
+    @current_team = Team.where(id: params[:team_id]).first
+    @team_players = @current_team.users
+    respond_to :js
+  end
+  
   def register_team_to_the_tournament
     @team = Team.find(params[:team_id])
     @tournament = Tournament.find(params[:id])
     add_players_to_the_tournament
     respond_to :js
   end
+
+  private
 
   def add_players_to_the_tournament
     number_of_players_for_the_game = 5
@@ -33,14 +41,6 @@ class TournamentsController < ApplicationController
       end
     end
   end
-
-  def detail
-    @current_team = Team.where(id: params[:team_id]).first
-    @team_players = @current_team.users
-    respond_to :js
-  end
-
-  private
 
   def tournament_params
     params.require(:tournament).permit(:title, :tournament_begins, :max_team, :payment, :prize)

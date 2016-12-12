@@ -7,7 +7,6 @@ class MatchesController < ApplicationController
   end
 
   def show
-    @match.teams.each{ |t| puts true if t.users.include? current_user }
     render_404 unless @match
   end
 
