@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'session/new'
   end
 
-  root 'posts#index'
+  root 'tournaments#index'
 
   mount Ckeditor::Engine => '/ckeditor'
 

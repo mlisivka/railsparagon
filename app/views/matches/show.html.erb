@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container-fluid">
   <div class="title"><%= _('Match') %> #<%= @match.id %></div>
   <div class="row">
-    <div class="container">
+    <div class="container-fluid">
       <div class="match-full">
         <% @match.teams.includes(:users).each do |i| %>
           <div class="col-sm-6">
