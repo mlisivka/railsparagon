@@ -23,7 +23,7 @@ class InvitesController < ApplicationController
   def update
     invite = Invite.update(params[:id], accepted: params[:accepted])
     if params[:accepted] == "true"
-      current_user.teams << invite.team
+      invite.team.users << current_user
     end
     respond_to do |format|
       format.html { render nothing: true }

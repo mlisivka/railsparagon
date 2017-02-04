@@ -4,7 +4,7 @@ describe Team do
 
   let(:team) { build(:team) }
   let(:user) { build(:user) }
-  let(:users){ create_list(:user, 10) }
+  let(:users){ create_list(:user, 5) }
 
   describe '#team_limit' do
 
