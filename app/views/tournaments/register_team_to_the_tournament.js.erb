@@ -1,8 +1,8 @@
 $(".error_msg").remove();
-<% if @registration_players.errors.empty? %>
+<% if @tournament.errors.empty? %>
 	$("tbody").append("<%= escape_javascript(render 'team') %>")
 <% else %>
-	<% @registration_players.errors.each do |attribute, error| %>
+	<% @tournament.errors.each do |attribute, error| %>
 		$("#pick-team").after('<div class="error_msg"><%= error %></div>')
 	<% end %>
 <% end %>

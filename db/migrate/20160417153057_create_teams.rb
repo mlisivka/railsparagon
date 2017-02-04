@@ -5,7 +5,6 @@ class CreateTeams < ActiveRecord::Migration
       t.string   :tag_name
       t.string   :country
       t.integer  :rating
-      t.integer  :captain_id, null: false
       t.integer  :specification_id
       t.timestamps null: false
     end

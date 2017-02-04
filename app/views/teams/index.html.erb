@@ -8,8 +8,6 @@
       		<th>Id</th>
       		<th><%= _('Name') %></th>
       		<th><%= _('Country') %></th>
-      		<th><%= _('Rating') %></th>
-      		<th><%= _('Captain') %></th>
       		<th><%= _('Players') %></th>
       	</tr>
       </thead>
@@ -19,8 +17,6 @@
         		<td><%= i.id %></td>
         		<td><%= i.full_name %></td>
             <td><%= i.country %></td>
-            <td><%= i.rating %></td>
-            <td><%= i.captain_id %></td>
             <td>
               <%= i.users.map(&:name).to_sentence %>
             </td>

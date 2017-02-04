@@ -5,12 +5,11 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @teams = Team.where(captain_id: current_user);
+    @teams = current_user.teams;
   end
 
   def create
     @team = Team.new(team_params)
-    @team.captain_id = current_user.id
     @team.users << current_user
     if @team.save
       redirect_to teams_path

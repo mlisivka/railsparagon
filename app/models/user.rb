@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :invitions,    class_name: "Invite", foreign_key: "recipient_id"
   has_many :send_invites, class_name: "Invite", foreign_key: "sender_id"
+  has_and_belongs_to_many :tournaments
 
   validates :name,
     presence: { message: _('Field can not be empty') },

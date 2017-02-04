@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010162113) do
+ActiveRecord::Schema.define(version: 20170204200754) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "login",              default: "", null: false
@@ -73,14 +73,6 @@ ActiveRecord::Schema.define(version: 20161010162113) do
     t.integer "team_id"
   end
 
-  create_table "players", force: :cascade do |t|
-    t.integer  "team_id"
-    t.integer  "tournament_id"
-    t.integer  "players_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title",              null: false
     t.text     "content",            null: false
@@ -100,7 +92,6 @@ ActiveRecord::Schema.define(version: 20161010162113) do
     t.string   "tag_name"
     t.string   "country"
     t.integer  "rating"
-    t.integer  "captain_id",       null: false
     t.integer  "specification_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -126,6 +117,7 @@ ActiveRecord::Schema.define(version: 20161010162113) do
     t.integer  "prize"
     t.integer  "team_id"
     t.integer  "match_id"
+    t.integer  "user_id"
     t.boolean  "end",               default: false
     t.datetime "tournament_begins",                 null: false
     t.datetime "created_at",                        null: false
@@ -135,6 +127,11 @@ ActiveRecord::Schema.define(version: 20161010162113) do
   add_index "tournaments", ["max_team"], name: "index_tournaments_on_max_team"
   add_index "tournaments", ["payment"], name: "index_tournaments_on_payment"
   add_index "tournaments", ["prize"], name: "index_tournaments_on_prize"
+
+  create_table "tournaments_users", id: false, force: :cascade do |t|
+    t.integer "tournament_id"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                                null: false
