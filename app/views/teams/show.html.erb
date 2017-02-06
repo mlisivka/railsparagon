@@ -21,16 +21,18 @@
             </div>
           </div>
           <div class="team-info-holder">
-            <!--<div class="statistic"><%= _('Rating') %> <%= _('winrate') %> <%= _('matches') %> <%= _('played') %></div>-->
             <div class="players">
   						<div class="team-player">
               	<ul class="list-group">
               	  <% @team.users.map do |user| %>
 										<li class="list-group-item"><%= user.name %>
 											<% if @team.users.first == current_user %>
-												<%= link_to 'remove', remove_user_team_path(user_id: user.id) %>
+												<%= link_to 'remove', remove_user_team_path(user_id: user.id), method: :post %>
 											<% end %>
 										</li>
+									<% end %>
+									<% if @team.users.include?(current_user) %>
+										<%= link_to "Leave this team", leave_team_path, method: :post %>
 									<% end %>
               	</ul>
   						</div>

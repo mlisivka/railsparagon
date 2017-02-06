@@ -25,6 +25,12 @@ class TeamsController < ApplicationController
     team.users.delete(user) if team.users.first == current_user
     redirect_to team_path(team)
   end
+  
+  def leave_team
+    team = Team.find(params[:id])
+    team.users.delete(current_user) if team.users.include?(current_user)
+    redirect_to team_path(team)
+  end
 
   private
 
