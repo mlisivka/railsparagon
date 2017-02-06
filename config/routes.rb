@@ -29,7 +29,9 @@ Rails.application.routes.draw do
     post :desired_time, on: :member
   end
   resources :invites
-  resources :teams
+  resources :teams do 
+    get 'remove_user/:user_id', to: 'teams#remove_user_from_team', as: 'remove_user', on: :member
+  end
 
   get '/profile', to: 'users#show'
   get '/profile/:name', to: 'users#show', as: 'user'

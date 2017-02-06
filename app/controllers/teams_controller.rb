@@ -6,6 +6,7 @@ class TeamsController < ApplicationController
 
   def show
     @teams = current_user.teams;
+    @team = Team.find(params[:id])
   end
 
   def create
@@ -16,6 +17,13 @@ class TeamsController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def remove_user_from_team
+    team = Team.find(params[:id])
+    user = User.find(params[:user_id])
+    team.users.delete(user) if team.users.first == current_user
+    redirect_to team_path(team)
   end
 
   private
