@@ -38,7 +38,7 @@
 								<%= locale_swither(FastGettext.available_locales) %>
                </ul>
             </li>
-            <% if user_signed_in? %>
+            <% if current_user %>
 							<% unless team_invite.empty? %>
 							<li>
 								<span id="notify-cl" class="glyphicon glyphicon-envelope" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
@@ -59,7 +59,7 @@
                 </li>
 								<% end %>
 							<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), logout_path, :method => :delete %></li>
+              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), logout_path, method: :delete %></li>
             <% else %>
               <li><%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> #{_('Log in')}"), login_path %></li>
               <li><%= link_to raw("<span class='glyphicon glyphicon-user'></span> #{_('Sign up')}"), register_path %></li>

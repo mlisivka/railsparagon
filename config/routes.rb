@@ -8,11 +8,14 @@ Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
+  get '/auth/epic/callback', to: "authentications#epic"
+  delete '/logout', to: 'application#log_out', as: 'logout'
+  
   devise_for :users, skip: :session
   devise_scope :user do
     get    '/login' => 'devise/sessions#new'
     post   '/login' => 'devise/sessions#create'
-    delete '/logout' => 'devise/sessions#destroy'
+    #delete '/logout' => 'devise/sessions#destroy'
     get    '/register' => 'devise/registrations#new'
   end
 
