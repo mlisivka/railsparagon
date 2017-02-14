@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   get '/auth/epic/callback', to: "authentications#epic"
-  delete '/logout', to: 'application#log_out', as: 'logout'
+  #get '/login', to: "authentications#login", as: 'login'
+  #get '/logout', to: 'authentications#logout', as: 'logout'
+  
+  get '/login', to: redirect("https://developer-paragon.epicgames.com/v1/auth/login/#{ENV['CLIENTID']}")
+  get '/logout', to: redirect("https://developer-paragon.epicgames.com/v1/auth/logout/#{ENV['CLIENTID']}")
   
   devise_for :users, skip: :session
   devise_scope :user do
-    get    '/login' => 'devise/sessions#new'
-    post   '/login' => 'devise/sessions#create'
+    #get    '/login' => 'devise/sessions#new'
+    #post   '/login' => 'devise/sessions#create'
     #delete '/logout' => 'devise/sessions#destroy'
     get    '/register' => 'devise/registrations#new'
   end

@@ -59,10 +59,9 @@
                 </li>
 								<% end %>
 							<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), logout_path, method: :delete %></li>
+              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), logout_path %></li>
             <% else %>
               <li><%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> #{_('Log in')}"), login_path %></li>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-user'></span> #{_('Sign up')}"), register_path %></li>
             <% end %>
           </ul>
         </div>

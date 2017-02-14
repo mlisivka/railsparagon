@@ -2,10 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string  :name, null: false
-      t.integer :played_matches
-      t.integer :win
-      t.integer :lose
-      t.integer :kda
+      t.string  :accountId, null: false
       t.integer :team_id
       t.timestamps null: false
     end

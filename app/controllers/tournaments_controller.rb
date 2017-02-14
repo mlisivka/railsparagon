@@ -5,7 +5,7 @@ class TournamentsController < ApplicationController
   end
 
   def show
-    @tournament = Tournament.where(id: params[:id]).first
+    @tournament = Tournament.find(params[:id])
   end
 
   def detail

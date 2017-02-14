@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     current_user.invitions.where("accepted IS NULL") if user_signed_in?
   end
   
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+  
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -18,10 +22,6 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     redirect_to root_path
   end
-  
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
 
   def set_gettext_locale
     requested_locale = params[:locale] || session[:locale] || cookies[:locale] ||  request.env['HTTP_ACCEPT_LANGUAGE']
@@ -29,34 +29,23 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  
+  def store_location
+     if request.get? && request.path != "/auth/epic/callback"
+       session[:previous_url] = request.fullpath
+     end
+   end
 
+  def after_sign_in_path_for
+    session[:previous_url] || root_path
+  end
+  
   def render_404
     render file: 'public/404.html', status: 404, layout: false
   end
 
   def render_403
     render file: 'public/403.html', status: 403, layout: false
-  end
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
-  end
-
-  def store_location
-    return unless request.get?
-    if (request.path != "/login" &&
-        request.path != "/register" &&
-        request.path != "/users/password/new" &&
-        request.path != "/users/password/edit" &&
-        request.path != "/users/confirmation" &&
-        request.path != "/logout" &&
-        !request.xhr?)
-      session[:previous_url] = request.fullpath
-    end
-  end
-
-  def after_sign_in_path_for(resource)
-    session[:previous_url] || root_path
   end
 
 end
