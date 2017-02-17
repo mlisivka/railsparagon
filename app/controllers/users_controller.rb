@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:name].nil? && user_signed_in?
+    if params[:name].nil? && current_user
       show_my_profile
     elsif params[:name]
       show_other_profile

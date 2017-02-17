@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
 
-  has_and_belongs_to_many :teams, before_add: :player_limit
-
   has_many :invitions,    class_name: "Invite", foreign_key: "recipient_id"
   has_many :send_invites, class_name: "Invite", foreign_key: "sender_id"
   has_and_belongs_to_many :tournaments
+  has_and_belongs_to_many :teams, before_add: :player_limit
   
   # In order to visit user page via name
   def to_param

@@ -4,10 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :team_invite, :current_user
 
   before_filter :set_gettext_locale, :store_location
-  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def team_invite
-    current_user.invitions.where("accepted IS NULL") if user_signed_in?
+    current_user.invitions.where("accepted IS NULL") if current_user
   end
   
   def current_user
