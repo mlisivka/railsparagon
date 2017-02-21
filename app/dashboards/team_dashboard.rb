@@ -15,10 +15,6 @@ class TeamDashboard < Administrate::BaseDashboard
     id: Field::Number,
     full_name: Field::String,
     tag_name: Field::String,
-    country: Field::String,
-    rating: Field::Number,
-    captain_id: Field::Number,
-    desired_time: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -31,7 +27,7 @@ class TeamDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :users,
     :tournaments,
-    :matches,
+    :full_name,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -43,10 +39,6 @@ class TeamDashboard < Administrate::BaseDashboard
     :id,
     :full_name,
     :tag_name,
-    :country,
-    :rating,
-    :captain_id,
-    :desired_time,
     :created_at,
     :updated_at,
   ].freeze
@@ -58,10 +50,6 @@ class TeamDashboard < Administrate::BaseDashboard
     :users,
     :full_name,
     :tag_name,
-    :country,
-    :rating,
-    :captain_id,
-    :desired_time,
   ].freeze
 
   # Overwrite this method to customize how teams are displayed

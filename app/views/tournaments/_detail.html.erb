@@ -1,15 +1,11 @@
 <div class="team-info" style="background: #fff">
   <img src="http://placehold.it/60">
   <%= s_('Team|Name') %>: <%= @current_team.full_name %>
-  <br>
-  <%= _('Country') %>: <%= @current_team.country %>
-  <br>
-  <%= _('Rating') %>: <%= @current_team.rating %>
 </div>
 <div class="team-player">
   <ul class="list-group">
     <% @current_team.users.each do |i| %>
-      <li class="list-group-item"><%= i.name %></li><!-- &nbsp;&nbsp;<span class="label label-primary">Captain</span> -->
+      <li class="list-group-item"><%= i.name %></li>
     <% end %>
   </ul>
 </div>

@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @teams = current_user.teams;
+    @teams = current_user.teams # error current_user = nil
     @team = Team.find(params[:id])
   end
 
@@ -35,7 +35,7 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:full_name, :country, :image)
+    params.require(:team).permit(:full_name, :tag_name, :image)
   end
 
 end
