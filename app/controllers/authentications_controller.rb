@@ -10,25 +10,35 @@ class AuthenticationsController < ApplicationController
     end
   end
   
+  private
+  
   def token(code)
-    url = URI.parse("https://developer-paragon.epicgames.com/v1/auth/token/#{code}")
-    
-    request = Net::HTTP::Get.new(url)
+    path = "https://developer-paragon.epicgames.com/v1/auth/token/#{code}"
+    data = epic_request(path)
+    user = User.find_by_accountId(data["accountId"])
+    if user.nil?
+      name = get_name(data["accountId"])
+      user = User.create(accountId: data["accountId"], name: name)
+    end
+    log_in(user)
+    redirect_to after_sign_in_path_for
+  end
+  
+  def get_name(accountId)
+    epic_request("https://developer-paragon.epicgames.com/v1/account/#{accountId}")["displayName"]
+  end
+  
+  def epic_request(path)
+    uri = URI.parse(path)
+    request = Net::HTTP::Get.new(uri)
     request.add_field("Accept", "application/json; charset=utf-8")
     request.add_field("X-Epic-ApiKey", ENV["API_KEY"])
     request.add_field("Authorization", ENV["AURHORIZATION"])
     
-    http = Net::HTTP.new(url.host, url.port)
+    http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     response = http.request(request)
-    data = JSON.parse response.body
-    
-    user = User.find_by_accountId(data["accountId"])
-    if user.nil?
-      user = User.create(accountId: data["accountId"], name: "user11")
-    end
-    log_in(user)
-    redirect_to after_sign_in_path_for
+    return JSON.parse response.body
   end
   
 end
