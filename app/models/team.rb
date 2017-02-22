@@ -10,7 +10,7 @@ class Team < ActiveRecord::Base
     uniqueness: { message: _('This team name is already taken, choose another please') }
   validates :tag_name,
     uniqueness: { allow_blank: true, message: _('This abbreviation is already taken, choose another please') }
-
+  
   private
 
   def team_limit user

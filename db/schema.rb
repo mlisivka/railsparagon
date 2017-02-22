@@ -95,7 +95,6 @@ ActiveRecord::Schema.define(version: 20170204200754) do
   end
 
   add_index "teams", ["full_name"], name: "index_teams_on_full_name", unique: true
-  add_index "teams", ["tag_name"], name: "index_teams_on_tag_name", unique: true
 
   create_table "teams_tournaments", id: false, force: :cascade do |t|
     t.integer "team_id"

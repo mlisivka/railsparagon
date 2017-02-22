@@ -14,6 +14,13 @@
                 <%= i.label :tag_name, _('Team Tag / Abbreviation') + ":" %>
                 <%= i.text_field :tag_name, class: "form-control" %>
               </div>
+              <div class="form-group">
+                <%= label_tag :friends, _('Enter the names of users to invite them to this team')%>
+                <%= text_field_tag 'friends[]', nil, class: "form-control team-friend" %>
+								<%= text_field_tag 'friends[]', nil, class: "form-control team-friend" %>
+								<%= text_field_tag 'friends[]', nil, class: "form-control team-friend" %>
+								<%= text_field_tag 'friends[]', nil, class: "form-control team-friend" %>
+              </div>
               <%= i.submit _('Create Team'), class: "btn btn-primary" %>
     		    <% end %>
           </div>

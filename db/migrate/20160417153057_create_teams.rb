@@ -5,7 +5,6 @@ class CreateTeams < ActiveRecord::Migration
       t.string   :tag_name
       t.timestamps null: false
     end
-    add_index :teams, :tag_name,  unique: true
     add_index :teams, :full_name, unique: true
   end
 end
