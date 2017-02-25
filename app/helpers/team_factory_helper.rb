@@ -1,0 +1,2 @@
+module TeamFactoryHelper
+end

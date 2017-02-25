@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     redirect_to root_path
   end
+  
+  def authenticate_user!
+      redirect_to login_path unless current_user
+  end 
 
   def set_gettext_locale
     requested_locale = params[:locale] || session[:locale] || cookies[:locale] ||  request.env['HTTP_ACCEPT_LANGUAGE']

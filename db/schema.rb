@@ -130,11 +130,13 @@ ActiveRecord::Schema.define(version: 20170204200754) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "accountId",  null: false
+    t.string   "name",                         null: false
+    t.string   "accountId",                    null: false
+    t.string   "email"
+    t.boolean  "without_team", default: false
     t.integer  "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "users", ["name"], name: "index_users_on_name", unique: true

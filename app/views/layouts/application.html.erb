@@ -29,6 +29,7 @@
             <li><a href="/users"><%= _('Profile') %></a></li>
             <li><a href="/teams"><%= _('Team') %></a></li>
             <li><a href="/matches"><%= _('Matches') %></a></li>
+						<li><%= link_to _('Find me a team'), new_assemble_team_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 						<li id="divider"></li>
@@ -71,7 +72,7 @@
     <% flash.each do |key, value| %>
       <%= content_tag(:div, class: "alert alert-success fade in", id: "success-alert") do %>
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong><%= key %>!</strong><%= value %>
+        <strong><%= value %></strong>
       <% end %>
     <% end %>
 

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="cover">
+		    <div class="title"><%= _('Find me a team') %></div>
+        <div class="team-create">
+  		    <%= form_tag team_factory_index_path, method: :post do %>
+					Оставь email и мы пришем тебе игроков с которыми ты сможешь сделать свою команду
+            <div class="form-group">
+              <%= label_tag :email, _('Email') + ":" %>
+              <%= text_field_tag :email, nil, class: "form-control" %>
+            </div>
+            <%= submit_tag _('To assemble a team'), class: "btn btn-primary" %>
+  		    <% end %>
+        </div>
+		  </div>
+    </div>
+	</div>
+</div>

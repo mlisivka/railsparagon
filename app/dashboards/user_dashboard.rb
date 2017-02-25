@@ -14,6 +14,8 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     accountId: Field::String,
+    email: Field::String,
+    without_team: Field::Boolean,
     team_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -38,6 +40,8 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :accountId,
+    :email,
+    :without_team,
     :created_at,
     :updated_at,
   ].freeze
@@ -47,6 +51,9 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :accountId,
+    :email,
+    :without_team,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
