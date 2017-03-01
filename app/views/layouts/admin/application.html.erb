@@ -21,6 +21,7 @@ By default, it renders:
   <title><%= content_for(:title) %> | <%= Rails.application.class.parent_name.titlecase %></title>
   <%= render "stylesheet" %>
 	<%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'ckeditor/config', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 

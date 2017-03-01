@@ -7,11 +7,12 @@
       	  <div class="tournament-info-sm">
 						<ul class="list-group">
 							<li class="list-group-item"><%= @tournament.title %></li>
-	      	    <li class="list-group-item"><%= _('Prize pool') %>&nbsp;&nbsp;<span class="label label-warning"><%= @tournament.prize %>$</span></li>
+	      	    <li class="list-group-item"><%= _('Prize pool') %>&nbsp;&nbsp;<span class="label label-warning"><%= @tournament.prize_pool %>$</span></li>
 	      	    <li class="list-group-item"><%= _('Payment') %>&nbsp;&nbsp;<span class="label label-warning"><%= @tournament.payment %>$</span></li>
 	      	    <li class="list-group-item"><%= _('Date begin') %>&nbsp;&nbsp; <%= @tournament.tournament_begins.strftime('%d/%m/%Y %H:%M') %></li>
 						</ul>
       	  </div>
+					<%= @tournament.description.html_safe %>
           <% if current_user %>
             <% unless current_user.teams.blank? %>
         	  	<div id="pick-team">

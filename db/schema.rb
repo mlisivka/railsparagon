@@ -110,10 +110,11 @@ ActiveRecord::Schema.define(version: 20170204200754) do
     t.string   "title",                             null: false
     t.integer  "max_team",                          null: false
     t.integer  "payment"
-    t.integer  "prize"
+    t.integer  "prize_pool"
     t.integer  "team_id"
     t.integer  "match_id"
     t.integer  "user_id"
+    t.text     "description"
     t.boolean  "end",               default: false
     t.datetime "tournament_begins",                 null: false
     t.datetime "created_at",                        null: false
@@ -122,7 +123,7 @@ ActiveRecord::Schema.define(version: 20170204200754) do
 
   add_index "tournaments", ["max_team"], name: "index_tournaments_on_max_team"
   add_index "tournaments", ["payment"], name: "index_tournaments_on_payment"
-  add_index "tournaments", ["prize"], name: "index_tournaments_on_prize"
+  add_index "tournaments", ["prize_pool"], name: "index_tournaments_on_prize_pool"
 
   create_table "tournaments_users", id: false, force: :cascade do |t|
     t.integer "tournament_id"

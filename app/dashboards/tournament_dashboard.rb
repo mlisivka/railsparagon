@@ -9,12 +9,14 @@ class TournamentDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     teams: Field::HasMany,
+    matches: Field::HasMany,
+    users: Field::HasMany,
     id: Field::Number,
     title: Field::String,
     max_team: Field::Number,
     payment: Field::Number,
-    prize: Field::Number,
-    team_id: Field::Number,
+    prize_pool: Field::Number,
+    description: CkeditorField,
     end: Field::Boolean,
     tournament_begins: Field::DateTime,
     created_at: Field::DateTime,
@@ -37,12 +39,13 @@ class TournamentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :teams,
+    :matches,
+    :users,
     :id,
     :title,
     :max_team,
     :payment,
-    :prize,
-    :team_id,
+    :prize_pool,
     :end,
     :tournament_begins,
     :created_at,
@@ -53,12 +56,11 @@ class TournamentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :teams,
     :title,
     :max_team,
     :payment,
-    :prize,
-    :team_id,
+    :prize_pool,
+    :description,
     :end,
     :tournament_begins,
   ].freeze

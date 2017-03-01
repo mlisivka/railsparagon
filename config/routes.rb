@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'tournaments#index'
-
   mount Ckeditor::Engine => '/ckeditor'
+  root 'tournaments#index'
 
   get '/auth/epic/callback', to: "authentications#epic"
   get '/login', to: redirect("https://developer-paragon.epicgames.com/v1/auth/login/#{ENV['CLIENTID']}")
