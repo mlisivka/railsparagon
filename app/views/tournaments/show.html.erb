@@ -14,7 +14,7 @@
       	  </div>
 					<%= @tournament.description.html_safe %>
           <% if current_user %>
-            <% unless current_user.teams.blank? %>
+            <% if !current_user.teams.blank? && !@tournament.users.include?(current_user) %>
         	  	<div id="pick-team">
    	    	    	<div class="btn-group btn-input clearfix team-select">
    	    	      <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
@@ -26,10 +26,12 @@
    							 <% end %>
    	    	     	</ul>
    	    	     </div>
-							 <button class="btn btn-primary btn-send" ><%= _('Send') %></button>
+							 <button class="btn btn-primary btn-send" id="register"><%= _('Send') %></button>
   						</div>
       	      <div id="team-detail">
       	      </div>
+						<% elsif @tournament.users.include?(current_user) %>
+							<%= link_to 'Leave', leave_tournament_path, method: :post %>
             <% else %>
               You have no teams for play in this tournament
             <% end %>

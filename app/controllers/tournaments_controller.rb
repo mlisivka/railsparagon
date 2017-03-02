@@ -21,6 +21,17 @@ class TournamentsController < ApplicationController
     @tournament.teams << @team if @tournament.errors.messages.empty?
     respond_to :js
   end
+  
+  def leave_tournament
+    @tournament = Tournament.find(params[:id])
+    @tournament.teams.map do |team|
+      if team.users.include?(current_user)
+        @tournament.teams.delete team
+        @tournament.users.delete team.users
+      end
+    end
+    redirect_to @tournament
+  end
 
   private
 

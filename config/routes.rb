@@ -30,17 +30,15 @@ Rails.application.routes.draw do
 
   resources :users, only: :index do
     get :send_invite, on: :member
-    get :no_team, on: :collection
-    put :request_assemble_team, on: :collection
   end
   
-  resources :team_factory, only: [:new ,:create]
   get 'assemble_team', to: 'team_factory#new', as: 'new_assemble_team'
   post 'assemble_team', to: 'team_factory#create'
 
   resources :tournaments, only: [:index, :show] do
     get '/registration_team', to: 'tournaments#register_team_to_the_tournament', on: :member
     get :detail, on: :member
+    post 'leave', to: 'tournaments#leave_tournament', on: :member
   end
 
 end
