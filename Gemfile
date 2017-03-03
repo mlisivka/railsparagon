@@ -19,7 +19,7 @@ gem 'gettext_i18n_rails'
 gem 'administrate'
 gem 'bourbon'
 gem 'paperclip', '4.3.7'
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'htmlcompressor'
 
 # Use SCSS for stylesheets
