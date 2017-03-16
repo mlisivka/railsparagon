@@ -4,11 +4,6 @@ $main_colora: #346;
 $main_color: rgb(40,53,79);
 $orange: #FFC749;
 
-.navbar-static-top{
-  box-shadow: 1px 1px 7px 2px rgba(0,0,0,0.2);
-	background-color: $main_colora !important;
-  border:1px solid $main_color !important;
-}
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
 	//color: $orange;
 	background-color: $main_color;
@@ -24,6 +19,67 @@ $orange: #FFC749;
 }
 .navbar-inverse .navbar-toggle{
 	border-color: $main-color;
+}
+.navbar-logo {
+	width: 175px;
+  text-align: center;
+}
+.navbar-tgl {
+  float: left;
+  width: 0;
+  height: 0;
+  border-top: 50px solid #3F3F3F;
+  border-left: 45px solid transparent;
+}
+.navbar-menu {
+	background-color: #3F3F3F;
+	width: calc(100% - 220px);
+	float: left;
+	border-bottom: 2px solid #C5C5C5;
+}
+.nav > li {
+	margin: 15px 0;
+	border-right: 2px solid #FEED01;
+}
+.nav > li > a {
+  color: #fff;
+  padding: 0px 5px;
+  margin: 0px 10px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  color: #FEED01;
+  border-bottom: 2px solid #FEED01;
+	background-color: transparent !important;
+  margin-bottom: -2px;
+}
+.navbar-right > li {
+	margin: 15px 0;
+	border-right: none;
+}
+.navbar-right {
+	margin-right: 15px;
+}
+.navbar-sign {
+	background-color: #FEED01;
+	color: #3F3F3F !important;
+	height: 50px;
+	width: 130px;
+  text-align: center;
+	transform: skew(-45deg);
+  margin: 0 25px 0 40px !important;
+	font-size: 16px;
+}
+.navbar-sign a {
+	color: #3F3F3F !important;
+  line-height: 50px !important;
+	transform: skew(45deg);
+}
+.navbar-sign > a:hover, .navbar-sign > a:focus {
+	border-bottom: none !important;
+}
+.navbar-sign a > img {
+	margin-top: -3px;
 }
 #divider {
   height: 1px;

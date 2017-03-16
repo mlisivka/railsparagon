@@ -4,7 +4,7 @@
 
     <title>ParagonRails</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, async: true %>
+    <%= javascript_include_tag 'application', async: true %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,62 +12,62 @@
 		<meta name="google-site-verification" content="KyfySNzoGJK-uKC5P_7X6_qk32BcsW2qdm1-bP3kRYo" />
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#responsive-menu">
-            <span class="sr-only ">Open navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">AgoraStorm</a>
-        </div>
-        <div class="collapse navbar-collapse" id="responsive-menu">
-          <ul class="nav navbar-nav">
-            <li><a href="/tournaments"><%= _('Tournaments') %></a></li>
-            <li><a href="/users"><%= _('Profile') %></a></li>
-            <li><a href="/teams"><%= _('Team') %></a></li>
-            <li><a href="/matches"><%= _('Matches') %></a></li>
-						<li><%= link_to _('Find me a team'), new_assemble_team_path %></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-						<li id="divider"></li>
+		<nav class="navbar navbar-static-top">
+			<a class="navbar-brand navbar-logo" href="/">
+				LOGO
+			</a>
+			<div class="navbar-tgl"></div>
+			<div class="navbar-menu">
+        <ul class="nav navbar-nav">
+          <li><a href="/tournaments"><%= _('Tournaments') %></a></li>
+          <li><a href="/users"><%= _('Profile') %></a></li>
+          <li><a href="/teams"><%= _('Team') %></a></li>
+          <li><a href="/matches"><%= _('Matches') %></a></li>
+					<li><%= link_to _('Find me a team'), new_assemble_team_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+					<li>
+						<span id="locale" class="glyphicon glyphicon-globe" style="color: white;float: left;font-size:20px;margin-right: 10px;"></span>
+						<ul class="dropdown-menu" id="locale_list" style="display: none">
+							<%= locale_swither(FastGettext.available_locales) %>
+             </ul>
+          </li>
+					<% unless team_invite.empty? %>
 						<li>
-							<span id="locale" class="glyphicon glyphicon-globe" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
-							<ul class="dropdown-menu" id="locale_list" style="display: none">
-								<%= locale_swither(FastGettext.available_locales) %>
-               </ul>
-            </li>
-            <% if current_user %>
-							<% unless team_invite.empty? %>
-							<li>
-								<span id="notify-cl" class="glyphicon glyphicon-envelope" style="color: white;float: left;margin-top: 15px;font-size:20px;margin-right: 10px;"></span>
-								<div id="notify" class="notify" style="display: none">
-									<% team_invite.each do |i| %>
-                      <div class="notify-main">
-                      	<input type="hidden" name="id" value="<%= i.id %>">
-                        <b><%= link_to i.sender.name, user_path(i.sender) %></b>
-                        invites you to the team
-                        <b><%= link_to i.team.full_name, team_path(i.team) %></b>
-                        <div class="notify-btn">
-                          <a class="btn btn-warning btn-sm" value="false"><%= _('Reject') %></a>
-                          <a class="btn btn-success btn-sm" value="true"><%= _('Accept') %></a>
-                        </div>
-                      </div>
-                	<% end %>
-                 </div>
-                </li>
-								<% end %>
-							<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'></span>  #{_('Log out')}"), logout_path %></li>
-            <% else %>
-              <li><%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> #{_('Log in')}"), login_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
+							<span id="notify-cl" class="glyphicon glyphicon-envelope" style="color: white;float: left;font-size:20px;margin-right: 10px;"></span>
+						<div id="notify" class="notify" style="display: none">
+							<% team_invite.each do |i| %>
+	               <div class="notify-main">
+	                	<input type="hidden" name="id" value="<%= i.id %>">
+	                  <b><%= link_to i.sender.name, user_path(i.sender) %></b>
+	                  invites you to the team
+	                  <b><%= link_to i.team.full_name, team_path(i.team) %></b>
+	                  <div class="notify-btn">
+	                    <a class="btn btn-warning btn-sm" value="false"><%= _('Reject') %></a>
+	                    <a class="btn btn-success btn-sm" value="true"><%= _('Accept') %></a>
+	                  </div>
+	               </div>
+	          	<% end %>
+	           </div>
+	          </li>
+					<% end %>
+          <% if current_user %>
+						<li><%= link_to current_user.name, current_user, style: "color:#fff" %></li>
+            <li class="navbar-sign">
+							<%= link_to logout_path do %>
+								<%= image_tag 'logo.png' %> <%= _('Log out') %>
+							<% end %>
+						</li>
+          <% else %>
+            <li class="navbar-sign">
+							<%= link_to login_path do %>
+								<%= image_tag 'logo.png' %> <%= _('Log in') %>
+							<% end %>
+						</li>
+          <% end %>
+        </ul>
+			</div>
+		</nav>
 
     <% flash.each do |key, value| %>
       <%= content_tag(:div, class: "alert alert-success fade in", id: "success-alert") do %>
