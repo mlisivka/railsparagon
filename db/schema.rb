@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20170204200754) do
     t.integer  "team_id"
     t.integer  "match_id"
     t.integer  "user_id"
-    t.text     "description"
+    t.text     "description",       default: "",    null: false
     t.boolean  "end",               default: false
     t.datetime "tournament_begins",                 null: false
     t.datetime "created_at",                        null: false
