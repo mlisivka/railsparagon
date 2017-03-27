@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <% @tournaments.each do |i| %>
-    <div class="col-sm-8">
+    <div class="col-lg-offset-1 col-lg-6 col-sm-8">
 			<div class="tournament-name"><%= link_to i.title, tournament_path(i) %></div>
       <div class="tournament-body">
 				<div class="col-xs-12 col-md-4">
@@ -42,5 +42,28 @@
       </div>
     </div>
     <% end %>
+    <div class="col-lg-offset-1 col-lg-3 col-sm-4">
+      <div class="news">
+        <div class="title">News</div>
+        <div class="post">
+          <div class="post-title">Site is opened</div>
+          <div class="post-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-title">Site is opened</div>
+          <div class="post-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-title">Site is opened</div>
+          <div class="post-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
