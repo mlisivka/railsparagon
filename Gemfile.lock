@@ -250,7 +250,7 @@ DEPENDENCIES
   paperclip (= 4.3.7)
   pg (= 0.18.2)
   railroady
-  rails (= 4.2.5.1)
+  rails
   rails_12factor (= 0.0.2)
   rspec-context-private
   rspec-rails
