@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     post :desired_time, on: :member
   end
   resources :invites
-  resources :teams do 
+  resources :teams do
     post 'remove_user/:user_id', to: 'teams#remove_user_from_team', as: 'remove_user', on: :member
     post 'leave', to: 'teams#leave_team', on: :member
   end
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     get :no_team, on: :collection
     put :request_assemble_team, on: :collection
   end
-  
+
   resources :team_factory, only: :create
   get 'assemble_team', to: 'team_factory#new', as: 'new_assemble_team'
 

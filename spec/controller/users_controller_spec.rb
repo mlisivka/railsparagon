@@ -17,7 +17,7 @@ describe UsersController, type: :controller do
       end
 
       it 'go to other profile' do
-        get :show, name: user.name
+        get :show, params: { name: user.name }
       end
 
       it 'go to your profile' do
@@ -27,7 +27,7 @@ describe UsersController, type: :controller do
     end
 
     it 'when user not signed in and go to other profile' do
-      get :show, name: user.name
+      get :show, params: { name: user.name }
       expect(response).to render_template :show
     end
 
@@ -37,7 +37,7 @@ describe UsersController, type: :controller do
     end
 
     it 'when user not found' do
-      get :show, name: 'not_found_name'
+      get :show, params: { name: 'not_found_name' }
       expect(response.status).to eq(404)
     end
 

@@ -1,4 +1,4 @@
-class Team < ActiveRecord::Base
+class Team < ApplicationRecord
 
   has_and_belongs_to_many :users, before_add: :team_limit
   has_and_belongs_to_many :matches
@@ -10,7 +10,7 @@ class Team < ActiveRecord::Base
     uniqueness: { message: _('This team name is already taken, choose another please') }
   validates :tag_name,
     uniqueness: { allow_blank: true, message: _('This abbreviation is already taken, choose another please') }
-  
+
   private
 
   def team_limit user

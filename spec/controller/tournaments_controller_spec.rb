@@ -12,7 +12,7 @@ describe TournamentsController, type: :controller do
   describe '#register_team_to_the_tournament' do
 
     it 'render page' do
-      xhr :get, :register_team_to_the_tournament, tournament_params, format: :js
+      get :register_team_to_the_tournament, params: tournament_params, format: :js, xhr:true
       expect(response).to render_template('register_team_to_the_tournament')
     end
 
@@ -46,7 +46,7 @@ describe TournamentsController, type: :controller do
   describe '#detail' do
 
     it 'render page' do
-      xhr :get, :detail, id: tournament.id, team_id: team.id, format: :js
+      get :detail, params: { id: tournament.id, team_id: team.id }, format: :js, xhr: true
       expect(response).to render_template('detail')
     end
 
