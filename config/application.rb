@@ -13,5 +13,7 @@ module RailsParagon
     # -- all .rb files in that directory are automatically loaded.
 
     ActiveSupport.halt_callback_chains_on_return_false = false
+
+    config.assets.initialize_on_precompile = false
   end
 end
